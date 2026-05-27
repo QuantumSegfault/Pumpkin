@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum ConfiguredFeature {
     Acacia,
@@ -257,7 +258,9 @@ impl ConfiguredFeature {
             "clay_pool_with_dripleaves" => Some(Self::ClayPoolWithDripleaves),
             "clay_with_dripleaves" => Some(Self::ClayWithDripleaves),
             "crimson_forest_vegetation" => Some(Self::CrimsonForestVegetation),
-            "crimson_forest_vegetation_bonemeal" => Some(Self::CrimsonForestVegetationBonemeal),
+            "crimson_forest_vegetation_bonemeal" => {
+                Some(Self::CrimsonForestVegetationBonemeal)
+            }
             "crimson_fungus" => Some(Self::CrimsonFungus),
             "crimson_fungus_planted" => Some(Self::CrimsonFungusPlanted),
             "crimson_roots" => Some(Self::CrimsonRoots),
@@ -442,7 +445,9 @@ impl ConfiguredFeature {
             "void_start_platform" => Some(Self::VoidStartPlatform),
             "warm_ocean_vegetation" => Some(Self::WarmOceanVegetation),
             "warped_forest_vegetation" => Some(Self::WarpedForestVegetation),
-            "warped_forest_vegetation_bonemeal" => Some(Self::WarpedForestVegetationBonemeal),
+            "warped_forest_vegetation_bonemeal" => {
+                Some(Self::WarpedForestVegetationBonemeal)
+            }
             "warped_fungus" => Some(Self::WarpedFungus),
             "warped_fungus_planted" => Some(Self::WarpedFungusPlanted),
             "waterlily" => Some(Self::Waterlily),

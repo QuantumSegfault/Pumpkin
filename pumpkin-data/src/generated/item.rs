@@ -1,22 +1,19 @@
 /* This file is generated. Do not edit manually. */
-use crate::Block;
-use crate::attributes::Attributes;
-use crate::data_component::DataComponent;
-#[allow(
-    clippy::wildcard_imports,
-    clippy::enum_glob_use,
-    clippy::too_many_lines
-)]
+#![cfg_attr(rustfmt, rustfmt::skip)]
+#[allow(clippy::wildcard_imports, clippy::enum_glob_use, clippy::too_many_lines)]
 use crate::data_component::DataComponent::*;
-use crate::data_component_impl::IDSet::{IDs, Tag};
 use crate::data_component_impl::*;
-use crate::effect::StatusEffect;
-use crate::sound::Sound;
 use crate::tag::{RegistryKey, Taggable};
-use crate::{AttributeModifierSlot, tag};
 use pumpkin_util::text::TextComponent;
 use std::borrow::Cow;
 use std::hash::{Hash, Hasher};
+use crate::{tag, AttributeModifierSlot};
+use crate::attributes::Attributes;
+use crate::data_component_impl::IDSet::{IDs, Tag};
+use crate::data_component::DataComponent;
+use crate::effect::StatusEffect;
+use crate::Block;
+use crate::sound::Sound;
 #[derive(Clone)]
 pub struct Item {
     pub id: u16,
@@ -2074,10 +2071,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:black_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -2188,7 +2191,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:black_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -2565,10 +2570,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:blue_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -2698,7 +2709,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:blue_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -3401,10 +3414,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:brown_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -3534,7 +3553,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:brown_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -4113,13 +4134,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -4232,22 +4257,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -4285,22 +4312,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -4338,22 +4367,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -4391,22 +4422,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -4859,17 +4892,25 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[StatusEffectInstance {
-                            effect_id: Cow::Borrowed("minecraft:hunger"),
-                            amplifier: 0i32,
-                            duration: 600i32,
-                            ambient: false,
-                            show_particles: true,
-                            show_icon: true,
-                        }]),
-                        0.3f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:hunger"),
+                                            amplifier: 0i32,
+                                            duration: 600i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                0.3f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -6085,39 +6126,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.200000047683716f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.200000047683716f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_copper_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(5f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_copper_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(5f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -6186,22 +6233,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6296,22 +6345,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6425,22 +6476,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6478,39 +6531,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_copper_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(5f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_copper_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(5f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -6539,22 +6598,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6564,7 +6625,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:copper")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -6629,22 +6692,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6680,22 +6745,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6705,7 +6772,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipNautilus),
                     asset_id: Some(Cow::Borrowed("minecraft:copper")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -6770,39 +6839,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_copper_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(5f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_copper_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(5f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -6833,39 +6908,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 2.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 2.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_copper_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(5f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_copper_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(5f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -6896,22 +6977,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.8235294818878174f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.8235294818878174f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -6939,44 +7022,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -7271,13 +7360,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -7914,10 +8007,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:cyan_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -8028,7 +8127,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:cyan_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -9328,39 +9429,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_diamond_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(8f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_diamond_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(8f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -9410,22 +9517,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9463,22 +9572,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9516,22 +9627,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9569,39 +9682,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_diamond_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(8f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_diamond_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(8f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -9630,22 +9749,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 11f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 11f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9655,7 +9776,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:diamond")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -9682,22 +9805,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9733,22 +9858,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 11f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 11f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9758,7 +9885,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipNautilus),
                     asset_id: Some(Cow::Borrowed("minecraft:diamond")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -9804,39 +9933,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_diamond_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(8f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_diamond_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(8f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -9867,39 +10002,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 4.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 4.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_diamond_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(8f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_diamond_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(8f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -9930,22 +10071,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.0476189851760864f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.0476189851760864f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -9973,44 +10116,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -10267,13 +10416,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -10647,43 +10800,49 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:regeneration"),
-                                amplifier: 1i32,
-                                duration: 400i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:resistance"),
-                                amplifier: 0i32,
-                                duration: 6000i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:fire_resistance"),
-                                amplifier: 0i32,
-                                duration: 6000i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:absorption"),
-                                amplifier: 3i32,
-                                duration: 2400i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                        ]),
-                        1f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:regeneration"),
+                                            amplifier: 1i32,
+                                            duration: 400i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:resistance"),
+                                            amplifier: 0i32,
+                                            duration: 6000i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:fire_resistance"),
+                                            amplifier: 0i32,
+                                            duration: 6000i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:absorption"),
+                                            amplifier: 3i32,
+                                            duration: 2400i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                1f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -12358,27 +12517,33 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:regeneration"),
-                                amplifier: 1i32,
-                                duration: 100i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:absorption"),
-                                amplifier: 0i32,
-                                duration: 2400i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                        ]),
-                        1f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:regeneration"),
+                                            amplifier: 1i32,
+                                            duration: 100i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:absorption"),
+                                            amplifier: 0i32,
+                                            duration: 2400i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                1f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -12399,39 +12564,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_gold_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(12f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_gold_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(12f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -12462,22 +12633,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12552,22 +12725,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12624,22 +12799,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12677,39 +12854,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_gold_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(12f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_gold_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(12f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -12738,22 +12921,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 7f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 7f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12763,7 +12948,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:gold")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -12790,22 +12977,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12841,22 +13030,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 7f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 7f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -12866,7 +13057,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipNautilus),
                     asset_id: Some(Cow::Borrowed("minecraft:gold")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -12893,39 +13086,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_gold_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(12f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_gold_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(12f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -12956,39 +13155,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_gold_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(12f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_gold_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(12f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -13019,22 +13224,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.9473683834075928f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.9473683834075928f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -13062,44 +13269,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -13328,10 +13541,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:gray_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -13442,7 +13661,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:gray_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -13648,10 +13869,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:green_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -13762,7 +13989,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:green_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -14185,9 +14414,13 @@ impl Item {
                     animation: ConsumeAnimation::Drink,
                     sound_event: IdOr::Id(Sound::ItemHoneyBottleDrink),
                     consume_particles: false,
-                    effects: Cow::Borrowed(&[ConsumeEffect::RemoveEffects(IDSet::IDs(
-                        Cow::Borrowed(&[&StatusEffect::POISON]),
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::RemoveEffects(
+                                IDSet::IDs(Cow::Borrowed(&[&StatusEffect::POISON])),
+                            ),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -14588,39 +14821,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.0999999046325684f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.0999999046325684f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_iron_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(6f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_iron_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(6f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -14689,22 +14928,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -14761,22 +15002,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -14852,22 +15095,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -14905,39 +15150,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_iron_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(6f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_iron_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(6f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -14966,22 +15217,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -14991,7 +15244,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:iron")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -15037,22 +15292,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -15088,22 +15345,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -15113,7 +15372,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipNautilus),
                     asset_id: Some(Cow::Borrowed("minecraft:iron")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -15178,39 +15439,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_iron_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(6f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_iron_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(6f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -15241,39 +15508,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 3.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 3.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_iron_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(6f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_iron_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(6f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -15304,22 +15577,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.9473683834075928f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.9473683834075928f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -15347,44 +15622,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -16099,22 +16380,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -16152,22 +16435,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -16205,22 +16490,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -16256,22 +16543,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -16281,7 +16570,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:leather")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -16308,22 +16599,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -16502,10 +16795,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:light_blue_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -16616,7 +16915,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:light_blue_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -16822,10 +17123,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:light_gray_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -16936,7 +17243,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:light_gray_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -17237,10 +17546,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:lime_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -17351,7 +17666,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:lime_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -17549,22 +17866,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -17685,10 +18004,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:magenta_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -17799,7 +18124,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:magenta_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -19827,39 +20154,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 9f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 9f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_netherite_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(9f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_netherite_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(9f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -19921,29 +20254,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.boots",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.boots",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.boots",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Feet,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.boots",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.boots",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.boots",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Feet,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -19987,29 +20322,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.chestplate",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.chestplate",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.chestplate",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Chest,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.chestplate",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.chestplate",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.chestplate",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Chest,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20053,29 +20390,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.helmet",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.helmet",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20119,39 +20458,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_netherite_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(9f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_netherite_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(9f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -20186,29 +20531,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 19f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.body",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 19f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.body",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20224,7 +20571,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseArmor),
                     asset_id: Some(Cow::Borrowed("minecraft:netherite")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_horse_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_horse_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -20276,29 +20625,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.leggings",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.leggings",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.leggings",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Legs,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.leggings",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.leggings",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.leggings",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Legs,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20340,29 +20691,31 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 19f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::KNOCKBACK_RESISTANCE,
-                            id: "minecraft:armor.body",
-                            amount: 0.10000000149011612f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 19f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::KNOCKBACK_RESISTANCE,
+                                id: "minecraft:armor.body",
+                                amount: 0.10000000149011612f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20378,7 +20731,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipNautilus),
                     asset_id: Some(Cow::Borrowed("minecraft:netherite")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_wear_nautilus_armor")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: false,
@@ -20405,39 +20760,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_netherite_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(9f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_netherite_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(9f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -20499,39 +20860,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 5.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 5.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_netherite_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(9f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_netherite_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(9f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -20568,22 +20935,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.13043475151062f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.13043475151062f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -20617,44 +20986,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 7f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 7f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -21174,9 +21549,13 @@ impl Item {
                     animation: ConsumeAnimation::Drink,
                     sound_event: IdOr::Id(Sound::EntityGenericDrink),
                     consume_particles: false,
-                    effects: Cow::Borrowed(&[ConsumeEffect::PlaySound(IdOr::Id(
-                        Sound::ItemOminousBottleDispose,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::PlaySound(
+                                IdOr::Id(Sound::ItemOminousBottleDispose),
+                            ),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -21319,10 +21698,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:orange_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -21433,7 +21818,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:orange_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -22560,13 +22947,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -22725,10 +23116,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:pink_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -22839,7 +23236,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:pink_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -23054,13 +23453,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -23170,17 +23573,25 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[StatusEffectInstance {
-                            effect_id: Cow::Borrowed("minecraft:poison"),
-                            amplifier: 0i32,
-                            duration: 100i32,
-                            ambient: false,
-                            show_particles: true,
-                            show_icon: true,
-                        }]),
-                        0.6f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:poison"),
+                                            amplifier: 0i32,
+                                            duration: 100i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                0.6f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -24137,35 +24548,41 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:poison"),
-                                amplifier: 1i32,
-                                duration: 1200i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:hunger"),
-                                amplifier: 2i32,
-                                duration: 300i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                            StatusEffectInstance {
-                                effect_id: Cow::Borrowed("minecraft:nausea"),
-                                amplifier: 0i32,
-                                duration: 300i32,
-                                ambient: false,
-                                show_particles: true,
-                                show_icon: true,
-                            },
-                        ]),
-                        1f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:poison"),
+                                            amplifier: 1i32,
+                                            duration: 1200i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:hunger"),
+                                            amplifier: 2i32,
+                                            duration: 300i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:nausea"),
+                                            amplifier: 0i32,
+                                            duration: 300i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                1f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -24391,10 +24808,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:purple_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -24505,7 +24928,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:purple_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -25222,10 +25647,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:red_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -25336,7 +25767,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:red_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -26063,17 +26496,25 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[StatusEffectInstance {
-                            effect_id: Cow::Borrowed("minecraft:hunger"),
-                            amplifier: 0i32,
-                            duration: 600i32,
-                            ambient: false,
-                            show_particles: true,
-                            show_icon: true,
-                        }]),
-                        0.8f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:hunger"),
+                                            amplifier: 0i32,
+                                            duration: 600i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                0.8f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -26102,7 +26543,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHorseSaddle),
                     asset_id: Some(Cow::Borrowed("minecraft:saddle")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_saddle"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_saddle")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -26560,28 +27003,32 @@ impl Item {
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:leaves")),
-                            speed: Some(15f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:wool")),
-                            speed: Some(5f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::VINE, &Block::GLOW_LICHEN])),
-                            speed: Some(2f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:leaves")),
+                                speed: Some(15f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:wool")),
+                                speed: Some(5f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: IDs(
+                                    Cow::Borrowed(&[&Block::VINE, &Block::GLOW_LICHEN]),
+                                ),
+                                speed: Some(2f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -26850,13 +27297,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -27612,17 +28063,25 @@ impl Item {
                     animation: ConsumeAnimation::Eat,
                     sound_event: IdOr::Id(Sound::EntityGenericEat),
                     consume_particles: true,
-                    effects: Cow::Borrowed(&[ConsumeEffect::ApplyEffects((
-                        Cow::Borrowed(&[StatusEffectInstance {
-                            effect_id: Cow::Borrowed("minecraft:poison"),
-                            amplifier: 0i32,
-                            duration: 100i32,
-                            ambient: false,
-                            show_particles: true,
-                            show_icon: true,
-                        }]),
-                        1f32,
-                    ))]),
+                    effects: Cow::Borrowed(
+                        &[
+                            ConsumeEffect::ApplyEffects((
+                                Cow::Borrowed(
+                                    &[
+                                        StatusEffectInstance {
+                                            effect_id: Cow::Borrowed("minecraft:poison"),
+                                            amplifier: 0i32,
+                                            duration: 100i32,
+                                            ambient: false,
+                                            show_particles: true,
+                                            show_icon: true,
+                                        },
+                                    ],
+                                ),
+                                1f32,
+                            )),
+                        ],
+                    ),
                 },
             ),
         ],
@@ -28175,39 +28634,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.200000047683716f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.200000047683716f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_stone_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(4f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_stone_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(4f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -28333,39 +28798,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_stone_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(4f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_stone_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(4f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -28396,39 +28867,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_stone_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(4f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_stone_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(4f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -28478,39 +28955,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 2.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 2.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_stone_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(4f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_stone_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(4f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -28560,22 +29043,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.666666626930237f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.666666626930237f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -28622,44 +29107,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 4f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 4f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -29810,22 +30301,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 8f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.9000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 8f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.9000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -30192,22 +30685,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.helmet",
-                            amount: 2f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.helmet",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Head,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.helmet",
+                                amount: 2f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.helmet",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -32478,10 +32973,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:white_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -32592,7 +33093,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:white_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -32826,13 +33329,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -32907,22 +33414,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ARMOR,
-                            id: "minecraft:armor.body",
-                            amount: 11f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ARMOR_TOUGHNESS,
-                            id: "minecraft:armor.body",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::Body,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ARMOR,
+                                id: "minecraft:armor.body",
+                                amount: 11f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ARMOR_TOUGHNESS,
+                                id: "minecraft:armor.body",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::Body,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -32932,9 +33441,11 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::ItemArmorEquipWolf),
                     asset_id: Some(Cow::Borrowed("minecraft:armadillo_scute")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::WOLF,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(&[&crate::entity_type::EntityType::WOLF]),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -32980,39 +33491,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 6f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3.200000047683716f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 6f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3.200000047683716f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_wooden_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
-                            speed: Some(2f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_wooden_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/axe")),
+                                speed: Some(2f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -33043,39 +33560,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_wooden_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
-                            speed: Some(2f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_wooden_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/hoe")),
+                                speed: Some(2f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -33106,39 +33629,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.799999952316284f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.799999952316284f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_wooden_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
-                            speed: Some(2f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_wooden_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/pickaxe")),
+                                speed: Some(2f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -33169,39 +33698,45 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 1.5f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 1.5f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:incorrect_for_wooden_tool")),
-                            speed: None,
-                            correct_for_drops: Some(false),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
-                            speed: Some(2f32),
-                            correct_for_drops: Some(true),
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:incorrect_for_wooden_tool"),
+                                ),
+                                speed: None,
+                                correct_for_drops: Some(false),
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:mineable/shovel")),
+                                speed: Some(2f32),
+                                correct_for_drops: Some(true),
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 1,
                     can_destroy_blocks_in_creative: true,
@@ -33232,22 +33767,24 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 0f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4615384340286255f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 0f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4615384340286255f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -33275,44 +33812,50 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[
-                        Modifier {
-                            r#type: &Attributes::ATTACK_DAMAGE,
-                            id: "minecraft:base_attack_damage",
-                            amount: 3f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                        Modifier {
-                            r#type: &Attributes::ATTACK_SPEED,
-                            id: "minecraft:base_attack_speed",
-                            amount: -2.4000000953674316f64,
-                            operation: Operation::AddValue,
-                            slot: AttributeModifierSlot::MainHand,
-                        },
-                    ]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::ATTACK_DAMAGE,
+                                id: "minecraft:base_attack_damage",
+                                amount: 3f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                            Modifier {
+                                r#type: &Attributes::ATTACK_SPEED,
+                                id: "minecraft:base_attack_speed",
+                                amount: -2.4000000953674316f64,
+                                operation: Operation::AddValue,
+                                slot: AttributeModifierSlot::MainHand,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
                 Tool,
                 &ToolImpl {
-                    rules: Cow::Borrowed(&[
-                        ToolRule {
-                            blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
-                            speed: Some(15f32),
-                            correct_for_drops: Some(true),
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_instantly_mines")),
-                            speed: Some(340282350000000000000000000000000000000f32),
-                            correct_for_drops: None,
-                        },
-                        ToolRule {
-                            blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
-                            speed: Some(1.5f32),
-                            correct_for_drops: None,
-                        },
-                    ]),
+                    rules: Cow::Borrowed(
+                        &[
+                            ToolRule {
+                                blocks: IDs(Cow::Borrowed(&[&Block::COBWEB])),
+                                speed: Some(15f32),
+                                correct_for_drops: Some(true),
+                            },
+                            ToolRule {
+                                blocks: Tag(
+                                    Cow::Borrowed("minecraft:sword_instantly_mines"),
+                                ),
+                                speed: Some(340282350000000000000000000000000000000f32),
+                                correct_for_drops: None,
+                            },
+                            ToolRule {
+                                blocks: Tag(Cow::Borrowed("minecraft:sword_efficient")),
+                                speed: Some(1.5f32),
+                                correct_for_drops: None,
+                            },
+                        ],
+                    ),
                     default_mining_speed: 1.0,
                     damage_per_block: 2,
                     can_destroy_blocks_in_creative: false,
@@ -33465,10 +34008,16 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityLlamaSwag),
                     asset_id: Some(Cow::Borrowed("minecraft:yellow_carpet")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::IDs(Cow::Borrowed(&[
-                        &crate::entity_type::EntityType::LLAMA,
-                        &crate::entity_type::EntityType::TRADER_LLAMA,
-                    ]))),
+                    allowed_entities: Some(
+                        IDSet::IDs(
+                            Cow::Borrowed(
+                                &[
+                                    &crate::entity_type::EntityType::LLAMA,
+                                    &crate::entity_type::EntityType::TRADER_LLAMA,
+                                ],
+                            ),
+                        ),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -33579,7 +34128,9 @@ impl Item {
                     equip_sound: IdOr::Id(Sound::EntityHappyGhastEquip),
                     asset_id: Some(Cow::Borrowed("minecraft:yellow_harness")),
                     camera_overlay: None,
-                    allowed_entities: Some(IDSet::Tag(Cow::Borrowed("can_equip_harness"))),
+                    allowed_entities: Some(
+                        IDSet::Tag(Cow::Borrowed("can_equip_harness")),
+                    ),
                     dispensable: true,
                     swappable: true,
                     damage_on_hurt: true,
@@ -33718,13 +34269,17 @@ impl Item {
             (
                 AttributeModifiers,
                 &AttributeModifiersImpl {
-                    attribute_modifiers: Cow::Borrowed(&[Modifier {
-                        r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-                        id: "minecraft:waypoint_transmit_range_hide",
-                        amount: -1f64,
-                        operation: Operation::AddMultipliedTotal,
-                        slot: AttributeModifierSlot::Head,
-                    }]),
+                    attribute_modifiers: Cow::Borrowed(
+                        &[
+                            Modifier {
+                                r#type: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                                id: "minecraft:waypoint_transmit_range_hide",
+                                amount: -1f64,
+                                operation: Operation::AddMultipliedTotal,
+                                slot: AttributeModifierSlot::Head,
+                            },
+                        ],
+                    ),
                 },
             ),
             (
@@ -33843,17 +34398,20 @@ impl Item {
     #[must_use]
     pub fn translated_name(&self) -> TextComponent {
         TextComponent::translate(
-            self.components
+            self
+                .components
                 .iter()
                 .find_map(|(id, data)| {
                     (id == &ItemName)
-                        .then(|| data.as_any().downcast_ref::<ItemNameImpl>().unwrap().name)
+                        .then(|| {
+                            data.as_any().downcast_ref::<ItemNameImpl>().unwrap().name
+                        })
                 })
                 .unwrap(),
             &[],
         )
     }
-    #[doc = "Try to parse an item from a resource location string."]
+    ///Try to parse an item from a resource location string.
     #[must_use]
     pub fn from_registry_key(name: &str) -> Option<&'static Self> {
         let name = name.strip_prefix("minecraft:").unwrap_or(name);
@@ -33998,13 +34556,17 @@ impl Item {
             "blue_terracotta" => Some(&Self::BLUE_TERRACOTTA),
             "blue_wool" => Some(&Self::BLUE_WOOL),
             "bogged_spawn_egg" => Some(&Self::BOGGED_SPAWN_EGG),
-            "bolt_armor_trim_smithing_template" => Some(&Self::BOLT_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "bolt_armor_trim_smithing_template" => {
+                Some(&Self::BOLT_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "bone" => Some(&Self::BONE),
             "bone_block" => Some(&Self::BONE_BLOCK),
             "bone_meal" => Some(&Self::BONE_MEAL),
             "book" => Some(&Self::BOOK),
             "bookshelf" => Some(&Self::BOOKSHELF),
-            "bordure_indented_banner_pattern" => Some(&Self::BORDURE_INDENTED_BANNER_PATTERN),
+            "bordure_indented_banner_pattern" => {
+                Some(&Self::BORDURE_INDENTED_BANNER_PATTERN)
+            }
             "bow" => Some(&Self::BOW),
             "bowl" => Some(&Self::BOWL),
             "brain_coral" => Some(&Self::BRAIN_CORAL),
@@ -34115,7 +34677,9 @@ impl Item {
             "coal_block" => Some(&Self::COAL_BLOCK),
             "coal_ore" => Some(&Self::COAL_ORE),
             "coarse_dirt" => Some(&Self::COARSE_DIRT),
-            "coast_armor_trim_smithing_template" => Some(&Self::COAST_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "coast_armor_trim_smithing_template" => {
+                Some(&Self::COAST_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "cobbled_deepslate" => Some(&Self::COBBLED_DEEPSLATE),
             "cobbled_deepslate_slab" => Some(&Self::COBBLED_DEEPSLATE_SLAB),
             "cobbled_deepslate_stairs" => Some(&Self::COBBLED_DEEPSLATE_STAIRS),
@@ -34175,7 +34739,9 @@ impl Item {
             "cracked_deepslate_bricks" => Some(&Self::CRACKED_DEEPSLATE_BRICKS),
             "cracked_deepslate_tiles" => Some(&Self::CRACKED_DEEPSLATE_TILES),
             "cracked_nether_bricks" => Some(&Self::CRACKED_NETHER_BRICKS),
-            "cracked_polished_blackstone_bricks" => Some(&Self::CRACKED_POLISHED_BLACKSTONE_BRICKS),
+            "cracked_polished_blackstone_bricks" => {
+                Some(&Self::CRACKED_POLISHED_BLACKSTONE_BRICKS)
+            }
             "cracked_stone_bricks" => Some(&Self::CRACKED_STONE_BRICKS),
             "crafter" => Some(&Self::CRAFTER),
             "crafting_table" => Some(&Self::CRAFTING_TABLE),
@@ -34320,7 +34886,9 @@ impl Item {
             "dripstone_block" => Some(&Self::DRIPSTONE_BLOCK),
             "dropper" => Some(&Self::DROPPER),
             "drowned_spawn_egg" => Some(&Self::DROWNED_SPAWN_EGG),
-            "dune_armor_trim_smithing_template" => Some(&Self::DUNE_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "dune_armor_trim_smithing_template" => {
+                Some(&Self::DUNE_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "echo_shard" => Some(&Self::ECHO_SHARD),
             "egg" => Some(&Self::EGG),
             "elder_guardian_spawn_egg" => Some(&Self::ELDER_GUARDIAN_SPAWN_EGG),
@@ -34363,7 +34931,9 @@ impl Item {
             "exposed_cut_copper_slab" => Some(&Self::EXPOSED_CUT_COPPER_SLAB),
             "exposed_cut_copper_stairs" => Some(&Self::EXPOSED_CUT_COPPER_STAIRS),
             "exposed_lightning_rod" => Some(&Self::EXPOSED_LIGHTNING_ROD),
-            "eye_armor_trim_smithing_template" => Some(&Self::EYE_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "eye_armor_trim_smithing_template" => {
+                Some(&Self::EYE_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "farmland" => Some(&Self::FARMLAND),
             "feather" => Some(&Self::FEATHER),
             "fermented_spider_eye" => Some(&Self::FERMENTED_SPIDER_EYE),
@@ -34381,7 +34951,9 @@ impl Item {
             "fletching_table" => Some(&Self::FLETCHING_TABLE),
             "flint" => Some(&Self::FLINT),
             "flint_and_steel" => Some(&Self::FLINT_AND_STEEL),
-            "flow_armor_trim_smithing_template" => Some(&Self::FLOW_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "flow_armor_trim_smithing_template" => {
+                Some(&Self::FLOW_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "flow_banner_pattern" => Some(&Self::FLOW_BANNER_PATTERN),
             "flow_pottery_sherd" => Some(&Self::FLOW_POTTERY_SHERD),
             "flower_banner_pattern" => Some(&Self::FLOWER_BANNER_PATTERN),
@@ -34490,11 +35062,15 @@ impl Item {
             "horn_coral_block" => Some(&Self::HORN_CORAL_BLOCK),
             "horn_coral_fan" => Some(&Self::HORN_CORAL_FAN),
             "horse_spawn_egg" => Some(&Self::HORSE_SPAWN_EGG),
-            "host_armor_trim_smithing_template" => Some(&Self::HOST_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "host_armor_trim_smithing_template" => {
+                Some(&Self::HOST_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "howl_pottery_sherd" => Some(&Self::HOWL_POTTERY_SHERD),
             "husk_spawn_egg" => Some(&Self::HUSK_SPAWN_EGG),
             "ice" => Some(&Self::ICE),
-            "infested_chiseled_stone_bricks" => Some(&Self::INFESTED_CHISELED_STONE_BRICKS),
+            "infested_chiseled_stone_bricks" => {
+                Some(&Self::INFESTED_CHISELED_STONE_BRICKS)
+            }
             "infested_cobblestone" => Some(&Self::INFESTED_COBBLESTONE),
             "infested_cracked_stone_bricks" => Some(&Self::INFESTED_CRACKED_STONE_BRICKS),
             "infested_deepslate" => Some(&Self::INFESTED_DEEPSLATE),
@@ -34873,12 +35449,20 @@ impl Item {
             "polished_andesite_stairs" => Some(&Self::POLISHED_ANDESITE_STAIRS),
             "polished_basalt" => Some(&Self::POLISHED_BASALT),
             "polished_blackstone" => Some(&Self::POLISHED_BLACKSTONE),
-            "polished_blackstone_brick_slab" => Some(&Self::POLISHED_BLACKSTONE_BRICK_SLAB),
-            "polished_blackstone_brick_stairs" => Some(&Self::POLISHED_BLACKSTONE_BRICK_STAIRS),
-            "polished_blackstone_brick_wall" => Some(&Self::POLISHED_BLACKSTONE_BRICK_WALL),
+            "polished_blackstone_brick_slab" => {
+                Some(&Self::POLISHED_BLACKSTONE_BRICK_SLAB)
+            }
+            "polished_blackstone_brick_stairs" => {
+                Some(&Self::POLISHED_BLACKSTONE_BRICK_STAIRS)
+            }
+            "polished_blackstone_brick_wall" => {
+                Some(&Self::POLISHED_BLACKSTONE_BRICK_WALL)
+            }
             "polished_blackstone_bricks" => Some(&Self::POLISHED_BLACKSTONE_BRICKS),
             "polished_blackstone_button" => Some(&Self::POLISHED_BLACKSTONE_BUTTON),
-            "polished_blackstone_pressure_plate" => Some(&Self::POLISHED_BLACKSTONE_PRESSURE_PLATE),
+            "polished_blackstone_pressure_plate" => {
+                Some(&Self::POLISHED_BLACKSTONE_PRESSURE_PLATE)
+            }
             "polished_blackstone_slab" => Some(&Self::POLISHED_BLACKSTONE_SLAB),
             "polished_blackstone_stairs" => Some(&Self::POLISHED_BLACKSTONE_STAIRS),
             "polished_blackstone_wall" => Some(&Self::POLISHED_BLACKSTONE_WALL),
@@ -35004,7 +35588,9 @@ impl Item {
             "resin_bricks" => Some(&Self::RESIN_BRICKS),
             "resin_clump" => Some(&Self::RESIN_CLUMP),
             "respawn_anchor" => Some(&Self::RESPAWN_ANCHOR),
-            "rib_armor_trim_smithing_template" => Some(&Self::RIB_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "rib_armor_trim_smithing_template" => {
+                Some(&Self::RIB_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "rooted_dirt" => Some(&Self::ROOTED_DIRT),
             "rose_bush" => Some(&Self::ROSE_BUSH),
             "rotten_flesh" => Some(&Self::ROTTEN_FLESH),
@@ -35075,7 +35661,9 @@ impl Item {
             "sniffer_egg" => Some(&Self::SNIFFER_EGG),
             "sniffer_spawn_egg" => Some(&Self::SNIFFER_SPAWN_EGG),
             "snort_pottery_sherd" => Some(&Self::SNORT_POTTERY_SHERD),
-            "snout_armor_trim_smithing_template" => Some(&Self::SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "snout_armor_trim_smithing_template" => {
+                Some(&Self::SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "snow" => Some(&Self::SNOW),
             "snow_block" => Some(&Self::SNOW_BLOCK),
             "snow_golem_spawn_egg" => Some(&Self::SNOW_GOLEM_SPAWN_EGG),
@@ -35089,7 +35677,9 @@ impl Item {
             "spectral_arrow" => Some(&Self::SPECTRAL_ARROW),
             "spider_eye" => Some(&Self::SPIDER_EYE),
             "spider_spawn_egg" => Some(&Self::SPIDER_SPAWN_EGG),
-            "spire_armor_trim_smithing_template" => Some(&Self::SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "spire_armor_trim_smithing_template" => {
+                Some(&Self::SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "splash_potion" => Some(&Self::SPLASH_POTION),
             "sponge" => Some(&Self::SPONGE),
             "spore_blossom" => Some(&Self::SPORE_BLOSSOM),
@@ -35174,7 +35764,9 @@ impl Item {
             "terracotta" => Some(&Self::TERRACOTTA),
             "test_block" => Some(&Self::TEST_BLOCK),
             "test_instance_block" => Some(&Self::TEST_INSTANCE_BLOCK),
-            "tide_armor_trim_smithing_template" => Some(&Self::TIDE_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "tide_armor_trim_smithing_template" => {
+                Some(&Self::TIDE_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "tinted_glass" => Some(&Self::TINTED_GLASS),
             "tipped_arrow" => Some(&Self::TIPPED_ARROW),
             "tnt" => Some(&Self::TNT),
@@ -35210,13 +35802,17 @@ impl Item {
             "twisting_vines" => Some(&Self::TWISTING_VINES),
             "vault" => Some(&Self::VAULT),
             "verdant_froglight" => Some(&Self::VERDANT_FROGLIGHT),
-            "vex_armor_trim_smithing_template" => Some(&Self::VEX_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "vex_armor_trim_smithing_template" => {
+                Some(&Self::VEX_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "vex_spawn_egg" => Some(&Self::VEX_SPAWN_EGG),
             "villager_spawn_egg" => Some(&Self::VILLAGER_SPAWN_EGG),
             "vindicator_spawn_egg" => Some(&Self::VINDICATOR_SPAWN_EGG),
             "vine" => Some(&Self::VINE),
             "wandering_trader_spawn_egg" => Some(&Self::WANDERING_TRADER_SPAWN_EGG),
-            "ward_armor_trim_smithing_template" => Some(&Self::WARD_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "ward_armor_trim_smithing_template" => {
+                Some(&Self::WARD_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "warden_spawn_egg" => Some(&Self::WARDEN_SPAWN_EGG),
             "warped_button" => Some(&Self::WARPED_BUTTON),
             "warped_door" => Some(&Self::WARPED_DOOR),
@@ -35259,31 +35855,47 @@ impl Item {
             "waxed_exposed_copper_chain" => Some(&Self::WAXED_EXPOSED_COPPER_CHAIN),
             "waxed_exposed_copper_chest" => Some(&Self::WAXED_EXPOSED_COPPER_CHEST),
             "waxed_exposed_copper_door" => Some(&Self::WAXED_EXPOSED_COPPER_DOOR),
-            "waxed_exposed_copper_golem_statue" => Some(&Self::WAXED_EXPOSED_COPPER_GOLEM_STATUE),
+            "waxed_exposed_copper_golem_statue" => {
+                Some(&Self::WAXED_EXPOSED_COPPER_GOLEM_STATUE)
+            }
             "waxed_exposed_copper_grate" => Some(&Self::WAXED_EXPOSED_COPPER_GRATE),
             "waxed_exposed_copper_lantern" => Some(&Self::WAXED_EXPOSED_COPPER_LANTERN),
             "waxed_exposed_copper_trapdoor" => Some(&Self::WAXED_EXPOSED_COPPER_TRAPDOOR),
             "waxed_exposed_cut_copper" => Some(&Self::WAXED_EXPOSED_CUT_COPPER),
             "waxed_exposed_cut_copper_slab" => Some(&Self::WAXED_EXPOSED_CUT_COPPER_SLAB),
-            "waxed_exposed_cut_copper_stairs" => Some(&Self::WAXED_EXPOSED_CUT_COPPER_STAIRS),
+            "waxed_exposed_cut_copper_stairs" => {
+                Some(&Self::WAXED_EXPOSED_CUT_COPPER_STAIRS)
+            }
             "waxed_exposed_lightning_rod" => Some(&Self::WAXED_EXPOSED_LIGHTNING_ROD),
             "waxed_lightning_rod" => Some(&Self::WAXED_LIGHTNING_ROD),
-            "waxed_oxidized_chiseled_copper" => Some(&Self::WAXED_OXIDIZED_CHISELED_COPPER),
+            "waxed_oxidized_chiseled_copper" => {
+                Some(&Self::WAXED_OXIDIZED_CHISELED_COPPER)
+            }
             "waxed_oxidized_copper" => Some(&Self::WAXED_OXIDIZED_COPPER),
             "waxed_oxidized_copper_bars" => Some(&Self::WAXED_OXIDIZED_COPPER_BARS),
             "waxed_oxidized_copper_bulb" => Some(&Self::WAXED_OXIDIZED_COPPER_BULB),
             "waxed_oxidized_copper_chain" => Some(&Self::WAXED_OXIDIZED_COPPER_CHAIN),
             "waxed_oxidized_copper_chest" => Some(&Self::WAXED_OXIDIZED_COPPER_CHEST),
             "waxed_oxidized_copper_door" => Some(&Self::WAXED_OXIDIZED_COPPER_DOOR),
-            "waxed_oxidized_copper_golem_statue" => Some(&Self::WAXED_OXIDIZED_COPPER_GOLEM_STATUE),
+            "waxed_oxidized_copper_golem_statue" => {
+                Some(&Self::WAXED_OXIDIZED_COPPER_GOLEM_STATUE)
+            }
             "waxed_oxidized_copper_grate" => Some(&Self::WAXED_OXIDIZED_COPPER_GRATE),
             "waxed_oxidized_copper_lantern" => Some(&Self::WAXED_OXIDIZED_COPPER_LANTERN),
-            "waxed_oxidized_copper_trapdoor" => Some(&Self::WAXED_OXIDIZED_COPPER_TRAPDOOR),
+            "waxed_oxidized_copper_trapdoor" => {
+                Some(&Self::WAXED_OXIDIZED_COPPER_TRAPDOOR)
+            }
             "waxed_oxidized_cut_copper" => Some(&Self::WAXED_OXIDIZED_CUT_COPPER),
-            "waxed_oxidized_cut_copper_slab" => Some(&Self::WAXED_OXIDIZED_CUT_COPPER_SLAB),
-            "waxed_oxidized_cut_copper_stairs" => Some(&Self::WAXED_OXIDIZED_CUT_COPPER_STAIRS),
+            "waxed_oxidized_cut_copper_slab" => {
+                Some(&Self::WAXED_OXIDIZED_CUT_COPPER_SLAB)
+            }
+            "waxed_oxidized_cut_copper_stairs" => {
+                Some(&Self::WAXED_OXIDIZED_CUT_COPPER_STAIRS)
+            }
             "waxed_oxidized_lightning_rod" => Some(&Self::WAXED_OXIDIZED_LIGHTNING_ROD),
-            "waxed_weathered_chiseled_copper" => Some(&Self::WAXED_WEATHERED_CHISELED_COPPER),
+            "waxed_weathered_chiseled_copper" => {
+                Some(&Self::WAXED_WEATHERED_CHISELED_COPPER)
+            }
             "waxed_weathered_copper" => Some(&Self::WAXED_WEATHERED_COPPER),
             "waxed_weathered_copper_bars" => Some(&Self::WAXED_WEATHERED_COPPER_BARS),
             "waxed_weathered_copper_bulb" => Some(&Self::WAXED_WEATHERED_COPPER_BULB),
@@ -35294,11 +35906,19 @@ impl Item {
                 Some(&Self::WAXED_WEATHERED_COPPER_GOLEM_STATUE)
             }
             "waxed_weathered_copper_grate" => Some(&Self::WAXED_WEATHERED_COPPER_GRATE),
-            "waxed_weathered_copper_lantern" => Some(&Self::WAXED_WEATHERED_COPPER_LANTERN),
-            "waxed_weathered_copper_trapdoor" => Some(&Self::WAXED_WEATHERED_COPPER_TRAPDOOR),
+            "waxed_weathered_copper_lantern" => {
+                Some(&Self::WAXED_WEATHERED_COPPER_LANTERN)
+            }
+            "waxed_weathered_copper_trapdoor" => {
+                Some(&Self::WAXED_WEATHERED_COPPER_TRAPDOOR)
+            }
             "waxed_weathered_cut_copper" => Some(&Self::WAXED_WEATHERED_CUT_COPPER),
-            "waxed_weathered_cut_copper_slab" => Some(&Self::WAXED_WEATHERED_CUT_COPPER_SLAB),
-            "waxed_weathered_cut_copper_stairs" => Some(&Self::WAXED_WEATHERED_CUT_COPPER_STAIRS),
+            "waxed_weathered_cut_copper_slab" => {
+                Some(&Self::WAXED_WEATHERED_CUT_COPPER_SLAB)
+            }
+            "waxed_weathered_cut_copper_stairs" => {
+                Some(&Self::WAXED_WEATHERED_CUT_COPPER_STAIRS)
+            }
             "waxed_weathered_lightning_rod" => Some(&Self::WAXED_WEATHERED_LIGHTNING_ROD),
             "wayfinder_armor_trim_smithing_template" => {
                 Some(&Self::WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE)
@@ -35338,7 +35958,9 @@ impl Item {
             "white_terracotta" => Some(&Self::WHITE_TERRACOTTA),
             "white_tulip" => Some(&Self::WHITE_TULIP),
             "white_wool" => Some(&Self::WHITE_WOOL),
-            "wild_armor_trim_smithing_template" => Some(&Self::WILD_ARMOR_TRIM_SMITHING_TEMPLATE),
+            "wild_armor_trim_smithing_template" => {
+                Some(&Self::WILD_ARMOR_TRIM_SMITHING_TEMPLATE)
+            }
             "wildflowers" => Some(&Self::WILDFLOWERS),
             "wind_charge" => Some(&Self::WIND_CHARGE),
             "witch_spawn_egg" => Some(&Self::WITCH_SPAWN_EGG),
@@ -35381,7 +36003,7 @@ impl Item {
             _ => None,
         }
     }
-    #[doc = "Try to parse an item from a raw id."]
+    ///Try to parse an item from a raw id.
     #[must_use]
     pub const fn from_id(id: u16) -> Option<&'static Self> {
         match id {

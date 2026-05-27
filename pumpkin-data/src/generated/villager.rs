@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use serde::Serialize;
 #[derive(Clone, Copy, PartialEq, Eq)]
 pub struct VillagerTradeItem {
@@ -371,34 +372,38 @@ pub const TRADES_BUTCHER_LEVEL_3: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_BUTCHER_LEVEL_4: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::DRIED_KELP_BLOCK,
-        count: 10i32,
+pub const TRADES_BUTCHER_LEVEL_4: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::DRIED_KELP_BLOCK,
+            count: 10i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 1i32,
+        },
+        max_uses: 12i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 1i32,
+];
+pub const TRADES_BUTCHER_LEVEL_5: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::SWEET_BERRIES,
+            count: 10i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 1i32,
+        },
+        max_uses: 12i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    max_uses: 12i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
-pub const TRADES_BUTCHER_LEVEL_5: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::SWEET_BERRIES,
-        count: 10i32,
-    },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 1i32,
-    },
-    max_uses: 12i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
+];
 pub const TRADES_CARTOGRAPHER_LEVEL_1: &[VillagerTrade] = &[
     VillagerTrade {
         wants: VillagerTradeItem {
@@ -1345,20 +1350,22 @@ pub const TRADES_FISHERMAN_LEVEL_3: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_FISHERMAN_LEVEL_4: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::TROPICAL_FISH,
-        count: 6i32,
+pub const TRADES_FISHERMAN_LEVEL_4: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::TROPICAL_FISH,
+            count: 6i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 1i32,
+        },
+        max_uses: 12i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 1i32,
-    },
-    max_uses: 12i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
+];
 pub const TRADES_FISHERMAN_LEVEL_5: &[VillagerTrade] = &[
     VillagerTrade {
         wants: VillagerTradeItem {
@@ -3873,20 +3880,22 @@ pub const TRADES_SHEPHERD_LEVEL_4: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_SHEPHERD_LEVEL_5: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 2i32,
+pub const TRADES_SHEPHERD_LEVEL_5: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 2i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::PAINTING,
+            count: 3i32,
+        },
+        max_uses: 12i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::PAINTING,
-        count: 3i32,
-    },
-    max_uses: 12i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
+];
 pub const TRADES_TOOLSMITH_LEVEL_1: &[VillagerTrade] = &[
     VillagerTrade {
         wants: VillagerTradeItem {
@@ -4091,20 +4100,22 @@ pub const TRADES_TOOLSMITH_LEVEL_4: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_TOOLSMITH_LEVEL_5: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 13i32,
+pub const TRADES_TOOLSMITH_LEVEL_5: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 13i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::DIAMOND_PICKAXE,
+            count: 1i32,
+        },
+        max_uses: 3i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::DIAMOND_PICKAXE,
-        count: 1i32,
-    },
-    max_uses: 3i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
+];
 pub const TRADES_WEAPONSMITH_LEVEL_1: &[VillagerTrade] = &[
     VillagerTrade {
         wants: VillagerTradeItem {
@@ -4165,20 +4176,22 @@ pub const TRADES_WEAPONSMITH_LEVEL_2: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_WEAPONSMITH_LEVEL_3: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::FLINT,
-        count: 24i32,
+pub const TRADES_WEAPONSMITH_LEVEL_3: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::FLINT,
+            count: 24i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 1i32,
+        },
+        max_uses: 12i32,
+        xp: 20i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 1i32,
-    },
-    max_uses: 12i32,
-    xp: 20i32,
-    price_multiplier: 0.05f32,
-}];
+];
 pub const TRADES_WEAPONSMITH_LEVEL_4: &[VillagerTrade] = &[
     VillagerTrade {
         wants: VillagerTradeItem {
@@ -4209,20 +4222,22 @@ pub const TRADES_WEAPONSMITH_LEVEL_4: &[VillagerTrade] = &[
         price_multiplier: 0.05f32,
     },
 ];
-pub const TRADES_WEAPONSMITH_LEVEL_5: &[VillagerTrade] = &[VillagerTrade {
-    wants: VillagerTradeItem {
-        item: &crate::item::Item::EMERALD,
-        count: 8i32,
+pub const TRADES_WEAPONSMITH_LEVEL_5: &[VillagerTrade] = &[
+    VillagerTrade {
+        wants: VillagerTradeItem {
+            item: &crate::item::Item::EMERALD,
+            count: 8i32,
+        },
+        wants_b: None,
+        gives: VillagerTradeItem {
+            item: &crate::item::Item::DIAMOND_SWORD,
+            count: 1i32,
+        },
+        max_uses: 3i32,
+        xp: 30i32,
+        price_multiplier: 0.05f32,
     },
-    wants_b: None,
-    gives: VillagerTradeItem {
-        item: &crate::item::Item::DIAMOND_SWORD,
-        count: 1i32,
-    },
-    max_uses: 3i32,
-    xp: 30i32,
-    price_multiplier: 0.05f32,
-}];
+];
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize)]
 #[repr(i32)]
 pub enum VillagerProfession {
@@ -4271,12 +4286,16 @@ impl VillagerProfession {
             Self::None => None,
             Self::Armorer => Some(crate::sound::Sound::EntityVillagerWorkArmorer),
             Self::Butcher => Some(crate::sound::Sound::EntityVillagerWorkButcher),
-            Self::Cartographer => Some(crate::sound::Sound::EntityVillagerWorkCartographer),
+            Self::Cartographer => {
+                Some(crate::sound::Sound::EntityVillagerWorkCartographer)
+            }
             Self::Cleric => Some(crate::sound::Sound::EntityVillagerWorkCleric),
             Self::Farmer => Some(crate::sound::Sound::EntityVillagerWorkFarmer),
             Self::Fisherman => Some(crate::sound::Sound::EntityVillagerWorkFisherman),
             Self::Fletcher => Some(crate::sound::Sound::EntityVillagerWorkFletcher),
-            Self::Leatherworker => Some(crate::sound::Sound::EntityVillagerWorkLeatherworker),
+            Self::Leatherworker => {
+                Some(crate::sound::Sound::EntityVillagerWorkLeatherworker)
+            }
             Self::Librarian => Some(crate::sound::Sound::EntityVillagerWorkLibrarian),
             Self::Mason => Some(crate::sound::Sound::EntityVillagerWorkMason),
             Self::Nitwit => None,
@@ -4294,12 +4313,14 @@ impl VillagerProfession {
             Self::Butcher => &[],
             Self::Cartographer => &[],
             Self::Cleric => &[],
-            Self::Farmer => &[
-                &crate::item::Item::WHEAT,
-                &crate::item::Item::WHEAT_SEEDS,
-                &crate::item::Item::BEETROOT_SEEDS,
-                &crate::item::Item::BONE_MEAL,
-            ],
+            Self::Farmer => {
+                &[
+                    &crate::item::Item::WHEAT,
+                    &crate::item::Item::WHEAT_SEEDS,
+                    &crate::item::Item::BEETROOT_SEEDS,
+                    &crate::item::Item::BONE_MEAL,
+                ]
+            }
             Self::Fisherman => &[],
             Self::Fletcher => &[],
             Self::Leatherworker => &[],
@@ -4336,306 +4357,462 @@ impl VillagerProfession {
     pub const fn trade_set(&self, level: i32) -> Option<VillagerTradeSet> {
         match self {
             Self::None => None,
-            Self::Armorer => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_ARMORER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_ARMORER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_ARMORER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_ARMORER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_ARMORER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Butcher => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_BUTCHER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_BUTCHER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_BUTCHER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_BUTCHER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_BUTCHER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Cartographer => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CARTOGRAPHER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CARTOGRAPHER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CARTOGRAPHER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CARTOGRAPHER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CARTOGRAPHER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Cleric => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CLERIC_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CLERIC_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CLERIC_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CLERIC_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_CLERIC_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Farmer => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FARMER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FARMER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FARMER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FARMER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FARMER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Fisherman => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FISHERMAN_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FISHERMAN_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FISHERMAN_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FISHERMAN_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FISHERMAN_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Fletcher => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FLETCHER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FLETCHER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FLETCHER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FLETCHER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_FLETCHER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Leatherworker => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LEATHERWORKER_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LEATHERWORKER_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LEATHERWORKER_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LEATHERWORKER_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LEATHERWORKER_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Librarian => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LIBRARIAN_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LIBRARIAN_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LIBRARIAN_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LIBRARIAN_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_LIBRARIAN_LEVEL_5,
-                    amount: 3i32,
-                }),
-                _ => None,
-            },
-            Self::Mason => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_MASON_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_MASON_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_MASON_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_MASON_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_MASON_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
+            Self::Armorer => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_ARMORER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_ARMORER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_ARMORER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_ARMORER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_ARMORER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Butcher => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_BUTCHER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_BUTCHER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_BUTCHER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_BUTCHER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_BUTCHER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Cartographer => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CARTOGRAPHER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CARTOGRAPHER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CARTOGRAPHER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CARTOGRAPHER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CARTOGRAPHER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Cleric => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CLERIC_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CLERIC_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CLERIC_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CLERIC_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_CLERIC_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Farmer => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FARMER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FARMER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FARMER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FARMER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FARMER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Fisherman => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FISHERMAN_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FISHERMAN_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FISHERMAN_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FISHERMAN_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FISHERMAN_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Fletcher => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FLETCHER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FLETCHER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FLETCHER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FLETCHER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_FLETCHER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Leatherworker => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LEATHERWORKER_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LEATHERWORKER_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LEATHERWORKER_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LEATHERWORKER_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LEATHERWORKER_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Librarian => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LIBRARIAN_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LIBRARIAN_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LIBRARIAN_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LIBRARIAN_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_LIBRARIAN_LEVEL_5,
+                            amount: 3i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Mason => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_MASON_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_MASON_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_MASON_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_MASON_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_MASON_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
             Self::Nitwit => None,
-            Self::Shepherd => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_SHEPHERD_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_SHEPHERD_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_SHEPHERD_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_SHEPHERD_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_SHEPHERD_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Toolsmith => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_TOOLSMITH_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_TOOLSMITH_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_TOOLSMITH_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_TOOLSMITH_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_TOOLSMITH_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
-            Self::Weaponsmith => match level {
-                1i32 => Some(VillagerTradeSet {
-                    trades: TRADES_WEAPONSMITH_LEVEL_1,
-                    amount: 2i32,
-                }),
-                2i32 => Some(VillagerTradeSet {
-                    trades: TRADES_WEAPONSMITH_LEVEL_2,
-                    amount: 2i32,
-                }),
-                3i32 => Some(VillagerTradeSet {
-                    trades: TRADES_WEAPONSMITH_LEVEL_3,
-                    amount: 2i32,
-                }),
-                4i32 => Some(VillagerTradeSet {
-                    trades: TRADES_WEAPONSMITH_LEVEL_4,
-                    amount: 2i32,
-                }),
-                5i32 => Some(VillagerTradeSet {
-                    trades: TRADES_WEAPONSMITH_LEVEL_5,
-                    amount: 2i32,
-                }),
-                _ => None,
-            },
+            Self::Shepherd => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_SHEPHERD_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_SHEPHERD_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_SHEPHERD_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_SHEPHERD_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_SHEPHERD_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Toolsmith => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_TOOLSMITH_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_TOOLSMITH_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_TOOLSMITH_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_TOOLSMITH_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_TOOLSMITH_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
+            Self::Weaponsmith => {
+                match level {
+                    1i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_WEAPONSMITH_LEVEL_1,
+                            amount: 2i32,
+                        })
+                    }
+                    2i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_WEAPONSMITH_LEVEL_2,
+                            amount: 2i32,
+                        })
+                    }
+                    3i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_WEAPONSMITH_LEVEL_3,
+                            amount: 2i32,
+                        })
+                    }
+                    4i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_WEAPONSMITH_LEVEL_4,
+                            amount: 2i32,
+                        })
+                    }
+                    5i32 => {
+                        Some(VillagerTradeSet {
+                            trades: TRADES_WEAPONSMITH_LEVEL_5,
+                            amount: 2i32,
+                        })
+                    }
+                    _ => None,
+                }
+            }
         }
     }
 }

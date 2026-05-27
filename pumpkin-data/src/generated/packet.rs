@@ -1,7 +1,7 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use pumpkin_util::version::JavaMinecraftVersion;
-pub const CURRENT_MC_VERSION: JavaMinecraftVersion =
-    pumpkin_util::version::JavaMinecraftVersion::V_26_1;
+pub const CURRENT_MC_VERSION: JavaMinecraftVersion = pumpkin_util::version::JavaMinecraftVersion::V_26_1;
 pub const LOWEST_SUPPORTED_MC_VERSION: JavaMinecraftVersion = JavaMinecraftVersion::V_1_20_5;
 #[derive(Clone, Copy, Debug)]
 pub struct PacketId {
@@ -17,8 +17,8 @@ pub struct PacketId {
     pub v26_1: i32,
 }
 impl PacketId {
-    #[doc = r" Converts the requested protocol version into the corresponding packet ID."]
-    #[doc = r" Returns -1 if the packet does not exist in that version."]
+    /// Converts the requested protocol version into the corresponding packet ID.
+    /// Returns -1 if the packet does not exist in that version.
     #[must_use]
     pub const fn to_id(&self, version: JavaMinecraftVersion) -> i32 {
         #[allow(clippy::match_same_arms)]

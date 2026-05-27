@@ -1,6 +1,7 @@
 /* This file is generated. Do not edit manually. */
-use serde::{Deserialize, Serialize};
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use std::fmt;
+use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum GameRule {
     AdvanceTime,
@@ -146,7 +147,9 @@ impl fmt::Display for GameRule {
             Self::EntityDrops => write!(f, "entity_drops"),
             Self::FallDamage => write!(f, "fall_damage"),
             Self::FireDamage => write!(f, "fire_damage"),
-            Self::FireSpreadRadiusAroundPlayer => write!(f, "fire_spread_radius_around_player"),
+            Self::FireSpreadRadiusAroundPlayer => {
+                write!(f, "fire_spread_radius_around_player")
+            }
             Self::ForgiveDeadPlayers => write!(f, "forgive_dead_players"),
             Self::FreezeDamage => write!(f, "freeze_damage"),
             Self::GlobalSoundEvents => write!(f, "global_sound_events"),
@@ -462,10 +465,14 @@ impl GameRuleRegistry {
             GameRule::BlockExplosionDropDecay => {
                 GameRuleValue::Bool(&self.block_explosion_drop_decay)
             }
-            GameRule::CommandBlockOutput => GameRuleValue::Bool(&self.command_block_output),
+            GameRule::CommandBlockOutput => {
+                GameRuleValue::Bool(&self.command_block_output)
+            }
             GameRule::CommandBlocksWork => GameRuleValue::Bool(&self.command_blocks_work),
             GameRule::DrowningDamage => GameRuleValue::Bool(&self.drowning_damage),
-            GameRule::ElytraMovementCheck => GameRuleValue::Bool(&self.elytra_movement_check),
+            GameRule::ElytraMovementCheck => {
+                GameRuleValue::Bool(&self.elytra_movement_check)
+            }
             GameRule::EnderPearlsVanishOnDeath => {
                 GameRuleValue::Bool(&self.ender_pearls_vanish_on_death)
             }
@@ -475,16 +482,22 @@ impl GameRuleRegistry {
             GameRule::FireSpreadRadiusAroundPlayer => {
                 GameRuleValue::Int(&self.fire_spread_radius_around_player)
             }
-            GameRule::ForgiveDeadPlayers => GameRuleValue::Bool(&self.forgive_dead_players),
+            GameRule::ForgiveDeadPlayers => {
+                GameRuleValue::Bool(&self.forgive_dead_players)
+            }
             GameRule::FreezeDamage => GameRuleValue::Bool(&self.freeze_damage),
             GameRule::GlobalSoundEvents => GameRuleValue::Bool(&self.global_sound_events),
             GameRule::ImmediateRespawn => GameRuleValue::Bool(&self.immediate_respawn),
             GameRule::KeepInventory => GameRuleValue::Bool(&self.keep_inventory),
-            GameRule::LavaSourceConversion => GameRuleValue::Bool(&self.lava_source_conversion),
+            GameRule::LavaSourceConversion => {
+                GameRuleValue::Bool(&self.lava_source_conversion)
+            }
             GameRule::LimitedCrafting => GameRuleValue::Bool(&self.limited_crafting),
             GameRule::LocatorBar => GameRuleValue::Bool(&self.locator_bar),
             GameRule::LogAdminCommands => GameRuleValue::Bool(&self.log_admin_commands),
-            GameRule::MaxBlockModifications => GameRuleValue::Int(&self.max_block_modifications),
+            GameRule::MaxBlockModifications => {
+                GameRuleValue::Int(&self.max_block_modifications)
+            }
             GameRule::MaxCommandForks => GameRuleValue::Int(&self.max_command_forks),
             GameRule::MaxCommandSequenceLength => {
                 GameRuleValue::Int(&self.max_command_sequence_length)
@@ -495,12 +508,16 @@ impl GameRuleRegistry {
                 GameRuleValue::Int(&self.max_snow_accumulation_height)
             }
             GameRule::MobDrops => GameRuleValue::Bool(&self.mob_drops),
-            GameRule::MobExplosionDropDecay => GameRuleValue::Bool(&self.mob_explosion_drop_decay),
+            GameRule::MobExplosionDropDecay => {
+                GameRuleValue::Bool(&self.mob_explosion_drop_decay)
+            }
             GameRule::MobGriefing => GameRuleValue::Bool(&self.mob_griefing),
             GameRule::NaturalHealthRegeneration => {
                 GameRuleValue::Bool(&self.natural_health_regeneration)
             }
-            GameRule::PlayerMovementCheck => GameRuleValue::Bool(&self.player_movement_check),
+            GameRule::PlayerMovementCheck => {
+                GameRuleValue::Bool(&self.player_movement_check)
+            }
             GameRule::PlayersNetherPortalCreativeDelay => {
                 GameRuleValue::Int(&self.players_nether_portal_creative_delay)
             }
@@ -518,7 +535,9 @@ impl GameRuleRegistry {
             GameRule::RandomTickSpeed => GameRuleValue::Int(&self.random_tick_speed),
             GameRule::ReducedDebugInfo => GameRuleValue::Bool(&self.reduced_debug_info),
             GameRule::RespawnRadius => GameRuleValue::Int(&self.respawn_radius),
-            GameRule::SendCommandFeedback => GameRuleValue::Bool(&self.send_command_feedback),
+            GameRule::SendCommandFeedback => {
+                GameRuleValue::Bool(&self.send_command_feedback)
+            }
             GameRule::ShowAdvancementMessages => {
                 GameRuleValue::Bool(&self.show_advancement_messages)
             }
@@ -527,7 +546,9 @@ impl GameRuleRegistry {
             GameRule::SpawnMonsters => GameRuleValue::Bool(&self.spawn_monsters),
             GameRule::SpawnPatrols => GameRuleValue::Bool(&self.spawn_patrols),
             GameRule::SpawnPhantoms => GameRuleValue::Bool(&self.spawn_phantoms),
-            GameRule::SpawnWanderingTraders => GameRuleValue::Bool(&self.spawn_wandering_traders),
+            GameRule::SpawnWanderingTraders => {
+                GameRuleValue::Bool(&self.spawn_wandering_traders)
+            }
             GameRule::SpawnWardens => GameRuleValue::Bool(&self.spawn_wardens),
             GameRule::SpawnerBlocksWork => GameRuleValue::Bool(&self.spawner_blocks_work),
             GameRule::SpectatorsGenerateChunks => {
@@ -535,9 +556,13 @@ impl GameRuleRegistry {
             }
             GameRule::SpreadVines => GameRuleValue::Bool(&self.spread_vines),
             GameRule::TntExplodes => GameRuleValue::Bool(&self.tnt_explodes),
-            GameRule::TntExplosionDropDecay => GameRuleValue::Bool(&self.tnt_explosion_drop_decay),
+            GameRule::TntExplosionDropDecay => {
+                GameRuleValue::Bool(&self.tnt_explosion_drop_decay)
+            }
             GameRule::UniversalAnger => GameRuleValue::Bool(&self.universal_anger),
-            GameRule::WaterSourceConversion => GameRuleValue::Bool(&self.water_source_conversion),
+            GameRule::WaterSourceConversion => {
+                GameRuleValue::Bool(&self.water_source_conversion)
+            }
         }
     }
     pub fn get_mut(&mut self, rule: &GameRule) -> GameRuleValue<&mut i64, &mut bool> {
@@ -551,10 +576,16 @@ impl GameRuleRegistry {
             GameRule::BlockExplosionDropDecay => {
                 GameRuleValue::Bool(&mut self.block_explosion_drop_decay)
             }
-            GameRule::CommandBlockOutput => GameRuleValue::Bool(&mut self.command_block_output),
-            GameRule::CommandBlocksWork => GameRuleValue::Bool(&mut self.command_blocks_work),
+            GameRule::CommandBlockOutput => {
+                GameRuleValue::Bool(&mut self.command_block_output)
+            }
+            GameRule::CommandBlocksWork => {
+                GameRuleValue::Bool(&mut self.command_blocks_work)
+            }
             GameRule::DrowningDamage => GameRuleValue::Bool(&mut self.drowning_damage),
-            GameRule::ElytraMovementCheck => GameRuleValue::Bool(&mut self.elytra_movement_check),
+            GameRule::ElytraMovementCheck => {
+                GameRuleValue::Bool(&mut self.elytra_movement_check)
+            }
             GameRule::EnderPearlsVanishOnDeath => {
                 GameRuleValue::Bool(&mut self.ender_pearls_vanish_on_death)
             }
@@ -564,15 +595,25 @@ impl GameRuleRegistry {
             GameRule::FireSpreadRadiusAroundPlayer => {
                 GameRuleValue::Int(&mut self.fire_spread_radius_around_player)
             }
-            GameRule::ForgiveDeadPlayers => GameRuleValue::Bool(&mut self.forgive_dead_players),
+            GameRule::ForgiveDeadPlayers => {
+                GameRuleValue::Bool(&mut self.forgive_dead_players)
+            }
             GameRule::FreezeDamage => GameRuleValue::Bool(&mut self.freeze_damage),
-            GameRule::GlobalSoundEvents => GameRuleValue::Bool(&mut self.global_sound_events),
-            GameRule::ImmediateRespawn => GameRuleValue::Bool(&mut self.immediate_respawn),
+            GameRule::GlobalSoundEvents => {
+                GameRuleValue::Bool(&mut self.global_sound_events)
+            }
+            GameRule::ImmediateRespawn => {
+                GameRuleValue::Bool(&mut self.immediate_respawn)
+            }
             GameRule::KeepInventory => GameRuleValue::Bool(&mut self.keep_inventory),
-            GameRule::LavaSourceConversion => GameRuleValue::Bool(&mut self.lava_source_conversion),
+            GameRule::LavaSourceConversion => {
+                GameRuleValue::Bool(&mut self.lava_source_conversion)
+            }
             GameRule::LimitedCrafting => GameRuleValue::Bool(&mut self.limited_crafting),
             GameRule::LocatorBar => GameRuleValue::Bool(&mut self.locator_bar),
-            GameRule::LogAdminCommands => GameRuleValue::Bool(&mut self.log_admin_commands),
+            GameRule::LogAdminCommands => {
+                GameRuleValue::Bool(&mut self.log_admin_commands)
+            }
             GameRule::MaxBlockModifications => {
                 GameRuleValue::Int(&mut self.max_block_modifications)
             }
@@ -580,8 +621,12 @@ impl GameRuleRegistry {
             GameRule::MaxCommandSequenceLength => {
                 GameRuleValue::Int(&mut self.max_command_sequence_length)
             }
-            GameRule::MaxEntityCramming => GameRuleValue::Int(&mut self.max_entity_cramming),
-            GameRule::MaxMinecartSpeed => GameRuleValue::Int(&mut self.max_minecart_speed),
+            GameRule::MaxEntityCramming => {
+                GameRuleValue::Int(&mut self.max_entity_cramming)
+            }
+            GameRule::MaxMinecartSpeed => {
+                GameRuleValue::Int(&mut self.max_minecart_speed)
+            }
             GameRule::MaxSnowAccumulationHeight => {
                 GameRuleValue::Int(&mut self.max_snow_accumulation_height)
             }
@@ -593,7 +638,9 @@ impl GameRuleRegistry {
             GameRule::NaturalHealthRegeneration => {
                 GameRuleValue::Bool(&mut self.natural_health_regeneration)
             }
-            GameRule::PlayerMovementCheck => GameRuleValue::Bool(&mut self.player_movement_check),
+            GameRule::PlayerMovementCheck => {
+                GameRuleValue::Bool(&mut self.player_movement_check)
+            }
             GameRule::PlayersNetherPortalCreativeDelay => {
                 GameRuleValue::Int(&mut self.players_nether_portal_creative_delay)
             }
@@ -609,13 +656,19 @@ impl GameRuleRegistry {
             GameRule::Pvp => GameRuleValue::Bool(&mut self.pvp),
             GameRule::Raids => GameRuleValue::Bool(&mut self.raids),
             GameRule::RandomTickSpeed => GameRuleValue::Int(&mut self.random_tick_speed),
-            GameRule::ReducedDebugInfo => GameRuleValue::Bool(&mut self.reduced_debug_info),
+            GameRule::ReducedDebugInfo => {
+                GameRuleValue::Bool(&mut self.reduced_debug_info)
+            }
             GameRule::RespawnRadius => GameRuleValue::Int(&mut self.respawn_radius),
-            GameRule::SendCommandFeedback => GameRuleValue::Bool(&mut self.send_command_feedback),
+            GameRule::SendCommandFeedback => {
+                GameRuleValue::Bool(&mut self.send_command_feedback)
+            }
             GameRule::ShowAdvancementMessages => {
                 GameRuleValue::Bool(&mut self.show_advancement_messages)
             }
-            GameRule::ShowDeathMessages => GameRuleValue::Bool(&mut self.show_death_messages),
+            GameRule::ShowDeathMessages => {
+                GameRuleValue::Bool(&mut self.show_death_messages)
+            }
             GameRule::SpawnMobs => GameRuleValue::Bool(&mut self.spawn_mobs),
             GameRule::SpawnMonsters => GameRuleValue::Bool(&mut self.spawn_monsters),
             GameRule::SpawnPatrols => GameRuleValue::Bool(&mut self.spawn_patrols),
@@ -624,7 +677,9 @@ impl GameRuleRegistry {
                 GameRuleValue::Bool(&mut self.spawn_wandering_traders)
             }
             GameRule::SpawnWardens => GameRuleValue::Bool(&mut self.spawn_wardens),
-            GameRule::SpawnerBlocksWork => GameRuleValue::Bool(&mut self.spawner_blocks_work),
+            GameRule::SpawnerBlocksWork => {
+                GameRuleValue::Bool(&mut self.spawner_blocks_work)
+            }
             GameRule::SpectatorsGenerateChunks => {
                 GameRuleValue::Bool(&mut self.spectators_generate_chunks)
             }
@@ -883,7 +938,7 @@ fn default_water_source_conversion() -> bool {
     GameRuleRegistry::default().water_source_conversion
 }
 mod as_string {
-    use serde::{Deserialize, Deserializer, Serialize, Serializer};
+    use serde::{Serialize, Deserialize, Serializer, Deserializer};
     use std::{fmt::Display, str::FromStr};
     pub fn serialize<T: Display, S: Serializer>(
         value: &T,

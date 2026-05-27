@@ -1,9 +1,10 @@
 /* This file is generated. Do not edit manually. */
-use crate::data_component_impl::EnchantmentsImpl;
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::item::Item;
 use crate::tag::Enchantment as EnchantmentTag;
 use crate::tag::Item as ItemTag;
 use crate::tag::{RegistryKey, Tag, Taggable};
+use crate::data_component_impl::EnchantmentsImpl;
 use pumpkin_util::text::TextComponent;
 use pumpkin_util::text::color::NamedColor;
 use std::hash::{Hash, Hasher};
@@ -729,10 +730,7 @@ impl Enchantment {
         supported_items: &ItemTag::MINECRAFT_ENCHANTABLE_CROSSBOW,
         exclusive_set: None,
         max_level: 3i32,
-        slots: &[
-            AttributeModifierSlot::MainHand,
-            AttributeModifierSlot::OffHand,
-        ],
+        slots: &[AttributeModifierSlot::MainHand, AttributeModifierSlot::OffHand],
         weight: 5i32,
         min_cost: Cost {
             base: 12i32,
@@ -1086,14 +1084,10 @@ impl Enchantment {
         if self == other {
             return false;
         }
-        if let Some(tag) = self.exclusive_set
-            && tag.1.contains(&(other.id as u16))
-        {
+        if let Some(tag) = self.exclusive_set && tag.1.contains(&(other.id as u16)) {
             return false;
         }
-        if let Some(tag) = other.exclusive_set
-            && tag.1.contains(&(self.id as u16))
-        {
+        if let Some(tag) = other.exclusive_set && tag.1.contains(&(self.id as u16)) {
             return false;
         }
         true
@@ -1107,18 +1101,23 @@ impl Enchantment {
         true
     }
     pub fn get_fullname(&self, level: i32) -> TextComponent {
-        let mut ret = TextComponent::translate(self.description, []).color_named(
-            if self.has_tag(&EnchantmentTag::MINECRAFT_CURSE) {
-                NamedColor::Red
-            } else {
-                NamedColor::Gray
-            },
-        );
+        let mut ret = TextComponent::translate(self.description, [])
+            .color_named(
+                if self.has_tag(&EnchantmentTag::MINECRAFT_CURSE) {
+                    NamedColor::Red
+                } else {
+                    NamedColor::Gray
+                },
+            );
         if level != 1 || self.max_level != 1 {
-            ret = ret.add_text(" ").add_child(TextComponent::translate(
-                "enchantment.level.".to_string() + &level.to_string(),
-                [],
-            ));
+            ret = ret
+                .add_text(" ")
+                .add_child(
+                    TextComponent::translate(
+                        "enchantment.level.".to_string() + &level.to_string(),
+                        [],
+                    ),
+                );
         }
         ret
     }

@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[derive(Clone, Copy)]
 pub enum SoundCategory {
     Master,

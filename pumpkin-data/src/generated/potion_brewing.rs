@@ -1,7 +1,8 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #![allow(dead_code)]
-use crate::item::Item;
 use crate::potion::Potion;
+use crate::item::Item;
 pub struct PotionRecipe {
     from: &'static Potion,
     ingredient: &'static [&'static Item],

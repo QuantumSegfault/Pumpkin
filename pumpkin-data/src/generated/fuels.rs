@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 pub const FUELS: [(u16, u16); 280usize] = [
     (36u16, 300u16),
     (37u16, 300u16),

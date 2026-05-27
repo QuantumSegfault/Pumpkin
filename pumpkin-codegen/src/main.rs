@@ -2,12 +2,7 @@ use heck::ToPascalCase;
 use proc_macro2::TokenStream;
 use quote::{format_ident, quote};
 use rayon::prelude::*;
-use std::{
-    fs,
-    io::Write,
-    path::Path,
-    process::{Command, Stdio},
-};
+use std::{fs, path::Path};
 
 mod attributes;
 mod biome;
@@ -154,12 +149,12 @@ pub fn main() {
     build_functions.par_iter().for_each(|(build_fn, file)| {
         println!("Parsing {}", file);
 
-        let raw_code = build_fn().to_string();
+        let raw_code = build_fn();
 
-        let header = "/* This file is generated. Do not edit manually. */\n";
+        let header = "/* This file is generated. Do not edit manually. */\n#![cfg_attr(rustfmt, rustfmt::skip)]\n";
 
-        let final_code = format_code(&raw_code).map_or_else(
-            |_| format!("{header}{raw_code}"),
+        let final_code = format_code(raw_code.clone()).map_or_else(
+            |_| format!("{header}{}", raw_code),
             |formatted| format!("{header}{formatted}"),
         );
 
@@ -204,39 +199,17 @@ pub fn write_generated_file(new_code: &str, out_file: &str) {
         .unwrap_or_else(|_| panic!("Failed to write to file: {}", path.display()));
 }
 
-/// Error returned when `rustfmt` is unavailable or fails to format code.
-pub struct RustFmtError;
+/// Error returned when `syn::parse2` fails to parse the TokenStream
+pub struct SynParseError;
 
-/// Formats a Rust source string by piping it through `rustfmt`.
+/// Formats a TokenStream by piping it through `syn::parse2` and `prettyplease`
 ///
 /// # Arguments
-/// - `unformatted_code` – Raw Rust source code to format.
+/// - `unformatted_code` – Raw TokenStream to format
 ///
 /// # Returns
-/// The formatted source string, or `Err(RustFmtError)` if `rustfmt` is not available
-/// or formatting fails.
-pub fn format_code(unformatted_code: &str) -> Result<String, RustFmtError> {
-    let child_result = Command::new("rustfmt")
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::null())
-        .spawn();
-
-    let Ok(mut child) = child_result else {
-        return Err(RustFmtError);
-    };
-
-    // Write the code to rustfmt's stdin
-    if let Some(mut stdin) = child.stdin.take()
-        && stdin.write_all(unformatted_code.as_bytes()).is_err()
-    {
-        return Err(RustFmtError);
-    }
-
-    match child.wait_with_output() {
-        Ok(output) if output.status.success() => {
-            String::from_utf8(output.stdout).map_err(|_| RustFmtError)
-        }
-        _ => Err(RustFmtError),
-    }
+/// The formatted source string, or `Err(SynParseError)` if syn could not parse the TokenStream
+pub fn format_code(unformatted_code: TokenStream) -> Result<String, SynParseError> {
+    let syn_file = syn::parse2::<syn::File>(unformatted_code).map_err(|_| SynParseError)?;
+    Ok(prettyplease::unparse(&syn_file))
 }

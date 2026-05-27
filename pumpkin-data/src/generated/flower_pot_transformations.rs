@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[must_use]
 pub const fn get_potted_item(item_id: u16) -> u16 {
     match item_id {

@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use std::hash::Hash;
 #[derive(Clone, Debug)]
 pub struct Attributes {
@@ -17,46 +18,19 @@ impl Hash for Attributes {
     }
 }
 impl Attributes {
-    pub const ARMOR: Self = Self {
-        id: 0,
-        default_value: 0f64,
-    };
-    pub const ARMOR_TOUGHNESS: Self = Self {
-        id: 1,
-        default_value: 0f64,
-    };
-    pub const ATTACK_DAMAGE: Self = Self {
-        id: 2,
-        default_value: 2f64,
-    };
-    pub const ATTACK_KNOCKBACK: Self = Self {
-        id: 3,
-        default_value: 0f64,
-    };
-    pub const ATTACK_SPEED: Self = Self {
-        id: 4,
-        default_value: 4f64,
-    };
-    pub const BLOCK_BREAK_SPEED: Self = Self {
-        id: 5,
-        default_value: 1f64,
-    };
+    pub const ARMOR: Self = Self { id: 0, default_value: 0f64 };
+    pub const ARMOR_TOUGHNESS: Self = Self { id: 1, default_value: 0f64 };
+    pub const ATTACK_DAMAGE: Self = Self { id: 2, default_value: 2f64 };
+    pub const ATTACK_KNOCKBACK: Self = Self { id: 3, default_value: 0f64 };
+    pub const ATTACK_SPEED: Self = Self { id: 4, default_value: 4f64 };
+    pub const BLOCK_BREAK_SPEED: Self = Self { id: 5, default_value: 1f64 };
     pub const BLOCK_INTERACTION_RANGE: Self = Self {
         id: 6,
         default_value: 4.5f64,
     };
-    pub const BURNING_TIME: Self = Self {
-        id: 7,
-        default_value: 1f64,
-    };
-    pub const CAMERA_DISTANCE: Self = Self {
-        id: 8,
-        default_value: 4f64,
-    };
-    pub const EXPLOSION_KNOCKBACK_RESISTANCE: Self = Self {
-        id: 9,
-        default_value: 0f64,
-    };
+    pub const BURNING_TIME: Self = Self { id: 7, default_value: 1f64 };
+    pub const CAMERA_DISTANCE: Self = Self { id: 8, default_value: 4f64 };
+    pub const EXPLOSION_KNOCKBACK_RESISTANCE: Self = Self { id: 9, default_value: 0f64 };
     pub const ENTITY_INTERACTION_RANGE: Self = Self {
         id: 10,
         default_value: 3f64,

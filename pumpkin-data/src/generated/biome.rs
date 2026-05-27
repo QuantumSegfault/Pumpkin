@@ -1,14 +1,12 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::biome::de::Deserialize;
 use crate::entity_type::EntityType;
-use crate::tag::RegistryKey;
 use crate::tag::Taggable;
+use crate::tag::RegistryKey;
 use pumpkin_util::biome::{TemperatureModifier, Weather};
 use serde::{Deserializer, de};
-use std::{
-    fmt,
-    hash::{Hash, Hasher},
-};
+use std::{fmt, hash::{Hasher, Hash}};
 #[derive(Debug)]
 pub struct Biome {
     pub id: u8,
@@ -70,11 +68,16 @@ impl<'de> Deserialize<'de> for &'static Biome {
             fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
                 formatter.write_str("a biome name as a string")
             }
-            fn visit_string<E: serde::de::Error>(self, v: String) -> Result<Self::Value, E> {
+            fn visit_string<E: serde::de::Error>(
+                self,
+                v: String,
+            ) -> Result<Self::Value, E> {
                 self.visit_str(&v)
             }
             fn visit_str<E: de::Error>(self, value: &str) -> Result<Self::Value, E> {
-                let biome = Biome::from_name(value.strip_prefix("minecraft:").unwrap_or(value));
+                let biome = Biome::from_name(
+                    value.strip_prefix("minecraft:").unwrap_or(value),
+                );
                 biome.ok_or_else(|| E::unknown_variant(value, &["unknown biome"]))
             }
         }
@@ -194,11 +197,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -228,11 +233,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -356,11 +363,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -400,11 +409,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -460,11 +471,13 @@ impl Biome {
             ],
             ambient: &[],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:strider",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:strider",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
             underground_water_creature: &[],
             water_ambient: &[],
@@ -581,23 +594,29 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:turtle",
-                min_count: 2i32,
-                max_count: 5i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:turtle",
+                    min_count: 2i32,
+                    max_count: 5i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -716,11 +735,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -745,11 +766,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -862,11 +885,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -886,11 +911,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -1013,19 +1040,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[
                 Spawner {
                     r#type: "minecraft:cod",
@@ -1110,11 +1141,13 @@ impl Biome {
             ],
             ambient: &[],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:strider",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:strider",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
             underground_water_creature: &[],
             water_ambient: &[],
@@ -1234,11 +1267,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -1263,11 +1298,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -1390,19 +1427,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[
                 Spawner {
                     r#type: "minecraft:cod",
@@ -1624,28 +1665,36 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:polar_bear",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:polar_bear",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:salmon",
-                min_count: 1i32,
-                max_count: 5i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:salmon",
+                    min_count: 1i32,
+                    max_count: 5i32,
+                },
+            ],
             water_creature: &[
                 Spawner {
                     r#type: "minecraft:squid",
@@ -1778,19 +1827,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[
                 Spawner {
                     r#type: "minecraft:cod",
@@ -1945,24 +1998,30 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:cod",
-                min_count: 3i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:cod",
+                    min_count: 3i32,
+                    max_count: 6i32,
+                },
+            ],
             water_creature: &[
                 Spawner {
                     r#type: "minecraft:squid",
@@ -2106,11 +2165,13 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -2125,11 +2186,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -2255,19 +2318,23 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -2280,11 +2347,13 @@ impl Biome {
         features: &[],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
             creature: &[],
@@ -2313,11 +2382,13 @@ impl Biome {
         ],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
             creature: &[],
@@ -2335,11 +2406,13 @@ impl Biome {
         features: &[],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
             creature: &[],
@@ -2462,11 +2535,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -2496,11 +2571,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -2617,11 +2694,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -2651,11 +2730,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -2773,11 +2854,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -2807,11 +2890,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -2936,28 +3021,36 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:polar_bear",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:polar_bear",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:salmon",
-                min_count: 1i32,
-                max_count: 5i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:salmon",
+                    min_count: 1i32,
+                    max_count: 5i32,
+                },
+            ],
             water_creature: &[
                 Spawner {
                     r#type: "minecraft:squid",
@@ -3075,23 +3168,29 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:goat",
-                min_count: 1i32,
-                max_count: 3i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:goat",
+                    min_count: 1i32,
+                    max_count: 3i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -3213,29 +3312,37 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:salmon",
-                min_count: 1i32,
-                max_count: 5i32,
-            }],
-            water_creature: &[Spawner {
-                r#type: "minecraft:squid",
-                min_count: 1i32,
-                max_count: 4i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:salmon",
+                    min_count: 1i32,
+                    max_count: 5i32,
+                },
+            ],
+            water_creature: &[
+                Spawner {
+                    r#type: "minecraft:squid",
+                    min_count: 1i32,
+                    max_count: 4i32,
+                },
+            ],
         },
         spawn_costs: phf::phf_map! {},
     };
@@ -3345,11 +3452,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -3369,11 +3478,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -3497,11 +3608,13 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -3516,11 +3629,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -3628,23 +3743,29 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:goat",
-                min_count: 1i32,
-                max_count: 3i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:goat",
+                    min_count: 1i32,
+                    max_count: 3i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -3768,11 +3889,13 @@ impl Biome {
                     max_count: 3i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -3812,11 +3935,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -3939,19 +4064,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[
                 Spawner {
                     r#type: "minecraft:cod",
@@ -4100,28 +4229,36 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
-            axolotls: &[Spawner {
-                r#type: "minecraft:axolotl",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
+            axolotls: &[
+                Spawner {
+                    r#type: "minecraft:axolotl",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:tropical_fish",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:tropical_fish",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             water_creature: &[],
         },
         spawn_costs: phf::phf_map! {},
@@ -4245,28 +4382,36 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:frog",
-                min_count: 2i32,
-                max_count: 5i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:frog",
+                    min_count: 2i32,
+                    max_count: 5i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:tropical_fish",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:tropical_fish",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             water_creature: &[],
         },
         spawn_costs: phf::phf_map! {},
@@ -4379,11 +4524,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -4403,11 +4550,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -4479,23 +4628,29 @@ impl Biome {
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
             monster: &[],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:mooshroom",
-                min_count: 4i32,
-                max_count: 8i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:mooshroom",
+                    min_count: 4i32,
+                    max_count: 8i32,
+                },
+            ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -4568,11 +4723,13 @@ impl Biome {
             ],
             ambient: &[],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:strider",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:strider",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
             underground_water_creature: &[],
             water_ambient: &[],
@@ -4697,24 +4854,30 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:cod",
-                min_count: 3i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:cod",
+                    min_count: 3i32,
+                    max_count: 6i32,
+                },
+            ],
             water_creature: &[
                 Spawner {
                     r#type: "minecraft:squid",
@@ -4848,11 +5011,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -4877,11 +5042,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5005,11 +5172,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -5049,11 +5218,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5177,11 +5348,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -5221,11 +5394,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5341,19 +5516,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5476,11 +5655,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -5515,11 +5696,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5642,29 +5825,37 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
-            water_ambient: &[Spawner {
-                r#type: "minecraft:salmon",
-                min_count: 1i32,
-                max_count: 5i32,
-            }],
-            water_creature: &[Spawner {
-                r#type: "minecraft:squid",
-                min_count: 1i32,
-                max_count: 4i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
+            water_ambient: &[
+                Spawner {
+                    r#type: "minecraft:salmon",
+                    min_count: 1i32,
+                    max_count: 5i32,
+                },
+            ],
+            water_creature: &[
+                Spawner {
+                    r#type: "minecraft:squid",
+                    min_count: 1i32,
+                    max_count: 4i32,
+                },
+            ],
         },
         spawn_costs: phf::phf_map! {},
     };
@@ -5784,11 +5975,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -5828,11 +6021,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -5954,11 +6149,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -6008,11 +6205,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6025,11 +6224,13 @@ impl Biome {
         features: &[&[crate::placed_feature::PlacedFeature::EndIslandDecorated]],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
             creature: &[],
@@ -6149,19 +6350,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6287,11 +6492,13 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -6306,11 +6513,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6421,11 +6630,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -6440,11 +6651,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6562,11 +6775,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -6606,11 +6821,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6669,17 +6886,24 @@ impl Biome {
             ],
             ambient: &[],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:strider",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:strider",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
             underground_water_creature: &[],
             water_ambient: &[],
             water_creature: &[],
         },
-        spawn_costs: phf::phf_map! { "enderman" => SpawnCosts { energy_budget : 0.15f64 , charge : 0.7f64 , } , "ghast" => SpawnCosts { energy_budget : 0.15f64 , charge : 0.7f64 , } , "skeleton" => SpawnCosts { energy_budget : 0.15f64 , charge : 0.7f64 , } , "strider" => SpawnCosts { energy_budget : 0.15f64 , charge : 0.7f64 , } },
+        spawn_costs: phf::phf_map! {
+            "enderman" => SpawnCosts { energy_budget : 0.15f64, charge : 0.7f64, },
+            "ghast" => SpawnCosts { energy_budget : 0.15f64, charge : 0.7f64, },
+            "skeleton" => SpawnCosts { energy_budget : 0.15f64, charge : 0.7f64, },
+            "strider" => SpawnCosts { energy_budget : 0.15f64, charge : 0.7f64, }
+        },
     };
     pub const SPARSE_JUNGLE: Biome = Biome {
         id: 50,
@@ -6793,11 +7017,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -6832,11 +7058,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -6943,19 +7171,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -7070,19 +7302,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -7205,11 +7441,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -7244,11 +7482,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -7380,11 +7620,13 @@ impl Biome {
                     max_count: 4i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -7414,11 +7656,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -7536,11 +7780,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -7580,11 +7826,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -7609,11 +7857,13 @@ impl Biome {
         ],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
             creature: &[],
@@ -7772,19 +8022,23 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[
                 Spawner {
                     r#type: "minecraft:pufferfish",
@@ -7857,24 +8111,30 @@ impl Biome {
         ],
         creature_spawn_probability: 0.1f32,
         spawners: SpawnGroups {
-            monster: &[Spawner {
-                r#type: "minecraft:enderman",
-                min_count: 4i32,
-                max_count: 4i32,
-            }],
+            monster: &[
+                Spawner {
+                    r#type: "minecraft:enderman",
+                    min_count: 4i32,
+                    max_count: 4i32,
+                },
+            ],
             ambient: &[],
             axolotls: &[],
-            creature: &[Spawner {
-                r#type: "minecraft:strider",
-                min_count: 1i32,
-                max_count: 2i32,
-            }],
+            creature: &[
+                Spawner {
+                    r#type: "minecraft:strider",
+                    min_count: 1i32,
+                    max_count: 2i32,
+                },
+            ],
             misc: &[],
             underground_water_creature: &[],
             water_ambient: &[],
             water_creature: &[],
         },
-        spawn_costs: phf::phf_map! { "enderman" => SpawnCosts { energy_budget : 0.12f64 , charge : 1f64 , } },
+        spawn_costs: phf::phf_map! {
+            "enderman" => SpawnCosts { energy_budget : 0.12f64, charge : 1f64, }
+        },
     };
     pub const WINDSWEPT_FOREST: Biome = Biome {
         id: 60,
@@ -7988,11 +8248,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -8022,11 +8284,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -8144,11 +8408,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -8178,11 +8444,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -8300,11 +8568,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -8334,11 +8604,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -8459,11 +8731,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -8503,11 +8777,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -8626,11 +8902,13 @@ impl Biome {
                     max_count: 1i32,
                 },
             ],
-            ambient: &[Spawner {
-                r#type: "minecraft:bat",
-                min_count: 8i32,
-                max_count: 8i32,
-            }],
+            ambient: &[
+                Spawner {
+                    r#type: "minecraft:bat",
+                    min_count: 8i32,
+                    max_count: 8i32,
+                },
+            ],
             axolotls: &[],
             creature: &[
                 Spawner {
@@ -8665,11 +8943,13 @@ impl Biome {
                 },
             ],
             misc: &[],
-            underground_water_creature: &[Spawner {
-                r#type: "minecraft:glow_squid",
-                min_count: 4i32,
-                max_count: 6i32,
-            }],
+            underground_water_creature: &[
+                Spawner {
+                    r#type: "minecraft:glow_squid",
+                    min_count: 4i32,
+                    max_count: 6i32,
+                },
+            ],
             water_ambient: &[],
             water_creature: &[],
         },
@@ -8848,14 +9128,8 @@ impl ParameterRange {
 }
 #[derive(PartialEq)]
 pub enum BiomeTree {
-    Leaf {
-        parameters: [ParameterRange; 7],
-        biome: &'static Biome,
-    },
-    Branch {
-        parameters: [ParameterRange; 7],
-        nodes: &'static [BiomeTree],
-    },
+    Leaf { parameters: [ParameterRange; 7], biome: &'static Biome },
+    Branch { parameters: [ParameterRange; 7], nodes: &'static [BiomeTree] },
 }
 impl BiomeTree {
     pub fn get(
@@ -8904,12 +9178,9 @@ impl BiomeTree {
             Self::Leaf { parameters, .. } => parameters,
             Self::Branch { parameters, .. } => parameters,
         };
-        params[0].calc_distance(p[0])
-            + params[1].calc_distance(p[1])
-            + params[2].calc_distance(p[2])
-            + params[3].calc_distance(p[3])
-            + params[4].calc_distance(p[4])
-            + params[5].calc_distance(p[5])
+        params[0].calc_distance(p[0]) + params[1].calc_distance(p[1])
+            + params[2].calc_distance(p[2]) + params[3].calc_distance(p[3])
+            + params[4].calc_distance(p[4]) + params[5].calc_distance(p[5])
             + params[6].calc_distance(p[6])
     }
 }

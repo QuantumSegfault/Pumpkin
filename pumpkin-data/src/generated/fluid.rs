@@ -1,7 +1,10 @@
 /* This file is generated. Do not edit manually. */
-use crate::tag::{RegistryKey, Taggable};
-use pumpkin_util::resource_location::{FromResourceLocation, ResourceLocation, ToResourceLocation};
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use std::hash::{Hash, Hasher};
+use crate::tag::{Taggable, RegistryKey};
+use pumpkin_util::resource_location::{
+    FromResourceLocation, ResourceLocation, ToResourceLocation,
+};
 #[derive(Clone)]
 pub struct PartialFluidState {
     pub height: f32,
@@ -181,9 +184,7 @@ where
         Self: Sized;
 }
 pub fn get_fluid(registry_id: &str) -> Option<&'static Fluid> {
-    let key = registry_id
-        .strip_prefix("minecraft:")
-        .unwrap_or(registry_id);
+    let key = registry_id.strip_prefix("minecraft:").unwrap_or(registry_id);
     Fluid::from_registry_key(key)
 }
 impl Fluid {
@@ -191,16 +192,18 @@ impl Fluid {
         id: 0,
         name: "empty",
         properties: None,
-        states: &[FluidState {
-            height: 0f32,
-            level: 0i16,
-            is_empty: true,
-            blast_resistance: 0f32,
-            block_state_id: 0u16,
-            is_still: false,
-            is_source: false,
-            falling: false,
-        }],
+        states: &[
+            FluidState {
+                height: 0f32,
+                level: 0i16,
+                is_empty: true,
+                blast_resistance: 0f32,
+                block_state_id: 0u16,
+                is_still: false,
+                is_source: false,
+                falling: false,
+            },
+        ],
         default_state_index: 0u16,
         flow_speed: 5u32,
         flow_distance: 4u32,
@@ -209,10 +212,12 @@ impl Fluid {
     pub const FLOWING_WATER: Fluid = Fluid {
         id: 1,
         name: "flowing_water",
-        properties: Some(&[
-            ("falling", &["true", "false"]),
-            ("level", &["1", "2", "3", "4", "5", "6", "7", "8"]),
-        ]),
+        properties: Some(
+            &[
+                ("falling", &["true", "false"]),
+                ("level", &["1", "2", "3", "4", "5", "6", "7", "8"]),
+            ],
+        ),
         states: &[
             FluidState {
                 height: 0.11111111f32,
@@ -414,10 +419,12 @@ impl Fluid {
     pub const FLOWING_LAVA: Fluid = Fluid {
         id: 3,
         name: "flowing_lava",
-        properties: Some(&[
-            ("falling", &["true", "false"]),
-            ("level", &["1", "2", "3", "4", "5", "6", "7", "8"]),
-        ]),
+        properties: Some(
+            &[
+                ("falling", &["true", "false"]),
+                ("level", &["1", "2", "3", "4", "5", "6", "7", "8"]),
+            ],
+        ),
         states: &[
             FluidState {
                 height: 0.11111111f32,
@@ -658,50 +665,68 @@ impl Fluid {
         }
     }
     #[track_caller]
-    #[doc = r" Get the properties of the fluid."]
+    /// Get the properties of the fluid.
     pub fn properties(&self, state_id: u16) -> Box<dyn FluidProperties> {
         match self.name {
-            "water" => Box::new(WaterLikeFluidProperties::from_state_id(
-                state_id,
-                &Fluid::WATER,
-            )),
-            "lava" => Box::new(WaterLikeFluidProperties::from_state_id(
-                state_id,
-                &Fluid::LAVA,
-            )),
-            "flowing_water" => Box::new(FlowingWaterLikeFluidProperties::from_state_id(
-                state_id,
-                &Fluid::FLOWING_WATER,
-            )),
-            "flowing_lava" => Box::new(FlowingWaterLikeFluidProperties::from_state_id(
-                state_id,
-                &Fluid::FLOWING_LAVA,
-            )),
+            "water" => {
+                Box::new(
+                    WaterLikeFluidProperties::from_state_id(state_id, &Fluid::WATER),
+                )
+            }
+            "lava" => {
+                Box::new(WaterLikeFluidProperties::from_state_id(state_id, &Fluid::LAVA))
+            }
+            "flowing_water" => {
+                Box::new(
+                    FlowingWaterLikeFluidProperties::from_state_id(
+                        state_id,
+                        &Fluid::FLOWING_WATER,
+                    ),
+                )
+            }
+            "flowing_lava" => {
+                Box::new(
+                    FlowingWaterLikeFluidProperties::from_state_id(
+                        state_id,
+                        &Fluid::FLOWING_LAVA,
+                    ),
+                )
+            }
             _ => panic!("Invalid state_id"),
         }
     }
     #[track_caller]
-    #[doc = r" Get the properties of the fluid."]
-    pub fn from_properties(&self, props: Vec<(String, String)>) -> Box<dyn FluidProperties> {
+    /// Get the properties of the fluid.
+    pub fn from_properties(
+        &self,
+        props: Vec<(String, String)>,
+    ) -> Box<dyn FluidProperties> {
         match self.name {
-            "water" => Box::new(WaterLikeFluidProperties::from_props(props, &Fluid::WATER)),
+            "water" => {
+                Box::new(WaterLikeFluidProperties::from_props(props, &Fluid::WATER))
+            }
             "lava" => Box::new(WaterLikeFluidProperties::from_props(props, &Fluid::LAVA)),
-            "flowing_water" => Box::new(FlowingWaterLikeFluidProperties::from_props(
-                props,
-                &Fluid::FLOWING_WATER,
-            )),
-            "flowing_lava" => Box::new(FlowingWaterLikeFluidProperties::from_props(
-                props,
-                &Fluid::FLOWING_LAVA,
-            )),
+            "flowing_water" => {
+                Box::new(
+                    FlowingWaterLikeFluidProperties::from_props(
+                        props,
+                        &Fluid::FLOWING_WATER,
+                    ),
+                )
+            }
+            "flowing_lava" => {
+                Box::new(
+                    FlowingWaterLikeFluidProperties::from_props(
+                        props,
+                        &Fluid::FLOWING_LAVA,
+                    ),
+                )
+            }
             _ => panic!("Invalid props"),
         }
     }
     pub fn same_fluid_type(a: u16, b: u16) -> bool {
-        a == b
-            || (a == 1 && b == 2)
-            || (a == 2 && b == 1)
-            || (a == 3 && b == 4)
+        a == b || (a == 1 && b == 2) || (a == 2 && b == 1) || (a == 3 && b == 4)
             || (a == 4 && b == 3)
     }
     pub fn matches_type(&self, other: &Fluid) -> bool {
@@ -739,9 +764,7 @@ impl ToResourceLocation for &'static Fluid {
 impl FromResourceLocation for &'static Fluid {
     fn from_resource_location(resource_location: &ResourceLocation) -> Option<Self> {
         Fluid::from_registry_key(
-            resource_location
-                .strip_prefix("minecraft:")
-                .unwrap_or(resource_location),
+            resource_location.strip_prefix("minecraft:").unwrap_or(resource_location),
         )
     }
 }
@@ -906,8 +929,8 @@ impl FluidProperties for WaterLikeFluidProperties {
     fn to_state_id(&self, fluid: &Fluid) -> u16 {
         if !["water", "lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "WaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "WaterLikeFluidProperties"
             );
         }
         let prop_index = self.to_index();
@@ -920,8 +943,8 @@ impl FluidProperties for WaterLikeFluidProperties {
     fn from_state_id(state_id: u16, fluid: &Fluid) -> Self {
         if !["water", "lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "WaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "WaterLikeFluidProperties"
             );
         }
         for (idx, state) in fluid.states.iter().enumerate() {
@@ -934,20 +957,20 @@ impl FluidProperties for WaterLikeFluidProperties {
     fn default(fluid: &Fluid) -> Self {
         if !["water", "lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "WaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "WaterLikeFluidProperties"
             );
         }
         Self::from_state_id(fluid.default_state_index, fluid)
     }
     fn to_props(&self) -> Vec<(String, String)> {
-        vec![("falling".to_string(), self.r#falling.to_value().to_string())]
+        vec![("falling".to_string(), self.r#falling.to_value().to_string()),]
     }
     fn from_props(props: Vec<(String, String)>, fluid: &Fluid) -> Self {
         if !["water", "lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "WaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "WaterLikeFluidProperties"
             );
         }
         let mut fluid_props = Self::default(fluid);
@@ -994,8 +1017,8 @@ impl FluidProperties for FlowingWaterLikeFluidProperties {
     fn to_state_id(&self, fluid: &Fluid) -> u16 {
         if !["flowing_water", "flowing_lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "FlowingWaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "FlowingWaterLikeFluidProperties"
             );
         }
         let prop_index = self.to_index();
@@ -1008,8 +1031,8 @@ impl FluidProperties for FlowingWaterLikeFluidProperties {
     fn from_state_id(state_id: u16, fluid: &Fluid) -> Self {
         if !["flowing_water", "flowing_lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "FlowingWaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "FlowingWaterLikeFluidProperties"
             );
         }
         for (idx, state) in fluid.states.iter().enumerate() {
@@ -1022,23 +1045,23 @@ impl FluidProperties for FlowingWaterLikeFluidProperties {
     fn default(fluid: &Fluid) -> Self {
         if !["flowing_water", "flowing_lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "FlowingWaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "FlowingWaterLikeFluidProperties"
             );
         }
         Self::from_state_id(fluid.default_state_index, fluid)
     }
     fn to_props(&self) -> Vec<(String, String)> {
         vec![
-            ("falling".to_string(), self.r#falling.to_value().to_string()),
-            ("level".to_string(), self.r#level.to_value().to_string()),
+            ("falling".to_string(), self.r#falling.to_value().to_string()), ("level"
+            .to_string(), self.r#level.to_value().to_string()),
         ]
     }
     fn from_props(props: Vec<(String, String)>, fluid: &Fluid) -> Self {
         if !["flowing_water", "flowing_lava"].contains(&fluid.name) {
             panic!(
-                "{} is not a valid fluid for {}",
-                &fluid.name, "FlowingWaterLikeFluidProperties"
+                "{} is not a valid fluid for {}", & fluid.name,
+                "FlowingWaterLikeFluidProperties"
             );
         }
         let mut fluid_props = Self::default(fluid);

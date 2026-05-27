@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum PlacedFeature {
     Acacia,
@@ -423,7 +424,9 @@ impl PlacedFeature {
             "patch_dry_grass_desert" => Some(Self::PatchDryGrassDesert),
             "patch_fire" => Some(Self::PatchFire),
             "patch_firefly_bush_near_water" => Some(Self::PatchFireflyBushNearWater),
-            "patch_firefly_bush_near_water_swamp" => Some(Self::PatchFireflyBushNearWaterSwamp),
+            "patch_firefly_bush_near_water_swamp" => {
+                Some(Self::PatchFireflyBushNearWaterSwamp)
+            }
             "patch_firefly_bush_swamp" => Some(Self::PatchFireflyBushSwamp),
             "patch_grass_badlands" => Some(Self::PatchGrassBadlands),
             "patch_grass_forest" => Some(Self::PatchGrassForest),

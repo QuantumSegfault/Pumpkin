@@ -1,9 +1,7 @@
 /* This file is generated. Do not edit manually. */
-use crate::{
-    attributes::Attributes,
-    data_component_impl::{IDSetContent, Operation},
-};
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use std::hash::{Hash, Hasher};
+use crate::{attributes::Attributes, data_component_impl::{Operation, IDSetContent}};
 #[derive(Clone, Debug)]
 pub struct StatusEffect {
     pub minecraft_name: &'static str,
@@ -44,12 +42,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 2445989i32,
         translation_key: "effect.minecraft.absorption",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::MAX_ABSORPTION,
-            id: "minecraft:effect.absorption",
-            base_value: 4f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::MAX_ABSORPTION,
+                id: "minecraft:effect.absorption",
+                base_value: 4f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const BAD_OMEN: Self = Self {
         minecraft_name: "minecraft:bad_omen",
@@ -121,12 +121,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 14270531i32,
         translation_key: "effect.minecraft.haste",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::ATTACK_SPEED,
-            id: "minecraft:effect.haste",
-            base_value: 0.10000000149011612f64,
-            operation: Operation::AddMultipliedTotal,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::ATTACK_SPEED,
+                id: "minecraft:effect.haste",
+                base_value: 0.10000000149011612f64,
+                operation: Operation::AddMultipliedTotal,
+            },
+        ],
     };
     pub const HEALTH_BOOST: Self = Self {
         minecraft_name: "minecraft:health_boost",
@@ -134,12 +136,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 16284963i32,
         translation_key: "effect.minecraft.health_boost",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::MAX_HEALTH,
-            id: "minecraft:effect.health_boost",
-            base_value: 4f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::MAX_HEALTH,
+                id: "minecraft:effect.health_boost",
+                base_value: 4f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const HERO_OF_THE_VILLAGE: Self = Self {
         minecraft_name: "minecraft:hero_of_the_village",
@@ -187,12 +191,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 16185078i32,
         translation_key: "effect.minecraft.invisibility",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::WAYPOINT_TRANSMIT_RANGE,
-            id: "minecraft:effect.waypoint_transmit_range_hide",
-            base_value: -1f64,
-            operation: Operation::AddMultipliedTotal,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::WAYPOINT_TRANSMIT_RANGE,
+                id: "minecraft:effect.waypoint_transmit_range_hide",
+                base_value: -1f64,
+                operation: Operation::AddMultipliedTotal,
+            },
+        ],
     };
     pub const JUMP_BOOST: Self = Self {
         minecraft_name: "minecraft:jump_boost",
@@ -200,12 +206,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 16646020i32,
         translation_key: "effect.minecraft.jump_boost",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::SAFE_FALL_DISTANCE,
-            id: "minecraft:effect.jump_boost",
-            base_value: 1f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::SAFE_FALL_DISTANCE,
+                id: "minecraft:effect.jump_boost",
+                base_value: 1f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const LEVITATION: Self = Self {
         minecraft_name: "minecraft:levitation",
@@ -221,12 +229,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 5882118i32,
         translation_key: "effect.minecraft.luck",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::LUCK,
-            id: "minecraft:effect.luck",
-            base_value: 1f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::LUCK,
+                id: "minecraft:effect.luck",
+                base_value: 1f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const MINING_FATIGUE: Self = Self {
         minecraft_name: "minecraft:mining_fatigue",
@@ -234,12 +244,14 @@ impl StatusEffect {
         category: MobEffectCategory::Harmful,
         color: 4866583i32,
         translation_key: "effect.minecraft.mining_fatigue",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::ATTACK_SPEED,
-            id: "minecraft:effect.mining_fatigue",
-            base_value: -0.10000000149011612f64,
-            operation: Operation::AddMultipliedTotal,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::ATTACK_SPEED,
+                id: "minecraft:effect.mining_fatigue",
+                base_value: -0.10000000149011612f64,
+                operation: Operation::AddMultipliedTotal,
+            },
+        ],
     };
     pub const NAUSEA: Self = Self {
         minecraft_name: "minecraft:nausea",
@@ -319,12 +331,14 @@ impl StatusEffect {
         category: MobEffectCategory::Harmful,
         color: 9154528i32,
         translation_key: "effect.minecraft.slowness",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::MOVEMENT_SPEED,
-            id: "minecraft:effect.slowness",
-            base_value: -0.15000000596046448f64,
-            operation: Operation::AddMultipliedTotal,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::MOVEMENT_SPEED,
+                id: "minecraft:effect.slowness",
+                base_value: -0.15000000596046448f64,
+                operation: Operation::AddMultipliedTotal,
+            },
+        ],
     };
     pub const SPEED: Self = Self {
         minecraft_name: "minecraft:speed",
@@ -332,12 +346,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 3402751i32,
         translation_key: "effect.minecraft.speed",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::MOVEMENT_SPEED,
-            id: "minecraft:effect.speed",
-            base_value: 0.20000000298023224f64,
-            operation: Operation::AddMultipliedTotal,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::MOVEMENT_SPEED,
+                id: "minecraft:effect.speed",
+                base_value: 0.20000000298023224f64,
+                operation: Operation::AddMultipliedTotal,
+            },
+        ],
     };
     pub const STRENGTH: Self = Self {
         minecraft_name: "minecraft:strength",
@@ -345,12 +361,14 @@ impl StatusEffect {
         category: MobEffectCategory::Beneficial,
         color: 16762624i32,
         translation_key: "effect.minecraft.strength",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::ATTACK_DAMAGE,
-            id: "minecraft:effect.strength",
-            base_value: 3f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::ATTACK_DAMAGE,
+                id: "minecraft:effect.strength",
+                base_value: 3f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const TRIAL_OMEN: Self = Self {
         minecraft_name: "minecraft:trial_omen",
@@ -366,12 +384,14 @@ impl StatusEffect {
         category: MobEffectCategory::Harmful,
         color: 12624973i32,
         translation_key: "effect.minecraft.unluck",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::LUCK,
-            id: "minecraft:effect.unluck",
-            base_value: -1f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::LUCK,
+                id: "minecraft:effect.unluck",
+                base_value: -1f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const WATER_BREATHING: Self = Self {
         minecraft_name: "minecraft:water_breathing",
@@ -387,12 +407,14 @@ impl StatusEffect {
         category: MobEffectCategory::Harmful,
         color: 4738376i32,
         translation_key: "effect.minecraft.weakness",
-        attribute_modifiers: &[Modifiers {
-            attribute: &Attributes::ATTACK_DAMAGE,
-            id: "minecraft:effect.weakness",
-            base_value: -4f64,
-            operation: Operation::AddValue,
-        }],
+        attribute_modifiers: &[
+            Modifiers {
+                attribute: &Attributes::ATTACK_DAMAGE,
+                id: "minecraft:effect.weakness",
+                base_value: -4f64,
+                operation: Operation::AddValue,
+            },
+        ],
     };
     pub const WEAVING: Self = Self {
         minecraft_name: "minecraft:weaving",

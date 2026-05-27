@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[repr(u32)]
 pub enum JukeboxSong {
@@ -25,7 +26,7 @@ pub enum JukeboxSong {
     Ward,
 }
 impl JukeboxSong {
-    #[doc = r" Returns the `JukeboxSong` from the string name (e.g., 'pigstep')."]
+    /// Returns the `JukeboxSong` from the string name (e.g., 'pigstep').
     #[must_use]
     pub fn from_name(name: &str) -> Option<Self> {
         match name {
@@ -53,7 +54,7 @@ impl JukeboxSong {
             _ => None,
         }
     }
-    #[doc = r" Returns the string name of the song."]
+    /// Returns the string name of the song.
     #[must_use]
     pub const fn to_name(&self) -> &'static str {
         match self {
@@ -80,7 +81,7 @@ impl JukeboxSong {
             Self::Ward => "ward",
         }
     }
-    #[doc = r" Returns the numeric ID associated with the song."]
+    /// Returns the numeric ID associated with the song.
     #[must_use]
     pub const fn get_id(&self) -> u32 {
         match self {
@@ -107,7 +108,7 @@ impl JukeboxSong {
             Self::Ward => 20u32,
         }
     }
-    #[doc = r" Returns the comparator output value (0-15) for this song."]
+    /// Returns the comparator output value (0-15) for this song.
     #[must_use]
     pub const fn comparator_output(&self) -> u8 {
         #[allow(clippy::match_same_arms)]
@@ -135,7 +136,7 @@ impl JukeboxSong {
             Self::Ward => 10u8,
         }
     }
-    #[doc = r" Returns the song length in seconds."]
+    /// Returns the song length in seconds.
     #[must_use]
     pub const fn length_in_seconds(&self) -> u32 {
         #[allow(clippy::match_same_arms)]
@@ -163,7 +164,7 @@ impl JukeboxSong {
             Self::Ward => 251u32,
         }
     }
-    #[doc = r" Returns the song length in ticks (20 ticks per second)."]
+    /// Returns the song length in ticks (20 ticks per second).
     #[must_use]
     pub const fn length_in_ticks(&self) -> u64 {
         self.length_in_seconds() as u64 * 20

@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::data_component_impl::*;
 #[derive(Copy, Clone, Debug, Hash, PartialEq, Eq)]
 #[repr(u8)]
@@ -261,7 +262,9 @@ impl DataComponent {
             "minecraft:tooltip_display" => Some(Self::TooltipDisplay),
             "minecraft:repair_cost" => Some(Self::RepairCost),
             "minecraft:creative_slot_lock" => Some(Self::CreativeSlotLock),
-            "minecraft:enchantment_glint_override" => Some(Self::EnchantmentGlintOverride),
+            "minecraft:enchantment_glint_override" => {
+                Some(Self::EnchantmentGlintOverride)
+            }
             "minecraft:intangible_projectile" => Some(Self::IntangibleProjectile),
             "minecraft:food" => Some(Self::Food),
             "minecraft:consumable" => Some(Self::Consumable),
@@ -330,7 +333,9 @@ impl DataComponent {
             "minecraft:parrot/variant" => Some(Self::ParrotVariant),
             "minecraft:tropical_fish/pattern" => Some(Self::TropicalFishPattern),
             "minecraft:tropical_fish/base_color" => Some(Self::TropicalFishBaseColor),
-            "minecraft:tropical_fish/pattern_color" => Some(Self::TropicalFishPatternColor),
+            "minecraft:tropical_fish/pattern_color" => {
+                Some(Self::TropicalFishPatternColor)
+            }
             "minecraft:mooshroom/variant" => Some(Self::MooshroomVariant),
             "minecraft:rabbit/variant" => Some(Self::RabbitVariant),
             "minecraft:pig/variant" => Some(Self::PigVariant),

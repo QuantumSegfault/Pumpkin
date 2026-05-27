@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::chunk::DoublePerlinNoiseParameters;
 pub struct NoiseData {
     pub noise_id: DoublePerlinNoiseParameters,
@@ -129,29 +130,17 @@ impl UnaryData {
             UnaryOperation::Square => density * density,
             UnaryOperation::Cube => density * density * density,
             UnaryOperation::HalfNegative => {
-                if density > 0.0 {
-                    density
-                } else {
-                    density * 0.5
-                }
+                if density > 0.0 { density } else { density * 0.5 }
             }
             UnaryOperation::QuarterNegative => {
-                if density > 0.0 {
-                    density
-                } else {
-                    density * 0.25
-                }
+                if density > 0.0 { density } else { density * 0.25 }
             }
             UnaryOperation::Squeeze => {
                 let clamped = density.clamp(-1.0, 1.0);
                 clamped / 2.0 - clamped * clamped * clamped / 24.0
             }
             UnaryOperation::Invert => {
-                if density == 0.0 {
-                    f64::INFINITY
-                } else {
-                    1.0 / density
-                }
+                if density == 0.0 { f64::INFINITY } else { 1.0 / density }
             }
         }
     }
@@ -177,13 +166,8 @@ pub struct SplinePoint {
     pub derivative: f32,
 }
 pub enum SplineRepr {
-    Standard {
-        location_function_index: usize,
-        points: &'static [SplinePoint],
-    },
-    Fixed {
-        value: f32,
-    },
+    Standard { location_function_index: usize, points: &'static [SplinePoint] },
+    Fixed { value: f32 },
 }
 #[derive(Copy, Clone)]
 pub enum WrapperType {
@@ -197,73 +181,38 @@ pub enum BaseNoiseFunctionComponent {
     Beardifier,
     BlendAlpha,
     BlendOffset,
-    BlendDensity {
-        input_index: usize,
-    },
+    BlendDensity { input_index: usize },
     FindTopSurface {
         density_index: usize,
         upper_bound_index: usize,
         data: &'static FindTopSurfaceData,
     },
     EndIslands,
-    Noise {
-        data: &'static NoiseData,
-    },
-    ShiftA {
-        noise_id: DoublePerlinNoiseParameters,
-    },
-    ShiftB {
-        noise_id: DoublePerlinNoiseParameters,
-    },
+    Noise { data: &'static NoiseData },
+    ShiftA { noise_id: DoublePerlinNoiseParameters },
+    ShiftB { noise_id: DoublePerlinNoiseParameters },
     ShiftedNoise {
         shift_x_index: usize,
         shift_y_index: usize,
         shift_z_index: usize,
         data: &'static ShiftedNoiseData,
     },
-    InterpolatedNoiseSampler {
-        data: &'static InterpolatedNoiseSamplerData,
-    },
-    WeirdScaled {
-        input_index: usize,
-        data: &'static WeirdScaledData,
-    },
-    Wrapper {
-        input_index: usize,
-        wrapper: WrapperType,
-    },
-    Constant {
-        value: f64,
-    },
-    ClampedYGradient {
-        data: &'static ClampedYGradientData,
-    },
-    Binary {
-        argument1_index: usize,
-        argument2_index: usize,
-        data: &'static BinaryData,
-    },
-    Linear {
-        input_index: usize,
-        data: &'static LinearData,
-    },
-    Unary {
-        input_index: usize,
-        data: &'static UnaryData,
-    },
-    Clamp {
-        input_index: usize,
-        data: &'static ClampData,
-    },
+    InterpolatedNoiseSampler { data: &'static InterpolatedNoiseSamplerData },
+    WeirdScaled { input_index: usize, data: &'static WeirdScaledData },
+    Wrapper { input_index: usize, wrapper: WrapperType },
+    Constant { value: f64 },
+    ClampedYGradient { data: &'static ClampedYGradientData },
+    Binary { argument1_index: usize, argument2_index: usize, data: &'static BinaryData },
+    Linear { input_index: usize, data: &'static LinearData },
+    Unary { input_index: usize, data: &'static UnaryData },
+    Clamp { input_index: usize, data: &'static ClampData },
     RangeChoice {
         input_index: usize,
         when_in_range_index: usize,
         when_out_range_index: usize,
         data: &'static RangeChoiceData,
     },
-    Spline {
-        spline: &'static SplineRepr,
-    },
+    Spline { spline: &'static SplineRepr },
 }
 pub struct BaseNoiseRouter {
     pub full_component_stack: &'static [BaseNoiseFunctionComponent],
@@ -298,7 +247,9 @@ pub struct BaseNoiseRouters {
 pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
     noise: BaseNoiseRouter {
         full_component_stack: &[
-            BaseNoiseFunctionComponent::Constant { value: 0.64f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.64f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: 0.1171875f64,
             },
@@ -324,8 +275,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 0f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.078125f64 },
-            BaseNoiseFunctionComponent::Constant { value: 4f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.078125f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: 4f64,
+            },
             BaseNoiseFunctionComponent::ClampedYGradient {
                 data: &ClampedYGradientData {
                     from_y: -64f64,
@@ -335,8 +290,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 },
             },
             BaseNoiseFunctionComponent::BlendOffset,
-            BaseNoiseFunctionComponent::Constant { value: 1f64 },
-            BaseNoiseFunctionComponent::Constant { value: -1f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 1f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -1f64,
+            },
             BaseNoiseFunctionComponent::BlendAlpha,
             BaseNoiseFunctionComponent::Wrapper {
                 input_index: 12usize,
@@ -377,7 +336,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 19usize,
                 wrapper: WrapperType::CacheFlat,
             },
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::ShiftB {
                 noise_id: DoublePerlinNoiseParameters::OFFSET,
             },
@@ -417,7 +378,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 27usize,
                 wrapper: WrapperType::CacheFlat,
             },
-            BaseNoiseFunctionComponent::Constant { value: -3f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -3f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.3333333333333333f64,
             },
@@ -477,27 +440,37 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     points: &[
                         SplinePoint {
                             location: -1.1f32,
-                            value: &SplineRepr::Fixed { value: 0.044f32 },
+                            value: &SplineRepr::Fixed {
+                                value: 0.044f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -1.02f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.51f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.44f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.18f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
@@ -558,12 +531,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -603,22 +580,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -639,7 +624,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -654,7 +641,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -675,7 +664,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -709,17 +700,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -798,12 +795,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -843,22 +844,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -879,7 +888,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -894,7 +905,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -915,7 +928,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -949,17 +964,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1038,12 +1059,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1083,22 +1108,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1119,22 +1152,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.001f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.001f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.003f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.003f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.094000004f32,
                                                 },
                                                 SplinePoint {
@@ -1155,22 +1196,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1189,22 +1238,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -1246,7 +1303,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 1.23f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.23f32,
+                                                    },
                                                     derivative: 0.5138249f32,
                                                 },
                                             ],
@@ -1272,7 +1331,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 0.88f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.88f32,
+                                                    },
                                                     derivative: 0.43317974f32,
                                                 },
                                             ],
@@ -1314,22 +1375,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1350,7 +1419,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -1362,12 +1433,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.021f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.021f32,
+                                                    },
                                                     derivative: 0.07f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0.658f32,
                                                 },
                                                 SplinePoint {
@@ -1388,22 +1463,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1422,22 +1505,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1456,7 +1547,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1494,9 +1587,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -1505,7 +1596,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -1519,7 +1612,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1557,9 +1652,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -1568,7 +1661,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -1582,22 +1677,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1616,22 +1719,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -1739,7 +1850,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -1773,17 +1886,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
@@ -1807,22 +1926,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1841,22 +1968,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -1875,7 +2010,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1913,9 +2050,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -1924,7 +2059,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -1938,7 +2075,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -1976,9 +2115,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -1987,7 +2124,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2001,22 +2140,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -2035,22 +2182,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0.015f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -2105,7 +2260,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0f64,
+            },
             BaseNoiseFunctionComponent::Spline {
                 spline: &SplineRepr::Standard {
                     location_function_index: 26usize,
@@ -2149,9 +2306,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 0.01f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                         ],
@@ -2284,9 +2439,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 0.01f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                         ],
@@ -2307,9 +2460,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 0.01f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                         ],
@@ -2349,9 +2500,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 0.01f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                         ],
@@ -2391,9 +2540,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 0.01f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                         ],
@@ -2472,15 +2619,21 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 10f64 },
-            BaseNoiseFunctionComponent::Constant { value: -10f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 10f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -10f64,
+            },
             BaseNoiseFunctionComponent::Spline {
                 spline: &SplineRepr::Standard {
                     location_function_index: 26usize,
                     points: &[
                         SplinePoint {
                             location: -0.19f32,
-                            value: &SplineRepr::Fixed { value: 3.95f32 },
+                            value: &SplineRepr::Fixed {
+                                value: 3.95f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
@@ -2500,7 +2653,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2519,7 +2674,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2538,7 +2695,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2557,7 +2716,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2571,7 +2732,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2595,7 +2758,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2604,7 +2769,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 6.25f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 6.25f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -2614,7 +2781,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2651,7 +2820,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2683,7 +2854,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 6.25f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 6.25f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -2707,7 +2880,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2726,7 +2901,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2745,7 +2922,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2764,7 +2943,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2778,7 +2959,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2802,7 +2985,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2811,7 +2996,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 5.47f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.47f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -2821,7 +3008,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2858,7 +3047,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -2890,7 +3081,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 5.47f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.47f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -2914,7 +3107,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2933,7 +3128,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2952,7 +3149,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2971,7 +3170,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -2985,7 +3186,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -3009,7 +3212,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3018,7 +3223,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 5.08f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.08f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -3028,7 +3235,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -3065,7 +3274,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -3097,7 +3308,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 5.08f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.08f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -3121,7 +3334,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3140,7 +3355,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3159,7 +3376,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3178,7 +3397,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3192,7 +3413,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -3216,7 +3439,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3235,9 +3460,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -3253,7 +3476,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.7f32,
-                                                    value: &SplineRepr::Fixed { value: 1.56f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.56f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3272,9 +3497,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -3290,7 +3513,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.7f32,
-                                                    value: &SplineRepr::Fixed { value: 1.56f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.56f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3309,9 +3534,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -3327,7 +3550,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: -0.15f32,
-                                                    value: &SplineRepr::Fixed { value: 1.37f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.37f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3346,9 +3571,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -3364,7 +3587,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: -0.15f32,
-                                                    value: &SplineRepr::Fixed { value: 1.37f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.37f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -3373,7 +3598,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.58f32,
-                                        value: &SplineRepr::Fixed { value: 4.69f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 4.69f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -3448,8 +3675,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 5f64 },
-            BaseNoiseFunctionComponent::Constant { value: 0.37f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 5f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.37f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::CAVE_ENTRANCE,
@@ -3479,7 +3710,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -0.05f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.05f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::SPAGHETTI_ROUGHNESS_MODULATOR,
@@ -3501,7 +3734,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -0.4f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.4f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::SPAGHETTI_ROUGHNESS,
@@ -3565,7 +3800,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Max,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -0.0765f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.0765f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.011499999999999996f64,
             },
@@ -3656,7 +3893,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Mul,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.27f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.27f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::CAVE_CHEESE,
@@ -3678,8 +3917,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     max_value: 1f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 1.5f64 },
-            BaseNoiseFunctionComponent::Constant { value: -0.64f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 1.5f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.64f64,
+            },
             BaseNoiseFunctionComponent::Binary {
                 argument1_index: 111usize,
                 argument2_index: 69usize,
@@ -3736,8 +3979,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     mapper: WeirdScaledMapper::Caves,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.083f64 },
-            BaseNoiseFunctionComponent::Constant { value: -0.95f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.083f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.95f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.35000000000000003f64,
             },
@@ -3780,7 +4027,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 8f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 8f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::SPAGHETTI_2D_ELEVATION,
@@ -3864,7 +4113,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Min,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 2f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 2f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::PILLAR,
@@ -3907,7 +4158,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.55f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.55f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::PILLAR_THICKNESS,
@@ -3946,7 +4199,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 154usize,
                 wrapper: WrapperType::CacheOnce,
             },
-            BaseNoiseFunctionComponent::Constant { value: -1000000f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -1000000f64,
+            },
             BaseNoiseFunctionComponent::RangeChoice {
                 input_index: 155usize,
                 when_in_range_index: 156usize,
@@ -4062,11 +4317,15 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 172usize,
                 wrapper: WrapperType::Interpolated,
             },
-            BaseNoiseFunctionComponent::Constant { value: 64f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 64f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.07500000000000001f64,
             },
-            BaseNoiseFunctionComponent::Constant { value: -0.025f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.025f64,
+            },
             BaseNoiseFunctionComponent::Noise {
                 data: &NoiseData {
                     noise_id: DoublePerlinNoiseParameters::NOODLE_THICKNESS,
@@ -4368,11 +4627,15 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 0f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.078125f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.078125f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.703125f64,
             },
-            BaseNoiseFunctionComponent::Constant { value: 4f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 4f64,
+            },
             BaseNoiseFunctionComponent::ClampedYGradient {
                 data: &ClampedYGradientData {
                     from_y: -64f64,
@@ -4382,8 +4645,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 },
             },
             BaseNoiseFunctionComponent::BlendOffset,
-            BaseNoiseFunctionComponent::Constant { value: 1f64 },
-            BaseNoiseFunctionComponent::Constant { value: -1f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 1f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -1f64,
+            },
             BaseNoiseFunctionComponent::BlendAlpha,
             BaseNoiseFunctionComponent::Wrapper {
                 input_index: 13usize,
@@ -4424,7 +4691,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 20usize,
                 wrapper: WrapperType::CacheFlat,
             },
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::ShiftB {
                 noise_id: DoublePerlinNoiseParameters::OFFSET,
             },
@@ -4464,7 +4733,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 28usize,
                 wrapper: WrapperType::CacheFlat,
             },
-            BaseNoiseFunctionComponent::Constant { value: -3f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -3f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.3333333333333333f64,
             },
@@ -4524,27 +4795,37 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     points: &[
                         SplinePoint {
                             location: -1.1f32,
-                            value: &SplineRepr::Fixed { value: 0.044f32 },
+                            value: &SplineRepr::Fixed {
+                                value: 0.044f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -1.02f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.51f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.44f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.18f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
@@ -4605,12 +4886,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -4650,22 +4935,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -4686,7 +4979,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -4701,7 +4996,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -4722,7 +5019,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -4756,17 +5055,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -4845,12 +5150,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -4890,22 +5199,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -4926,7 +5243,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -4941,7 +5260,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -4962,7 +5283,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -4996,17 +5319,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5085,12 +5414,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5130,22 +5463,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5166,22 +5507,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.001f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.001f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.003f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.003f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.094000004f32,
                                                 },
                                                 SplinePoint {
@@ -5202,22 +5551,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5236,22 +5593,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -5293,7 +5658,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 1.23f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.23f32,
+                                                    },
                                                     derivative: 0.5138249f32,
                                                 },
                                             ],
@@ -5319,7 +5686,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 0.88f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.88f32,
+                                                    },
                                                     derivative: 0.43317974f32,
                                                 },
                                             ],
@@ -5361,22 +5730,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5397,7 +5774,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -5409,12 +5788,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.021f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.021f32,
+                                                    },
                                                     derivative: 0.07f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0.658f32,
                                                 },
                                                 SplinePoint {
@@ -5435,22 +5818,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5469,22 +5860,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5503,7 +5902,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5541,9 +5942,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -5552,7 +5951,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -5566,7 +5967,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5604,9 +6007,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -5615,7 +6016,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -5629,22 +6032,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5663,22 +6074,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -5786,7 +6205,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -5820,17 +6241,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
@@ -5854,22 +6281,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5888,22 +6323,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -5922,7 +6365,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -5960,9 +6405,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -5971,7 +6414,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -5985,7 +6430,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6023,9 +6470,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -6034,7 +6479,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6048,22 +6495,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -6082,22 +6537,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0.015f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -6156,15 +6619,21 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 10f64 },
-            BaseNoiseFunctionComponent::Constant { value: -10f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 10f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -10f64,
+            },
             BaseNoiseFunctionComponent::Spline {
                 spline: &SplineRepr::Standard {
                     location_function_index: 27usize,
                     points: &[
                         SplinePoint {
                             location: -0.19f32,
-                            value: &SplineRepr::Fixed { value: 3.95f32 },
+                            value: &SplineRepr::Fixed {
+                                value: 3.95f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
@@ -6184,7 +6653,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6203,7 +6674,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6222,7 +6695,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6241,7 +6716,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6255,7 +6732,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6279,7 +6758,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6288,7 +6769,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 6.25f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 6.25f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -6298,7 +6781,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6335,7 +6820,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 6.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 6.25f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6367,7 +6854,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 6.25f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 6.25f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -6391,7 +6880,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6410,7 +6901,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6429,7 +6922,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6448,7 +6943,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6462,7 +6959,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6486,7 +6985,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6495,7 +6996,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 5.47f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.47f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -6505,7 +7008,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6542,7 +7047,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.47f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.47f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6574,7 +7081,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 5.47f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.47f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -6598,7 +7107,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6617,7 +7128,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6636,7 +7149,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6655,7 +7170,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6669,7 +7186,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6693,7 +7212,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6702,7 +7223,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.35f32,
-                                        value: &SplineRepr::Fixed { value: 5.08f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.08f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                     SplinePoint {
@@ -6712,7 +7235,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6749,7 +7274,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.9f32,
-                                                    value: &SplineRepr::Fixed { value: 5.08f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 5.08f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6781,7 +7308,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.62f32,
-                                        value: &SplineRepr::Fixed { value: 5.08f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 5.08f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -6805,7 +7334,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6824,7 +7355,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6843,7 +7376,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6862,7 +7397,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6876,7 +7413,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -0.05f32,
-                                                    value: &SplineRepr::Fixed { value: 2.67f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 2.67f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -6900,7 +7439,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.2f32,
-                                                    value: &SplineRepr::Fixed { value: 4.69f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 4.69f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6919,9 +7460,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -6937,7 +7476,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.7f32,
-                                                    value: &SplineRepr::Fixed { value: 1.56f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.56f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6956,9 +7497,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -6974,7 +7513,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.7f32,
-                                                    value: &SplineRepr::Fixed { value: 1.56f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.56f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -6993,9 +7534,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -7011,7 +7550,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: -0.15f32,
-                                                    value: &SplineRepr::Fixed { value: 1.37f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.37f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -7030,9 +7571,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                         points: &[
                                                             SplinePoint {
                                                                 location: -0.2f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 6.3f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 6.3f32 },
                                                                 derivative: 0f32,
                                                             },
                                                             SplinePoint {
@@ -7048,7 +7587,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: -0.15f32,
-                                                    value: &SplineRepr::Fixed { value: 1.37f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.37f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -7057,7 +7598,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                     },
                                     SplinePoint {
                                         location: 0.58f32,
-                                        value: &SplineRepr::Fixed { value: 4.69f32 },
+                                        value: &SplineRepr::Fixed {
+                                            value: 4.69f32,
+                                        },
                                         derivative: 0f32,
                                     },
                                 ],
@@ -7183,8 +7726,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: BinaryOperation::Add,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 128f64 },
-            BaseNoiseFunctionComponent::Constant { value: -128f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 128f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -128f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: 0.2734375f64,
             },
@@ -7259,7 +7806,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 1usize,
                 wrapper: WrapperType::CacheFlat,
             },
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::ShiftB {
                 noise_id: DoublePerlinNoiseParameters::OFFSET,
             },
@@ -7342,8 +7891,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 },
             },
             BaseNoiseFunctionComponent::BlendOffset,
-            BaseNoiseFunctionComponent::Constant { value: 1f64 },
-            BaseNoiseFunctionComponent::Constant { value: -1f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 1f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -1f64,
+            },
             BaseNoiseFunctionComponent::BlendAlpha,
             BaseNoiseFunctionComponent::Wrapper {
                 input_index: 19usize,
@@ -7373,7 +7926,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
             BaseNoiseFunctionComponent::Constant {
                 value: -0.5037500262260437f64,
             },
-            BaseNoiseFunctionComponent::Constant { value: -3f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -3f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.3333333333333333f64,
             },
@@ -7419,27 +7974,37 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     points: &[
                         SplinePoint {
                             location: -1.1f32,
-                            value: &SplineRepr::Fixed { value: 0.044f32 },
+                            value: &SplineRepr::Fixed {
+                                value: 0.044f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -1.02f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.51f32,
-                            value: &SplineRepr::Fixed { value: -0.2222f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.2222f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.44f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
                             location: -0.18f32,
-                            value: &SplineRepr::Fixed { value: -0.12f32 },
+                            value: &SplineRepr::Fixed {
+                                value: -0.12f32,
+                            },
                             derivative: 0f32,
                         },
                         SplinePoint {
@@ -7500,12 +8065,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7545,22 +8114,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7581,7 +8158,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -7596,7 +8175,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -7617,7 +8198,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -7651,17 +8234,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7740,12 +8329,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7785,22 +8378,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.3f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.3f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7821,7 +8422,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -7836,7 +8439,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.1f32,
                                                 },
                                                 SplinePoint {
@@ -7857,7 +8462,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.15f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.15f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -7891,17 +8498,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -7980,12 +8593,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.75f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2222f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2222f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8025,22 +8642,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8061,22 +8686,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.001f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.001f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.003f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.003f32,
+                                                    },
                                                     derivative: 0.01f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.05f32,
+                                                    },
                                                     derivative: 0.094000004f32,
                                                 },
                                                 SplinePoint {
@@ -8097,22 +8730,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8131,22 +8772,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -8188,7 +8837,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 1.23f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 1.23f32,
+                                                    },
                                                     derivative: 0.5138249f32,
                                                 },
                                             ],
@@ -8214,7 +8865,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 1f32,
-                                                    value: &SplineRepr::Fixed { value: 0.88f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.88f32,
+                                                    },
                                                     derivative: 0.43317974f32,
                                                 },
                                             ],
@@ -8256,22 +8909,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.25f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.25f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8292,7 +8953,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -8304,12 +8967,16 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.021f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.021f32,
+                                                    },
                                                     derivative: 0.07f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.35f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.35f32,
+                                                    },
                                                     derivative: 0.658f32,
                                                 },
                                                 SplinePoint {
@@ -8330,22 +8997,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8364,22 +9039,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8398,7 +9081,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8436,9 +9121,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -8447,7 +9130,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -8461,7 +9146,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8499,9 +9186,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -8510,7 +9195,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -8524,22 +9211,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.1f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.1f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8558,22 +9253,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: -0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.03f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.12f32,
                                                 },
                                                 SplinePoint {
@@ -8681,7 +9384,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.2f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.2f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
@@ -8715,17 +9420,23 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.099999994f32,
                                                 },
                                                 SplinePoint {
@@ -8749,22 +9460,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8783,22 +9502,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8817,7 +9544,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8855,9 +9584,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -8866,7 +9593,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -8880,7 +9609,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
@@ -8918,9 +9649,7 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                             },
                                                             SplinePoint {
                                                                 location: 1f32,
-                                                                value: &SplineRepr::Fixed {
-                                                                    value: 0.1f32,
-                                                                },
+                                                                value: &SplineRepr::Fixed { value: 0.1f32 },
                                                                 derivative: 0.049f32,
                                                             },
                                                         ],
@@ -8929,7 +9658,9 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.17f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.17f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                             ],
@@ -8943,22 +9674,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.05f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.05f32,
+                                                    },
                                                     derivative: 0.5f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -8977,22 +9716,30 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                                             points: &[
                                                 SplinePoint {
                                                     location: -1f32,
-                                                    value: &SplineRepr::Fixed { value: -0.02f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: -0.02f32,
+                                                    },
                                                     derivative: 0.015f32,
                                                 },
                                                 SplinePoint {
                                                     location: -0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0f32,
-                                                    value: &SplineRepr::Fixed { value: 0.01f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.01f32,
+                                                    },
                                                     derivative: 0f32,
                                                 },
                                                 SplinePoint {
                                                     location: 0.4f32,
-                                                    value: &SplineRepr::Fixed { value: 0.03f32 },
+                                                    value: &SplineRepr::Fixed {
+                                                        value: 0.03f32,
+                                                    },
                                                     derivative: 0.04f32,
                                                 },
                                                 SplinePoint {
@@ -9059,8 +9806,12 @@ pub const OVERWORLD_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
 pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
     noise: BaseNoiseRouter {
         full_component_stack: &[
-            BaseNoiseFunctionComponent::Constant { value: 0.64f64 },
-            BaseNoiseFunctionComponent::Constant { value: 2.5f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.64f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: 2.5f64,
+            },
             BaseNoiseFunctionComponent::ClampedYGradient {
                 data: &ClampedYGradientData {
                     from_y: -8f64,
@@ -9069,8 +9820,12 @@ pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 1f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -2.5f64 },
-            BaseNoiseFunctionComponent::Constant { value: 0.9375f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -2.5f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.9375f64,
+            },
             BaseNoiseFunctionComponent::ClampedYGradient {
                 data: &ClampedYGradientData {
                     from_y: 104f64,
@@ -9079,7 +9834,9 @@ pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 0f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: -0.9375f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: -0.9375f64,
+            },
             BaseNoiseFunctionComponent::InterpolatedNoiseSampler {
                 data: &InterpolatedNoiseSamplerData {
                     scaled_xz_scale: 0.25f64,
@@ -9163,7 +9920,9 @@ pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                 input_index: 19usize,
                 wrapper: WrapperType::CellCache,
             },
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
         ],
         barrier_noise: 21usize,
         fluid_level_floodedness_noise: 21usize,
@@ -9177,11 +9936,17 @@ pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
         vein_gap: 21usize,
     },
     surface_estimator: BaseSurfaceEstimator {
-        full_component_stack: &[BaseNoiseFunctionComponent::Constant { value: 0f64 }],
+        full_component_stack: &[
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
+        ],
     },
     multi_noise: BaseMultiNoiseRouter {
         full_component_stack: &[
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::ShiftedNoise {
                 shift_x_index: 0usize,
                 shift_y_index: 0usize,
@@ -9214,7 +9979,9 @@ pub const NETHER_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
 pub const END_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
     noise: BaseNoiseRouter {
         full_component_stack: &[
-            BaseNoiseFunctionComponent::Constant { value: 0.64f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.64f64,
+            },
             BaseNoiseFunctionComponent::Constant {
                 value: -0.234375f64,
             },
@@ -9226,8 +9993,12 @@ pub const END_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 1f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0.234375f64 },
-            BaseNoiseFunctionComponent::Constant { value: -23.4375f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0.234375f64,
+            },
+            BaseNoiseFunctionComponent::Constant {
+                value: -23.4375f64,
+            },
             BaseNoiseFunctionComponent::ClampedYGradient {
                 data: &ClampedYGradientData {
                     from_y: 56f64,
@@ -9236,7 +10007,9 @@ pub const END_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     to_value: 0f64,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 23.4375f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 23.4375f64,
+            },
             BaseNoiseFunctionComponent::EndIslands,
             BaseNoiseFunctionComponent::InterpolatedNoiseSampler {
                 data: &InterpolatedNoiseSamplerData {
@@ -9316,7 +10089,9 @@ pub const END_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
                     operation: UnaryOperation::Squeeze,
                 },
             },
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::Wrapper {
                 input_index: 7usize,
                 wrapper: WrapperType::Cache2D,
@@ -9334,11 +10109,17 @@ pub const END_BASE_NOISE_ROUTER: BaseNoiseRouters = BaseNoiseRouters {
         vein_gap: 20usize,
     },
     surface_estimator: BaseSurfaceEstimator {
-        full_component_stack: &[BaseNoiseFunctionComponent::Constant { value: 0f64 }],
+        full_component_stack: &[
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
+        ],
     },
     multi_noise: BaseMultiNoiseRouter {
         full_component_stack: &[
-            BaseNoiseFunctionComponent::Constant { value: 0f64 },
+            BaseNoiseFunctionComponent::Constant {
+                value: 0f64,
+            },
             BaseNoiseFunctionComponent::EndIslands,
             BaseNoiseFunctionComponent::Wrapper {
                 input_index: 1usize,

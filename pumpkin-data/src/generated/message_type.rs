@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 pub const CHAT: u8 = 0u8;
 pub const EMOTE_COMMAND: u8 = 1u8;
 pub const MSG_COMMAND_INCOMING: u8 = 2u8;

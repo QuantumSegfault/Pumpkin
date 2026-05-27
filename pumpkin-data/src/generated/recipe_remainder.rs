@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[must_use]
 #[allow(clippy::match_same_arms)]
 pub const fn get_recipe_remainder_id(item_id: u16) -> Option<u16> {

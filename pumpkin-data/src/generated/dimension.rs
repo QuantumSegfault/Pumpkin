@@ -1,8 +1,9 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use pumpkin_util::math::int_provider::{
-    BiasedToBottomIntProvider, ClampedIntProvider, ClampedNormalIntProvider, ConstantIntProvider,
-    IntProvider, NormalIntProvider, TrapezoidIntProvider, UniformIntProvider, WeightedEntry,
-    WeightedListIntProvider,
+    BiasedToBottomIntProvider, ClampedIntProvider, TrapezoidIntProvider,
+    ClampedNormalIntProvider, ConstantIntProvider, IntProvider, NormalIntProvider,
+    UniformIntProvider, WeightedEntry, WeightedListIntProvider,
 };
 #[derive(Debug, Clone)]
 pub struct Dimension {
@@ -37,12 +38,12 @@ impl Dimension {
         logical_height: 384i32,
         infiniburn: "#minecraft:infiniburn_overworld",
         ambient_light: 0f32,
-        monster_spawn_light_level: IntProvider::Object(NormalIntProvider::Uniform(
-            UniformIntProvider {
+        monster_spawn_light_level: IntProvider::Object(
+            NormalIntProvider::Uniform(UniformIntProvider {
                 min_inclusive: 0i32,
                 max_inclusive: 7i32,
-            },
-        )),
+            }),
+        ),
         monster_spawn_block_light_limit: 0u8,
         sky_color: Some(7907327i32),
         fog_color: Some(12638463i32),
@@ -61,12 +62,12 @@ impl Dimension {
         logical_height: 384i32,
         infiniburn: "#minecraft:infiniburn_overworld",
         ambient_light: 0f32,
-        monster_spawn_light_level: IntProvider::Object(NormalIntProvider::Uniform(
-            UniformIntProvider {
+        monster_spawn_light_level: IntProvider::Object(
+            NormalIntProvider::Uniform(UniformIntProvider {
                 min_inclusive: 0i32,
                 max_inclusive: 7i32,
-            },
-        )),
+            }),
+        ),
         monster_spawn_block_light_limit: 0u8,
         sky_color: Some(7907327i32),
         fog_color: Some(12638463i32),

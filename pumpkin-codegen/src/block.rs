@@ -1420,7 +1420,7 @@ fn get_be_data_from_nbt<R: Read + Seek>(
 
     let data_start = reader.stream_position().unwrap();
     let data_end = reader.seek(SeekFrom::End(0)).unwrap();
-    reader.seek(SeekFrom::Start(data_start));
+    let _ = reader.seek(SeekFrom::Start(data_start));
 
     let nbt_reader = &mut NbtReadHelperBedrock::new(&mut *reader);
 

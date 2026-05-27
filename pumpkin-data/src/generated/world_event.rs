@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[repr(u16)]
 pub enum WorldEvent {
     AnimationDragonSummonRoar = 3001u16,

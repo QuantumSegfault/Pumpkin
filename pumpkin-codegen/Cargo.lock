@@ -768,6 +768,7 @@ dependencies = [
  "heck",
  "indexmap",
  "md5",
+ "prettyplease",
  "proc-macro2",
  "pumpkin-nbt",
  "pumpkin-util",

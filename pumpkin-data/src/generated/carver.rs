@@ -1,9 +1,10 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use pumpkin_util::math::float_provider::{
-    ClampedNormalFloatProvider, ConstantFloatProvider, FloatProvider, NormalFloatProvider,
-    TrapezoidFloatProvider, UniformFloatProvider,
+    FloatProvider, NormalFloatProvider, ConstantFloatProvider, UniformFloatProvider,
+    TrapezoidFloatProvider, ClampedNormalFloatProvider,
 };
-use pumpkin_util::y_offset::{AboveBottom, Absolute, BelowTop, YOffset};
+use pumpkin_util::y_offset::{YOffset, Absolute, AboveBottom, BelowTop};
 pub enum HeightProvider {
     Uniform(UniformHeightProvider),
     Trapezoid(TrapezoidHeightProvider),
@@ -74,20 +75,22 @@ pub const CANYON: CarverConfig = CarverConfig {
     lava_level: YOffset::AboveBottom(AboveBottom { above_bottom: 8i8 }),
     replaceable: crate::tag::Block::MINECRAFT_OVERWORLD_CARVER_REPLACEABLES,
     additional: CarverAdditionalConfig::Canyon(CanyonCarverConfig {
-        vertical_rotation: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(-0.125f32, 0.125f32),
-        )),
+        vertical_rotation: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(-0.125f32, 0.125f32)),
+        ),
         shape: CanyonShapeConfig {
-            distance_factor: FloatProvider::Object(NormalFloatProvider::Uniform(
-                UniformFloatProvider::new(0.75f32, 1f32),
-            )),
-            thickness: FloatProvider::Object(NormalFloatProvider::Trapezoid(
-                TrapezoidFloatProvider::new(0f32, 6f32, 2f32),
-            )),
+            distance_factor: FloatProvider::Object(
+                NormalFloatProvider::Uniform(UniformFloatProvider::new(0.75f32, 1f32)),
+            ),
+            thickness: FloatProvider::Object(
+                NormalFloatProvider::Trapezoid(
+                    TrapezoidFloatProvider::new(0f32, 6f32, 2f32),
+                ),
+            ),
             width_smoothness: 3i32,
-            horizontal_radius_factor: FloatProvider::Object(NormalFloatProvider::Uniform(
-                UniformFloatProvider::new(0.75f32, 1f32),
-            )),
+            horizontal_radius_factor: FloatProvider::Object(
+                NormalFloatProvider::Uniform(UniformFloatProvider::new(0.75f32, 1f32)),
+            ),
             vertical_radius_default_factor: 1f32,
             vertical_radius_center_factor: 0f32,
         },
@@ -99,21 +102,21 @@ pub const CAVE: CarverConfig = CarverConfig {
         min_inclusive: YOffset::AboveBottom(AboveBottom { above_bottom: 8i8 }),
         max_inclusive: YOffset::Absolute(Absolute { absolute: 180i16 }),
     }),
-    y_scale: FloatProvider::Object(NormalFloatProvider::Uniform(UniformFloatProvider::new(
-        0.1f32, 0.9f32,
-    ))),
+    y_scale: FloatProvider::Object(
+        NormalFloatProvider::Uniform(UniformFloatProvider::new(0.1f32, 0.9f32)),
+    ),
     lava_level: YOffset::AboveBottom(AboveBottom { above_bottom: 8i8 }),
     replaceable: crate::tag::Block::MINECRAFT_OVERWORLD_CARVER_REPLACEABLES,
     additional: CarverAdditionalConfig::Cave(CaveCarverConfig {
-        horizontal_radius_multiplier: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(0.7f32, 1.4f32),
-        )),
-        vertical_radius_multiplier: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(0.8f32, 1.3f32),
-        )),
-        floor_level: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(-1f32, -0.4f32),
-        )),
+        horizontal_radius_multiplier: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(0.7f32, 1.4f32)),
+        ),
+        vertical_radius_multiplier: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(0.8f32, 1.3f32)),
+        ),
+        floor_level: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(-1f32, -0.4f32)),
+        ),
     }),
 };
 pub const CAVE_EXTRA_UNDERGROUND: CarverConfig = CarverConfig {
@@ -122,21 +125,21 @@ pub const CAVE_EXTRA_UNDERGROUND: CarverConfig = CarverConfig {
         min_inclusive: YOffset::AboveBottom(AboveBottom { above_bottom: 8i8 }),
         max_inclusive: YOffset::Absolute(Absolute { absolute: 47i16 }),
     }),
-    y_scale: FloatProvider::Object(NormalFloatProvider::Uniform(UniformFloatProvider::new(
-        0.1f32, 0.9f32,
-    ))),
+    y_scale: FloatProvider::Object(
+        NormalFloatProvider::Uniform(UniformFloatProvider::new(0.1f32, 0.9f32)),
+    ),
     lava_level: YOffset::AboveBottom(AboveBottom { above_bottom: 8i8 }),
     replaceable: crate::tag::Block::MINECRAFT_OVERWORLD_CARVER_REPLACEABLES,
     additional: CarverAdditionalConfig::Cave(CaveCarverConfig {
-        horizontal_radius_multiplier: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(0.7f32, 1.4f32),
-        )),
-        vertical_radius_multiplier: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(0.8f32, 1.3f32),
-        )),
-        floor_level: FloatProvider::Object(NormalFloatProvider::Uniform(
-            UniformFloatProvider::new(-1f32, -0.4f32),
-        )),
+        horizontal_radius_multiplier: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(0.7f32, 1.4f32)),
+        ),
+        vertical_radius_multiplier: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(0.8f32, 1.3f32)),
+        ),
+        floor_level: FloatProvider::Object(
+            NormalFloatProvider::Uniform(UniformFloatProvider::new(-1f32, -0.4f32)),
+        ),
     }),
 };
 pub const NETHER_CAVE: CarverConfig = CarverConfig {

@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use pumpkin_util::version::JavaMinecraftVersion;
 pub struct TrackedId {
     pub v1_21: u8,

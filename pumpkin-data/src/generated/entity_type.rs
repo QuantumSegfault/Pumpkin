@@ -1,11 +1,12 @@
 /* This file is generated. Do not edit manually. */
-use crate::attributes::Attributes;
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::data_component_impl::IDSetContent;
-use crate::sound::Sound;
-use crate::tag::RegistryKey;
 use crate::tag::Taggable;
-use pumpkin_util::HeightMap;
+use crate::tag::RegistryKey;
+use crate::attributes::Attributes;
+use crate::sound::Sound;
 use pumpkin_util::loot_table::*;
+use pumpkin_util::HeightMap;
 use std::hash::Hash;
 #[derive(Debug, Clone)]
 pub struct EntityType {
@@ -664,36 +665,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/blaze"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:blaze_rod",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 1f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:blaze_rod",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::KilledByPlayer]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.8f32],
         eye_height: 1.53f32,
@@ -765,102 +774,116 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/bogged"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:tipped_arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetPotion,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:tipped_arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::SetPotion,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.99f32],
         eye_height: 1.74f32,
@@ -910,36 +933,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/breeze"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:breeze_rod",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:breeze_rod",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::KilledByPlayer]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.77f32],
         eye_height: 1.3452f32,
@@ -1061,36 +1092,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/camel_husk"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:rotten_flesh",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 2f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 2f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.7f32, 2.375f32],
         eye_height: 2.275f32,
@@ -1141,30 +1180,40 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/cat"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:string",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[LootFunction {
-                        content: LootFunctionTypes::SetCount {
-                            count: LootFunctionNumberProvider::Uniform {
-                                min: 0f32,
-                                max: 2f32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:string",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            add: false,
-                        },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                    }]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 0.7f32],
         eye_height: 0.35f32,
@@ -1214,68 +1263,78 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/cave_spider"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:string",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:string",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:spider_eye",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: -1f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:spider_eye",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: -1f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.7f32, 0.5f32],
         eye_height: 0.45f32,
@@ -1391,71 +1450,87 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/chicken"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:feather",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:feather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:chicken",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:chicken",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.4f32, 0.7f32],
         eye_height: 0.644f32,
@@ -1504,50 +1579,72 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/cod"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:cod",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
-                                },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone_meal",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:cod",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::RandomChance { chance: 0.05f32 }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone_meal",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::RandomChance {
+                                    chance: 0.05f32,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.5f32, 0.3f32],
         eye_height: 0.195f32,
@@ -1618,36 +1715,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/copper_golem"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:copper_ingot",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:copper_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.49f32, 0.98f32],
         eye_height: 0.8125f32,
@@ -1697,81 +1802,97 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/cow"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:leather",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:beef",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:beef",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 1f32,
-                                        max: 3f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.4f32],
         eye_height: 1.3f32,
@@ -1871,57 +1992,69 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/creeper"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:gunpowder",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:gunpowder",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Tag(TagEntry {
-                            name: "minecraft:creeper_drop_music_discs",
-                            expand: true,
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::EntityProperties {
-                        entity: "attacker",
-                        expected_type: Some("#minecraft:skeletons"),
-                    }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Tag(TagEntry {
+                                    name: "minecraft:creeper_drop_music_discs",
+                                    expand: true,
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::EntityProperties {
+                                    entity: "attacker",
+                                    expected_type: Some("#minecraft:skeletons"),
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.7f32],
         eye_height: 1.445f32,
@@ -2015,49 +2148,63 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/dolphin"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:cod",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 1f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:cod",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
-                                },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 0.6f32],
         eye_height: 0.3f32,
@@ -2107,36 +2254,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/donkey"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:leather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.5f32],
         eye_height: 1.425f32,
@@ -2209,59 +2364,69 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/drowned"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rotten_flesh",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:copper_ingot",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:copper_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.74f32,
@@ -2333,164 +2498,198 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/elder_guardian"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:prismarine_shard",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:prismarine_shard",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:cod",
-                            }),
-                            weight: 3i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::FurnaceSmelt,
-                                    conditions: Some(&[LootCondition::AnyOf(&[
-                                        LootCondition::EntityProperties {
-                                            entity: "this",
-                                            expected_type: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
                                         },
-                                        LootCondition::EntityProperties {
-                                            entity: "direct_attacker",
-                                            expected_type: None,
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
                                         },
-                                    ])]),
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:prismarine_crystals",
-                            }),
-                            weight: 2i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            }]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Empty,
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:wet_sponge",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                            value: "minecraft:gameplay/fishing/fish",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:cod",
+                                }),
+                                weight: 3i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:prismarine_crystals",
+                                }),
+                                weight: 2i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Empty,
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:wet_sponge",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                    value: "minecraft:gameplay/fishing/fish",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
                                 },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Empty,
-                            weight: 4i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:tide_armor_trim_smithing_template",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                            ],
+                        ),
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Empty,
+                                weight: 4i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:tide_armor_trim_smithing_template",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.9975f32, 1.9975f32],
         eye_height: 0.99875f32,
@@ -2633,36 +2832,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/enderman"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:ender_pearl",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 1f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:ender_pearl",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 2.9f32],
         eye_height: 2.55f32,
@@ -2762,53 +2969,61 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/evoker"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:totem_of_undying",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:totem_of_undying",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:emerald",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:emerald",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.6575f32,
@@ -3158,95 +3373,115 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/ghast"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:ghast_tear",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:ghast_tear",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:gunpowder",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:music_disc_tears",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::DamageSourceProperties {
-                            expected_source_type: None,
-                            expected_direct_type: Some("minecraft:fireball"),
-                        },
-                        LootCondition::KilledByPlayer,
-                    ]),
-                    functions: Some(&[LootFunction {
-                        content: LootFunctionTypes::SetCount {
-                            count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                            add: false,
-                        },
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:gunpowder",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                    }]),
-                },
-            ]),
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:music_disc_tears",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::DamageSourceProperties {
+                                    expected_source_type: None,
+                                    expected_direct_type: Some("minecraft:fireball"),
+                                },
+                                LootCondition::KilledByPlayer,
+                            ],
+                        ),
+                        functions: Some(
+                            &[
+                                LootFunction {
+                                    content: LootFunctionTypes::SetCount {
+                                        count: LootFunctionNumberProvider::Constant {
+                                            value: 1f32,
+                                        },
+                                        add: false,
+                                    },
+                                    conditions: None,
+                                },
+                            ],
+                        ),
+                    },
+                ],
+            ),
         }),
         dimension: [4f32, 4f32],
         eye_height: 2.6f32,
@@ -3367,36 +3602,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/glow_squid"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:glow_ink_sac",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:glow_ink_sac",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.8f32, 0.8f32],
         eye_height: 0.4f32,
@@ -3497,125 +3740,157 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/guardian"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:prismarine_shard",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:prismarine_shard",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:cod",
-                            }),
-                            weight: 2i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::FurnaceSmelt,
-                                    conditions: Some(&[LootCondition::AnyOf(&[
-                                        LootCondition::EntityProperties {
-                                            entity: "this",
-                                            expected_type: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
                                         },
-                                        LootCondition::EntityProperties {
-                                            entity: "direct_attacker",
-                                            expected_type: None,
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
                                         },
-                                    ])]),
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:prismarine_crystals",
-                            }),
-                            weight: 2i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            }]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Empty,
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                            value: "minecraft:gameplay/fishing/fish",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:cod",
+                                }),
+                                weight: 2i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:prismarine_crystals",
+                                }),
+                                weight: 2i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Empty,
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                    value: "minecraft:gameplay/fishing/fish",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
                                 },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.85f32, 0.85f32],
         eye_height: 0.425f32,
@@ -3716,81 +3991,97 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/hoglin"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:porkchop",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:porkchop",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 2f32,
+                                                    max: 4f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 2f32,
-                                        max: 4f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:leather",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.4f32],
         eye_height: 1.19f32,
@@ -3862,36 +4153,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/horse"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:leather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.6f32],
         eye_height: 1.52f32,
@@ -3942,124 +4241,150 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/husk"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rotten_flesh",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rabbit_foot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::EntityProperties {
+                                            entity: "this",
+                                            expected_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:iron_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:carrot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:potato",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
                                 },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rabbit_foot",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::EntityProperties {
-                            entity: "this",
-                            expected_type: None,
-                        }]),
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:iron_ingot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:carrot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:potato",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            }]),
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.74f32,
@@ -4181,56 +4506,70 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/iron_golem"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:poppy",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:poppy",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:iron_ingot",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 3f32,
-                                    max: 5f32,
-                                },
-                                add: false,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:iron_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 3f32,
+                                                    max: 5f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.4f32, 2.7f32],
         eye_height: 2.295f32,
@@ -4456,36 +4795,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/llama"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:leather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.87f32],
         eye_height: 1.7765f32,
@@ -4557,101 +4904,141 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/magma_cube"),
-            pools: Some(&[LootPool {
-                entries: &[
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:magma_cream",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[
-                            LootCondition::Inverted(&LootCondition::DamageSourceProperties {
-                                expected_source_type: Some("minecraft:frog"),
-                                expected_direct_type: None,
-                            }),
-                            LootCondition::EntityProperties {
-                                entity: "this",
-                                expected_type: None,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:magma_cream",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::Inverted(
+                                            &LootCondition::DamageSourceProperties {
+                                                expected_source_type: Some("minecraft:frog"),
+                                                expected_direct_type: None,
+                                            },
+                                        ),
+                                        LootCondition::EntityProperties {
+                                            entity: "this",
+                                            expected_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: -2f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                        ]),
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: -2f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:pearlescent_froglight",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::DamageSourceProperties {
+                                            expected_source_type: Some("minecraft:frog"),
+                                            expected_direct_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:verdant_froglight",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::DamageSourceProperties {
+                                            expected_source_type: Some("minecraft:frog"),
+                                            expected_direct_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                        ]),
-                    },
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:pearlescent_froglight",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::DamageSourceProperties {
-                            expected_source_type: Some("minecraft:frog"),
-                            expected_direct_type: None,
-                        }]),
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:ochre_froglight",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::DamageSourceProperties {
+                                            expected_source_type: Some("minecraft:frog"),
+                                            expected_direct_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        }]),
-                    },
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:verdant_froglight",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::DamageSourceProperties {
-                            expected_source_type: Some("minecraft:frog"),
-                            expected_direct_type: None,
-                        }]),
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
-                            },
-                            conditions: None,
-                        }]),
-                    },
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:ochre_froglight",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::DamageSourceProperties {
-                            expected_source_type: Some("minecraft:frog"),
-                            expected_direct_type: None,
-                        }]),
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
-                            },
-                            conditions: None,
-                        }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
                     },
                 ],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+            ),
         }),
         dimension: [0.52f32, 0.52f32],
         eye_height: 0.325f32,
@@ -4837,81 +5224,97 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/mooshroom"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:leather",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:beef",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:beef",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 1f32,
-                                        max: 3f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.4f32],
         eye_height: 1.3f32,
@@ -4961,36 +5364,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/mule"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:leather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.6f32],
         eye_height: 1.52f32,
@@ -5041,27 +5452,35 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/nautilus"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:nautilus_shell",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: None,
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[
-                    LootCondition::KilledByPlayer,
-                    LootCondition::RandomChanceWithEnchantedBonus {
-                        enchantment: "minecraft:looting",
-                        chances: None,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:nautilus_shell",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
                     },
-                ]),
-                functions: None,
-            }]),
+                ],
+            ),
         }),
         dimension: [0.875f32, 0.95f32],
         eye_height: 0.2751f32,
@@ -5295,27 +5714,39 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/panda"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:bamboo",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[LootFunction {
-                        content: LootFunctionTypes::SetCount {
-                            count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                            add: false,
-                        },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bamboo",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                    }]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3f32, 1.25f32],
         eye_height: 1.0625f32,
@@ -5365,102 +5796,116 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/parched"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:tipped_arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetPotion,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:tipped_arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::SetPotion,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.99f32],
         eye_height: 1.74f32,
@@ -5512,36 +5957,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/parrot"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:feather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:feather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.5f32, 0.9f32],
         eye_height: 0.54f32,
@@ -5591,36 +6044,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/phantom"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:phantom_membrane",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 1f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:phantom_membrane",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::KilledByPlayer]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 0.5f32],
         eye_height: 0.175f32,
@@ -5670,49 +6131,63 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/pig"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:porkchop",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:porkchop",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
-                                },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 0.9f32],
         eye_height: 0.765f32,
@@ -5862,36 +6337,50 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/pillager"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:ominous_bottle",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:ominous_bottle",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetOminousBottleAmplifier,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::SetOminousBottleAmplifier,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::EntityProperties {
-                    entity: "this",
-                    expected_type: None,
-                }]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::EntityProperties {
+                                    entity: "this",
+                                    expected_type: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.6575f32,
@@ -5968,88 +6457,108 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/polar_bear"),
-            pools: Some(&[LootPool {
-                entries: &[
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:cod",
-                        }),
-                        weight: 3i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:cod",
+                                }),
+                                weight: 3i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:salmon",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    },
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:salmon",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
+                        functions: None,
                     },
                 ],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+            ),
         }),
         dimension: [1.4f32, 1.4f32],
         eye_height: 1.19f32,
@@ -6098,44 +6607,62 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/pufferfish"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:pufferfish",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:pufferfish",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone_meal",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::RandomChance { chance: 0.05f32 }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone_meal",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::RandomChance {
+                                    chance: 0.05f32,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.7f32, 0.7f32],
         eye_height: 0.455f32,
@@ -6186,99 +6713,121 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/rabbit"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rabbit_hide",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rabbit_hide",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rabbit",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rabbit_foot",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rabbit",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rabbit_foot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.49f32, 0.6f32],
         eye_height: 0.59f32,
@@ -6328,27 +6877,39 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/ravager"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:saddle",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[LootFunction {
-                        content: LootFunctionTypes::SetCount {
-                            count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                            add: false,
-                        },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:saddle",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                    }]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.95f32, 2.2f32],
         eye_height: 1.8700001f32,
@@ -6397,50 +6958,72 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/salmon"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:salmon",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::FurnaceSmelt,
-                            conditions: Some(&[LootCondition::AnyOf(&[
-                                LootCondition::EntityProperties {
-                                    entity: "this",
-                                    expected_type: None,
-                                },
-                                LootCondition::EntityProperties {
-                                    entity: "direct_attacker",
-                                    expected_type: None,
-                                },
-                            ])]),
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone_meal",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:salmon",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::RandomChance { chance: 0.05f32 }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone_meal",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::RandomChance {
+                                    chance: 0.05f32,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.7f32, 0.4f32],
         eye_height: 0.26f32,
@@ -6490,259 +7073,337 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/sheep"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:mutton",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 1f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:mutton",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Alternatives(AlternativeEntry {
-                            children: &[
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/white",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/orange",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/magenta",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/light_blue",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/yellow",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/lime",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/pink",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/gray",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/light_gray",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/cyan",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/purple",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/blue",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/brown",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/green",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/red",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                                LootPoolEntry {
-                                    content: LootPoolEntryTypes::LootTable(LootTableEntry {
-                                        value: "minecraft:entities/sheep/black",
-                                    }),
-                                    weight: 1i32,
-                                    quality: 0i32,
-                                    conditions: Some(&[LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    }]),
-                                    functions: None,
-                                },
-                            ],
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Alternatives(AlternativeEntry {
+                                    children: &[
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/white",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/orange",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/magenta",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/light_blue",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/yellow",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/lime",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/pink",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/gray",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/light_gray",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/cyan",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/purple",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/blue",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/brown",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/green",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/red",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                        LootPoolEntry {
+                                            content: LootPoolEntryTypes::LootTable(LootTableEntry {
+                                                value: "minecraft:entities/sheep/black",
+                                            }),
+                                            weight: 1i32,
+                                            quality: 0i32,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::EntityProperties {
+                                                        entity: "this",
+                                                        expected_type: None,
+                                                    },
+                                                ],
+                                            ),
+                                            functions: None,
+                                        },
+                                    ],
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.3f32],
         eye_height: 1.235f32,
@@ -6791,24 +7452,34 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/shulker"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:shulker_shell",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: None,
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::RandomChanceWithEnchantedBonus {
-                    enchantment: "minecraft:looting",
-                    chances: None,
-                }]),
-                functions: None,
-            }]),
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:shulker_shell",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1f32, 1f32],
         eye_height: 0.5f32,
@@ -6930,68 +7601,78 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/skeleton"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.99f32],
         eye_height: 1.74f32,
@@ -7041,36 +7722,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/skeleton_horse"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:bone",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.6f32],
         eye_height: 1.52f32,
@@ -7120,64 +7809,88 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/slime"),
-            pools: Some(&[LootPool {
-                entries: &[
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:slime_ball",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::Inverted(
-                            &LootCondition::DamageSourceProperties {
-                                expected_source_type: Some("minecraft:frog"),
-                                expected_direct_type: None,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:slime_ball",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::Inverted(
+                                            &LootCondition::DamageSourceProperties {
+                                                expected_source_type: Some("minecraft:frog"),
+                                                expected_direct_type: None,
+                                            },
+                                        ),
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                        )]),
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:slime_ball",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::DamageSourceProperties {
+                                            expected_source_type: Some("minecraft:frog"),
+                                            expected_direct_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::EntityProperties {
+                                    entity: "this",
+                                    expected_type: None,
                                 },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    },
-                    LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:slime_ball",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::DamageSourceProperties {
-                            expected_source_type: Some("minecraft:frog"),
-                            expected_direct_type: None,
-                        }]),
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
-                            },
-                            conditions: None,
-                        }]),
+                            ],
+                        ),
+                        functions: None,
                     },
                 ],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::EntityProperties {
-                    entity: "this",
-                    expected_type: None,
-                }]),
-                functions: None,
-            }]),
+            ),
         }),
         dimension: [0.52f32, 0.52f32],
         eye_height: 0.325f32,
@@ -7298,30 +8011,40 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/snow_golem"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:snowball",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[LootFunction {
-                        content: LootFunctionTypes::SetCount {
-                            count: LootFunctionNumberProvider::Uniform {
-                                min: 0f32,
-                                max: 15f32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:snowball",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 15f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            add: false,
-                        },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                    }]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.7f32, 1.9f32],
         eye_height: 1.7f32,
@@ -7437,68 +8160,78 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/spider"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:string",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:string",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:spider_eye",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: -1f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:spider_eye",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: -1f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.4f32, 0.9f32],
         eye_height: 0.65f32,
@@ -7613,36 +8346,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/squid"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:ink_sac",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:ink_sac",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.8f32, 0.8f32],
         eye_height: 0.4f32,
@@ -7692,102 +8433,116 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/stray"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:tipped_arrow",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetPotion,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:tipped_arrow",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::SetPotion,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::KilledByPlayer]),
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.99f32],
         eye_height: 1.74f32,
@@ -7837,36 +8592,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/strider"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:string",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 2f32,
-                                    max: 5f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:string",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 2f32,
+                                                    max: 5f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.7f32],
         eye_height: 1.445f32,
@@ -8032,36 +8795,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/trader_llama"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:leather",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 2f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:leather",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 1.87f32],
         eye_height: 1.7765f32,
@@ -8132,44 +8903,62 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/tropical_fish"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:tropical_fish",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Constant { value: 1f32 },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:tropical_fish",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Constant {
+                                                    value: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        }]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone_meal",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::RandomChance { chance: 0.05f32 }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone_meal",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::RandomChance {
+                                    chance: 0.05f32,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.5f32, 0.4f32],
         eye_height: 0.26f32,
@@ -8219,56 +9008,68 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/turtle"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:seagrass",
-                        }),
-                        weight: 3i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:seagrass",
+                                }),
+                                weight: 3i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bowl",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[LootCondition::DamageSourceProperties {
-                        expected_source_type: None,
-                        expected_direct_type: None,
-                    }]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bowl",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::DamageSourceProperties {
+                                    expected_source_type: None,
+                                    expected_direct_type: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.2f32, 0.4f32],
         eye_height: 0.34f32,
@@ -8417,36 +9218,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/vindicator"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:emerald",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 1f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:emerald",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::KilledByPlayer]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.6575f32,
@@ -8545,21 +9354,27 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/warden"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:sculk_catalyst",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: None,
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:sculk_catalyst",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.9f32, 2.9f32],
         eye_height: 2.4650002f32,
@@ -8631,195 +9446,213 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/witch"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:glowstone_dust",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:glowstone_dust",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:sugar",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:spider_eye",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:sugar",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:glass_bottle",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:gunpowder",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:spider_eye",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:stick",
-                            }),
-                            weight: 2i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[
-                                LootFunction {
-                                    content: LootFunctionTypes::SetCount {
-                                        count: LootFunctionNumberProvider::Uniform {
-                                            min: 0f32,
-                                            max: 2f32,
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
                                         },
-                                        add: false,
-                                    },
-                                    conditions: None,
-                                },
-                                LootFunction {
-                                    content: LootFunctionTypes::EnchantedCountIncrease,
-                                    conditions: None,
-                                },
-                            ]),
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Object(
-                        LootNumberProviderTypesProvider::Uniform(UniformLootNumberProvider {
-                            min: 1f32,
-                            max: 3f32,
-                        }),
-                    ),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:redstone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:glass_bottle",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:gunpowder",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:stick",
+                                }),
+                                weight: 2i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Object(
+                            LootNumberProviderTypesProvider::Uniform(UniformLootNumberProvider {
+                                min: 1f32,
+                                max: 3f32,
+                            }),
+                        ),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 4f32,
-                                        max: 8f32,
-                                    },
-                                    add: false,
-                                },
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:redstone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 4f32,
+                                                    max: 8f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-            ]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.62f32,
@@ -8920,89 +9753,103 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/wither_skeleton"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:coal",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: -1f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:coal",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: -1f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:bone",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:wither_skeleton_skull",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:bone",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:wither_skeleton_skull",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.7f32, 2.4f32],
         eye_height: 2.1f32,
@@ -9125,36 +9972,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zoglin"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:rotten_flesh",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 1f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 1f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.4f32],
         eye_height: 1.19f32,
@@ -9205,145 +10060,175 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zombie"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rotten_flesh",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:red_mushroom",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: Some(&[LootCondition::EntityProperties {
-                            entity: "this",
-                            expected_type: None,
-                        }]),
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:iron_ingot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:carrot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:potato",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            }]),
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:music_disc_lava_chicken",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::EntityProperties {
-                            entity: "this",
-                            expected_type: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:red_mushroom",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: Some(
+                                    &[
+                                        LootCondition::EntityProperties {
+                                            entity: "this",
+                                            expected_type: None,
+                                        },
+                                    ],
+                                ),
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:iron_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:carrot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:potato",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:music_disc_lava_chicken",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::EntityProperties {
+                                    entity: "this",
+                                    expected_type: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.74f32,
@@ -9393,36 +10278,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zombie_horse"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:rotten_flesh",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 2f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 2f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: None,
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [1.3964844f32, 1.6f32],
         eye_height: 1.52f32,
@@ -9473,36 +10366,44 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zombie_nautilus"),
-            pools: Some(&[LootPool {
-                entries: &[LootPoolEntry {
-                    content: LootPoolEntryTypes::Item(ItemEntry {
-                        name: "minecraft:rotten_flesh",
-                    }),
-                    weight: 1i32,
-                    quality: 0i32,
-                    conditions: None,
-                    functions: Some(&[
-                        LootFunction {
-                            content: LootFunctionTypes::SetCount {
-                                count: LootFunctionNumberProvider::Uniform {
-                                    min: 0f32,
-                                    max: 3f32,
-                                },
-                                add: false,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 3f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            conditions: None,
-                        },
-                        LootFunction {
-                            content: LootFunctionTypes::EnchantedCountIncrease,
-                            conditions: None,
-                        },
-                    ]),
-                }],
-                rolls: LootNumberProviderTypes::Constant(1f32),
-                bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                conditions: Some(&[LootCondition::KilledByPlayer]),
-                functions: None,
-            }]),
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(&[LootCondition::KilledByPlayer]),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.875f32, 0.95f32],
         eye_height: 0.2751f32,
@@ -9553,91 +10454,109 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zombie_villager"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rotten_flesh",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 2f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 2f32,
-                                    },
-                                    add: false,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:iron_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:carrot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:potato",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::FurnaceSmelt,
+                                            conditions: Some(
+                                                &[
+                                                    LootCondition::AnyOf(
+                                                        &[
+                                                            LootCondition::EntityProperties {
+                                                                entity: "this",
+                                                                expected_type: None,
+                                                            },
+                                                            LootCondition::EntityProperties {
+                                                                entity: "direct_attacker",
+                                                                expected_type: None,
+                                                            },
+                                                        ],
+                                                    ),
+                                                ],
+                                            ),
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
                                 },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:iron_ingot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:carrot",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: None,
-                        },
-                        LootPoolEntry {
-                            content: LootPoolEntryTypes::Item(ItemEntry {
-                                name: "minecraft:potato",
-                            }),
-                            weight: 1i32,
-                            quality: 0i32,
-                            conditions: None,
-                            functions: Some(&[LootFunction {
-                                content: LootFunctionTypes::FurnaceSmelt,
-                                conditions: Some(&[LootCondition::AnyOf(&[
-                                    LootCondition::EntityProperties {
-                                        entity: "this",
-                                        expected_type: None,
-                                    },
-                                    LootCondition::EntityProperties {
-                                        entity: "direct_attacker",
-                                        expected_type: None,
-                                    },
-                                ])]),
-                            }]),
-                        },
-                    ],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.74f32,
@@ -9688,89 +10607,103 @@ impl EntityType {
         loot_table: Some(LootTable {
             r#type: LootTableType::Entity,
             random_sequence: Some("minecraft:entities/zombified_piglin"),
-            pools: Some(&[
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:rotten_flesh",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
+            pools: Some(
+                &[
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:rotten_flesh",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
                                 conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
                             },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:gold_nugget",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
-                        conditions: None,
-                        functions: Some(&[
-                            LootFunction {
-                                content: LootFunctionTypes::SetCount {
-                                    count: LootFunctionNumberProvider::Uniform {
-                                        min: 0f32,
-                                        max: 1f32,
-                                    },
-                                    add: false,
-                                },
-                                conditions: None,
-                            },
-                            LootFunction {
-                                content: LootFunctionTypes::EnchantedCountIncrease,
-                                conditions: None,
-                            },
-                        ]),
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: None,
-                    functions: None,
-                },
-                LootPool {
-                    entries: &[LootPoolEntry {
-                        content: LootPoolEntryTypes::Item(ItemEntry {
-                            name: "minecraft:gold_ingot",
-                        }),
-                        weight: 1i32,
-                        quality: 0i32,
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
                         conditions: None,
                         functions: None,
-                    }],
-                    rolls: LootNumberProviderTypes::Constant(1f32),
-                    bonus_rolls: LootNumberProviderTypes::Constant(0f32),
-                    conditions: Some(&[
-                        LootCondition::KilledByPlayer,
-                        LootCondition::RandomChanceWithEnchantedBonus {
-                            enchantment: "minecraft:looting",
-                            chances: None,
-                        },
-                    ]),
-                    functions: None,
-                },
-            ]),
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:gold_nugget",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: Some(
+                                    &[
+                                        LootFunction {
+                                            content: LootFunctionTypes::SetCount {
+                                                count: LootFunctionNumberProvider::Uniform {
+                                                    min: 0f32,
+                                                    max: 1f32,
+                                                },
+                                                add: false,
+                                            },
+                                            conditions: None,
+                                        },
+                                        LootFunction {
+                                            content: LootFunctionTypes::EnchantedCountIncrease,
+                                            conditions: None,
+                                        },
+                                    ],
+                                ),
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: None,
+                        functions: None,
+                    },
+                    LootPool {
+                        entries: &[
+                            LootPoolEntry {
+                                content: LootPoolEntryTypes::Item(ItemEntry {
+                                    name: "minecraft:gold_ingot",
+                                }),
+                                weight: 1i32,
+                                quality: 0i32,
+                                conditions: None,
+                                functions: None,
+                            },
+                        ],
+                        rolls: LootNumberProviderTypes::Constant(1f32),
+                        bonus_rolls: LootNumberProviderTypes::Constant(0f32),
+                        conditions: Some(
+                            &[
+                                LootCondition::KilledByPlayer,
+                                LootCondition::RandomChanceWithEnchantedBonus {
+                                    enchantment: "minecraft:looting",
+                                    chances: None,
+                                },
+                            ],
+                        ),
+                        functions: None,
+                    },
+                ],
+            ),
         }),
         dimension: [0.6f32, 1.95f32],
         eye_height: 1.79f32,

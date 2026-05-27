@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use crate::tag::{RegistryKey, Tag, Taggable};
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct DamageType {
@@ -431,7 +432,7 @@ impl DamageType {
         scaling: DamageScaling::WhenCausedByLivingNonPlayer,
         id: 49,
     };
-    #[doc = r" Try to parse a damage type from a resource location string."]
+    /// Try to parse a damage type from a resource location string.
     pub fn from_name(name: &str) -> Option<Self> {
         match name {
             "arrow" => Some(Self::ARROW),

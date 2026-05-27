@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 pub struct DoublePerlinNoiseParameters {
     pub id: usize,
     pub first_octave: i32,
@@ -27,75 +28,76 @@ impl DoublePerlinNoiseParameters {
         }
     }
     pub fn id_to_parameters(id: &str) -> Option<&'static DoublePerlinNoiseParameters> {
-        let id = id
-            .strip_prefix("minecraft:")
-            .unwrap_or(id)
-            .replace("/", "_");
-        Some(match id.as_str() {
-            "aquifer_barrier" => &Self::AQUIFER_BARRIER,
-            "aquifer_fluid_level_floodedness" => &Self::AQUIFER_FLUID_LEVEL_FLOODEDNESS,
-            "aquifer_fluid_level_spread" => &Self::AQUIFER_FLUID_LEVEL_SPREAD,
-            "aquifer_lava" => &Self::AQUIFER_LAVA,
-            "badlands_pillar" => &Self::BADLANDS_PILLAR,
-            "badlands_pillar_roof" => &Self::BADLANDS_PILLAR_ROOF,
-            "badlands_surface" => &Self::BADLANDS_SURFACE,
-            "calcite" => &Self::CALCITE,
-            "cave_cheese" => &Self::CAVE_CHEESE,
-            "cave_entrance" => &Self::CAVE_ENTRANCE,
-            "cave_layer" => &Self::CAVE_LAYER,
-            "clay_bands_offset" => &Self::CLAY_BANDS_OFFSET,
-            "continentalness" => &Self::CONTINENTALNESS,
-            "continentalness_large" => &Self::CONTINENTALNESS_LARGE,
-            "erosion" => &Self::EROSION,
-            "erosion_large" => &Self::EROSION_LARGE,
-            "gravel" => &Self::GRAVEL,
-            "gravel_layer" => &Self::GRAVEL_LAYER,
-            "ice" => &Self::ICE,
-            "iceberg_pillar" => &Self::ICEBERG_PILLAR,
-            "iceberg_pillar_roof" => &Self::ICEBERG_PILLAR_ROOF,
-            "iceberg_surface" => &Self::ICEBERG_SURFACE,
-            "jagged" => &Self::JAGGED,
-            "nether_temperature" => &Self::NETHER_TEMPERATURE,
-            "nether_vegetation" => &Self::NETHER_VEGETATION,
-            "nether_state_selector" => &Self::NETHER_STATE_SELECTOR,
-            "nether_wart" => &Self::NETHER_WART,
-            "netherrack" => &Self::NETHERRACK,
-            "noodle" => &Self::NOODLE,
-            "noodle_ridge_a" => &Self::NOODLE_RIDGE_A,
-            "noodle_ridge_b" => &Self::NOODLE_RIDGE_B,
-            "noodle_thickness" => &Self::NOODLE_THICKNESS,
-            "offset" => &Self::OFFSET,
-            "ore_gap" => &Self::ORE_GAP,
-            "ore_vein_a" => &Self::ORE_VEIN_A,
-            "ore_vein_b" => &Self::ORE_VEIN_B,
-            "ore_veininess" => &Self::ORE_VEININESS,
-            "packed_ice" => &Self::PACKED_ICE,
-            "patch" => &Self::PATCH,
-            "pillar" => &Self::PILLAR,
-            "pillar_rareness" => &Self::PILLAR_RARENESS,
-            "pillar_thickness" => &Self::PILLAR_THICKNESS,
-            "powder_snow" => &Self::POWDER_SNOW,
-            "ridge" => &Self::RIDGE,
-            "soul_sand_layer" => &Self::SOUL_SAND_LAYER,
-            "spaghetti_2d" => &Self::SPAGHETTI_2D,
-            "spaghetti_2d_elevation" => &Self::SPAGHETTI_2D_ELEVATION,
-            "spaghetti_2d_modulator" => &Self::SPAGHETTI_2D_MODULATOR,
-            "spaghetti_2d_thickness" => &Self::SPAGHETTI_2D_THICKNESS,
-            "spaghetti_3d_1" => &Self::SPAGHETTI_3D_1,
-            "spaghetti_3d_2" => &Self::SPAGHETTI_3D_2,
-            "spaghetti_3d_rarity" => &Self::SPAGHETTI_3D_RARITY,
-            "spaghetti_3d_thickness" => &Self::SPAGHETTI_3D_THICKNESS,
-            "spaghetti_roughness" => &Self::SPAGHETTI_ROUGHNESS,
-            "spaghetti_roughness_modulator" => &Self::SPAGHETTI_ROUGHNESS_MODULATOR,
-            "surface" => &Self::SURFACE,
-            "surface_secondary" => &Self::SURFACE_SECONDARY,
-            "surface_swamp" => &Self::SURFACE_SWAMP,
-            "temperature" => &Self::TEMPERATURE,
-            "temperature_large" => &Self::TEMPERATURE_LARGE,
-            "vegetation" => &Self::VEGETATION,
-            "vegetation_large" => &Self::VEGETATION_LARGE,
-            _ => return None,
-        })
+        let id = id.strip_prefix("minecraft:").unwrap_or(id).replace("/", "_");
+        Some(
+            match id.as_str() {
+                "aquifer_barrier" => &Self::AQUIFER_BARRIER,
+                "aquifer_fluid_level_floodedness" => {
+                    &Self::AQUIFER_FLUID_LEVEL_FLOODEDNESS
+                }
+                "aquifer_fluid_level_spread" => &Self::AQUIFER_FLUID_LEVEL_SPREAD,
+                "aquifer_lava" => &Self::AQUIFER_LAVA,
+                "badlands_pillar" => &Self::BADLANDS_PILLAR,
+                "badlands_pillar_roof" => &Self::BADLANDS_PILLAR_ROOF,
+                "badlands_surface" => &Self::BADLANDS_SURFACE,
+                "calcite" => &Self::CALCITE,
+                "cave_cheese" => &Self::CAVE_CHEESE,
+                "cave_entrance" => &Self::CAVE_ENTRANCE,
+                "cave_layer" => &Self::CAVE_LAYER,
+                "clay_bands_offset" => &Self::CLAY_BANDS_OFFSET,
+                "continentalness" => &Self::CONTINENTALNESS,
+                "continentalness_large" => &Self::CONTINENTALNESS_LARGE,
+                "erosion" => &Self::EROSION,
+                "erosion_large" => &Self::EROSION_LARGE,
+                "gravel" => &Self::GRAVEL,
+                "gravel_layer" => &Self::GRAVEL_LAYER,
+                "ice" => &Self::ICE,
+                "iceberg_pillar" => &Self::ICEBERG_PILLAR,
+                "iceberg_pillar_roof" => &Self::ICEBERG_PILLAR_ROOF,
+                "iceberg_surface" => &Self::ICEBERG_SURFACE,
+                "jagged" => &Self::JAGGED,
+                "nether_temperature" => &Self::NETHER_TEMPERATURE,
+                "nether_vegetation" => &Self::NETHER_VEGETATION,
+                "nether_state_selector" => &Self::NETHER_STATE_SELECTOR,
+                "nether_wart" => &Self::NETHER_WART,
+                "netherrack" => &Self::NETHERRACK,
+                "noodle" => &Self::NOODLE,
+                "noodle_ridge_a" => &Self::NOODLE_RIDGE_A,
+                "noodle_ridge_b" => &Self::NOODLE_RIDGE_B,
+                "noodle_thickness" => &Self::NOODLE_THICKNESS,
+                "offset" => &Self::OFFSET,
+                "ore_gap" => &Self::ORE_GAP,
+                "ore_vein_a" => &Self::ORE_VEIN_A,
+                "ore_vein_b" => &Self::ORE_VEIN_B,
+                "ore_veininess" => &Self::ORE_VEININESS,
+                "packed_ice" => &Self::PACKED_ICE,
+                "patch" => &Self::PATCH,
+                "pillar" => &Self::PILLAR,
+                "pillar_rareness" => &Self::PILLAR_RARENESS,
+                "pillar_thickness" => &Self::PILLAR_THICKNESS,
+                "powder_snow" => &Self::POWDER_SNOW,
+                "ridge" => &Self::RIDGE,
+                "soul_sand_layer" => &Self::SOUL_SAND_LAYER,
+                "spaghetti_2d" => &Self::SPAGHETTI_2D,
+                "spaghetti_2d_elevation" => &Self::SPAGHETTI_2D_ELEVATION,
+                "spaghetti_2d_modulator" => &Self::SPAGHETTI_2D_MODULATOR,
+                "spaghetti_2d_thickness" => &Self::SPAGHETTI_2D_THICKNESS,
+                "spaghetti_3d_1" => &Self::SPAGHETTI_3D_1,
+                "spaghetti_3d_2" => &Self::SPAGHETTI_3D_2,
+                "spaghetti_3d_rarity" => &Self::SPAGHETTI_3D_RARITY,
+                "spaghetti_3d_thickness" => &Self::SPAGHETTI_3D_THICKNESS,
+                "spaghetti_roughness" => &Self::SPAGHETTI_ROUGHNESS,
+                "spaghetti_roughness_modulator" => &Self::SPAGHETTI_ROUGHNESS_MODULATOR,
+                "surface" => &Self::SURFACE,
+                "surface_secondary" => &Self::SURFACE_SECONDARY,
+                "surface_swamp" => &Self::SURFACE_SWAMP,
+                "temperature" => &Self::TEMPERATURE,
+                "temperature_large" => &Self::TEMPERATURE_LARGE,
+                "vegetation" => &Self::VEGETATION,
+                "vegetation_large" => &Self::VEGETATION_LARGE,
+                _ => return None,
+            },
+        )
     }
     pub const AQUIFER_BARRIER: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         0usize,
@@ -105,24 +107,22 @@ impl DoublePerlinNoiseParameters {
         1391399305011792652u64,
         0.8333333333333333f64,
     );
-    pub const AQUIFER_FLUID_LEVEL_FLOODEDNESS: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            1usize,
-            -7i32,
-            &[1f64],
-            1971819648764795038u64,
-            2506222294934710214u64,
-            0.8333333333333333f64,
-        );
-    pub const AQUIFER_FLUID_LEVEL_SPREAD: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            2usize,
-            -5i32,
-            &[1f64],
-            644356645385251490u64,
-            3919847117419490415u64,
-            0.8333333333333333f64,
-        );
+    pub const AQUIFER_FLUID_LEVEL_FLOODEDNESS: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        1usize,
+        -7i32,
+        &[1f64],
+        1971819648764795038u64,
+        2506222294934710214u64,
+        0.8333333333333333f64,
+    );
+    pub const AQUIFER_FLUID_LEVEL_SPREAD: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        2usize,
+        -5i32,
+        &[1f64],
+        644356645385251490u64,
+        3919847117419490415u64,
+        0.8333333333333333f64,
+    );
     pub const AQUIFER_LAVA: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         3usize,
         -1i32,
@@ -238,17 +238,7 @@ impl DoublePerlinNoiseParameters {
     pub const GRAVEL_LAYER: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         17usize,
         -8i32,
-        &[
-            1f64,
-            1f64,
-            1f64,
-            1f64,
-            0f64,
-            0f64,
-            0f64,
-            0f64,
-            0.013333333333333334f64,
-        ],
+        &[1f64, 1f64, 1f64, 1f64, 0f64, 0f64, 0f64, 0f64, 0.013333333333333334f64],
         3700753923770560088u64,
         5824949440647379577u64,
         1.4999999999999998f64,
@@ -289,8 +279,8 @@ impl DoublePerlinNoiseParameters {
         22usize,
         -16i32,
         &[
-            1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64,
-            1f64, 1f64,
+            1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64, 1f64,
+            1f64, 1f64, 1f64,
         ],
         17943115692276099476u64,
         8209175272455791875u64,
@@ -467,17 +457,7 @@ impl DoublePerlinNoiseParameters {
     pub const SOUL_SAND_LAYER: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         44usize,
         -8i32,
-        &[
-            1f64,
-            1f64,
-            1f64,
-            1f64,
-            0f64,
-            0f64,
-            0f64,
-            0f64,
-            0.013333333333333334f64,
-        ],
+        &[1f64, 1f64, 1f64, 1f64, 0f64, 0f64, 0f64, 0f64, 0.013333333333333334f64],
         12961541884992915651u64,
         3334122176816136683u64,
         1.4999999999999998f64,
@@ -490,33 +470,30 @@ impl DoublePerlinNoiseParameters {
         3026987529072654797u64,
         0.8333333333333333f64,
     );
-    pub const SPAGHETTI_2D_ELEVATION: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            46usize,
-            -8i32,
-            &[1f64],
-            3016672669024775629u64,
-            6607299245856183467u64,
-            0.8333333333333333f64,
-        );
-    pub const SPAGHETTI_2D_MODULATOR: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            47usize,
-            -11i32,
-            &[1f64],
-            10799755704108864802u64,
-            158433782627262445u64,
-            0.8333333333333333f64,
-        );
-    pub const SPAGHETTI_2D_THICKNESS: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            48usize,
-            -11i32,
-            &[1f64],
-            4027848931106223304u64,
-            16564638782843236028u64,
-            0.8333333333333333f64,
-        );
+    pub const SPAGHETTI_2D_ELEVATION: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        46usize,
+        -8i32,
+        &[1f64],
+        3016672669024775629u64,
+        6607299245856183467u64,
+        0.8333333333333333f64,
+    );
+    pub const SPAGHETTI_2D_MODULATOR: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        47usize,
+        -11i32,
+        &[1f64],
+        10799755704108864802u64,
+        158433782627262445u64,
+        0.8333333333333333f64,
+    );
+    pub const SPAGHETTI_2D_THICKNESS: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        48usize,
+        -11i32,
+        &[1f64],
+        4027848931106223304u64,
+        16564638782843236028u64,
+        0.8333333333333333f64,
+    );
     pub const SPAGHETTI_3D_1: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         49usize,
         -7i32,
@@ -541,15 +518,14 @@ impl DoublePerlinNoiseParameters {
         13710596865147759916u64,
         0.8333333333333333f64,
     );
-    pub const SPAGHETTI_3D_THICKNESS: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            52usize,
-            -8i32,
-            &[1f64],
-            9907390455466502951u64,
-            17587734509872338347u64,
-            0.8333333333333333f64,
-        );
+    pub const SPAGHETTI_3D_THICKNESS: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        52usize,
+        -8i32,
+        &[1f64],
+        9907390455466502951u64,
+        17587734509872338347u64,
+        0.8333333333333333f64,
+    );
     pub const SPAGHETTI_ROUGHNESS: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         53usize,
         -5i32,
@@ -558,15 +534,14 @@ impl DoublePerlinNoiseParameters {
         15318329311263287229u64,
         0.8333333333333333f64,
     );
-    pub const SPAGHETTI_ROUGHNESS_MODULATOR: DoublePerlinNoiseParameters =
-        DoublePerlinNoiseParameters::new(
-            54usize,
-            -8i32,
-            &[1f64],
-            16254484819590729386u64,
-            14613561992896323587u64,
-            0.8333333333333333f64,
-        );
+    pub const SPAGHETTI_ROUGHNESS_MODULATOR: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
+        54usize,
+        -8i32,
+        &[1f64],
+        16254484819590729386u64,
+        14613561992896323587u64,
+        0.8333333333333333f64,
+    );
     pub const SURFACE: DoublePerlinNoiseParameters = DoublePerlinNoiseParameters::new(
         55usize,
         -6i32,

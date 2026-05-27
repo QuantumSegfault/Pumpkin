@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Particle {
     AngryVillager,
@@ -120,7 +121,7 @@ pub enum Particle {
     Firefly,
 }
 impl Particle {
-    #[doc = r" Try to parse a `Particle` from a resource location string."]
+    /// Try to parse a `Particle` from a resource location string.
     #[must_use]
     #[allow(clippy::too_many_lines)]
     pub fn from_name(name: &str) -> Option<Self> {

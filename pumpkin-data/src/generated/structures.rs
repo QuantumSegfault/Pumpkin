@@ -1,8 +1,9 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 use pumpkin_util::math::floor_div;
 use pumpkin_util::random::{
-    RandomGenerator, RandomImpl, get_carver_seed, get_region_seed, legacy_rand::LegacyRand,
-    xoroshiro128::Xoroshiro,
+    RandomGenerator, RandomImpl, get_carver_seed, get_region_seed,
+    legacy_rand::LegacyRand, xoroshiro128::Xoroshiro,
 };
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
 pub enum StructureKeys {
@@ -87,10 +88,12 @@ impl SpreadType {
     pub fn get(&self, random: &mut RandomGenerator, bound: i32) -> i32 {
         match self {
             Self::Linear => random.next_bounded_i32(bound),
-            Self::Triangular => i32::midpoint(
-                random.next_bounded_i32(bound),
-                random.next_bounded_i32(bound),
-            ),
+            Self::Triangular => {
+                i32::midpoint(
+                    random.next_bounded_i32(bound),
+                    random.next_bounded_i32(bound),
+                )
+            }
         }
     }
 }
@@ -316,10 +319,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::AncientCity,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::AncientCity,
+                weight: 1u32,
+            },
+        ],
     };
     pub const BURIED_TREASURES: Self = StructureSet {
         placement: StructurePlacement {
@@ -332,10 +337,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::BuriedTreasure,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::BuriedTreasure,
+                weight: 1u32,
+            },
+        ],
     };
     pub const DESERT_PYRAMIDS: Self = StructureSet {
         placement: StructurePlacement {
@@ -348,10 +355,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::DesertPyramid,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::DesertPyramid,
+                weight: 1u32,
+            },
+        ],
     };
     pub const END_CITIES: Self = StructureSet {
         placement: StructurePlacement {
@@ -364,10 +373,12 @@ impl StructureSet {
                 spread_type: Some(SpreadType::Triangular),
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::EndCity,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::EndCity,
+                weight: 1u32,
+            },
+        ],
     };
     pub const IGLOOS: Self = StructureSet {
         placement: StructurePlacement {
@@ -380,10 +391,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::Igloo,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::Igloo,
+                weight: 1u32,
+            },
+        ],
     };
     pub const JUNGLE_TEMPLES: Self = StructureSet {
         placement: StructurePlacement {
@@ -396,10 +409,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::JunglePyramid,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::JunglePyramid,
+                weight: 1u32,
+            },
+        ],
     };
     pub const MINESHAFTS: Self = StructureSet {
         placement: StructurePlacement {
@@ -456,10 +471,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::NetherFossil,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::NetherFossil,
+                weight: 1u32,
+            },
+        ],
     };
     pub const OCEAN_MONUMENTS: Self = StructureSet {
         placement: StructurePlacement {
@@ -472,10 +489,12 @@ impl StructureSet {
                 spread_type: Some(SpreadType::Triangular),
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::Monument,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::Monument,
+                weight: 1u32,
+            },
+        ],
     };
     pub const OCEAN_RUINS: Self = StructureSet {
         placement: StructurePlacement {
@@ -510,10 +529,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::PillagerOutpost,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::PillagerOutpost,
+                weight: 1u32,
+            },
+        ],
     };
     pub const RUINED_PORTALS: Self = StructureSet {
         placement: StructurePlacement {
@@ -584,19 +605,19 @@ impl StructureSet {
             frequency_reduction_method: None,
             frequency: None,
             salt: 0u32,
-            placement_type: StructurePlacementType::ConcentricRings(
-                ConcentricRingsStructurePlacement {
-                    spread: 3i32,
-                    distance: 32i32,
-                    count: 128i32,
-                    preferred_biomes: "#minecraft:stronghold_biased_to",
-                },
-            ),
+            placement_type: StructurePlacementType::ConcentricRings(ConcentricRingsStructurePlacement {
+                spread: 3i32,
+                distance: 32i32,
+                count: 128i32,
+                preferred_biomes: "#minecraft:stronghold_biased_to",
+            }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::Stronghold,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::Stronghold,
+                weight: 1u32,
+            },
+        ],
     };
     pub const SWAMP_HUTS: Self = StructureSet {
         placement: StructurePlacement {
@@ -609,10 +630,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::SwampHut,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::SwampHut,
+                weight: 1u32,
+            },
+        ],
     };
     pub const TRAIL_RUINS: Self = StructureSet {
         placement: StructurePlacement {
@@ -625,10 +648,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::TrailRuins,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::TrailRuins,
+                weight: 1u32,
+            },
+        ],
     };
     pub const TRIAL_CHAMBERS: Self = StructureSet {
         placement: StructurePlacement {
@@ -641,10 +666,12 @@ impl StructureSet {
                 spread_type: None,
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::TrialChambers,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::TrialChambers,
+                weight: 1u32,
+            },
+        ],
     };
     pub const VILLAGES: Self = StructureSet {
         placement: StructurePlacement {
@@ -691,10 +718,12 @@ impl StructureSet {
                 spread_type: Some(SpreadType::Triangular),
             }),
         },
-        structures: &[WeightedEntry {
-            structure: StructureKeys::Mansion,
-            weight: 1u32,
-        }],
+        structures: &[
+            WeightedEntry {
+                structure: StructureKeys::Mansion,
+                weight: 1u32,
+            },
+        ],
     };
     pub const ALL: &'static [StructureSet] = &[
         Self::ANCIENT_CITIES,

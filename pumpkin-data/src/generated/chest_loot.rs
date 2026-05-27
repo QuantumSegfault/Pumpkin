@@ -1,4 +1,5 @@
 /* This file is generated. Do not edit manually. */
+#![cfg_attr(rustfmt, rustfmt::skip)]
 pub use pumpkin_util::chest_loot_table::*;
 static ABANDONED_MINESHAFT_POOL0_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
@@ -382,21 +383,25 @@ static ANCIENT_CITY_ICE_BOX_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 6i32,
     },
 ];
-static ANCIENT_CITY_ICE_BOX_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: ANCIENT_CITY_ICE_BOX_POOL0_ENTRIES,
-    min_rolls: 4i32,
-    max_rolls: 10i32,
-    empty_weight: 0i32,
-}];
+static ANCIENT_CITY_ICE_BOX_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: ANCIENT_CITY_ICE_BOX_POOL0_ENTRIES,
+        min_rolls: 4i32,
+        max_rolls: 10i32,
+        empty_weight: 0i32,
+    },
+];
 pub static ANCIENT_CITY_ICE_BOX: ChestLootTable = ChestLootTable {
     pools: ANCIENT_CITY_ICE_BOX_POOLS,
 };
-static BASTION_BRIDGE_POOL0_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:lodestone",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BASTION_BRIDGE_POOL0_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:lodestone",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BASTION_BRIDGE_POOL1_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:crossbow",
@@ -509,18 +514,22 @@ static BASTION_BRIDGE_POOL2_ENTRIES: &[ChestLootEntry] = &[
         max_count: 6i32,
     },
 ];
-static BASTION_BRIDGE_POOL3_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:snout_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
-static BASTION_BRIDGE_POOL4_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:netherite_upgrade_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BASTION_BRIDGE_POOL3_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:snout_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
+static BASTION_BRIDGE_POOL4_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:netherite_upgrade_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BASTION_BRIDGE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: BASTION_BRIDGE_POOL0_ENTRIES,
@@ -698,18 +707,22 @@ static BASTION_HOGLIN_STABLE_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 7i32,
     },
 ];
-static BASTION_HOGLIN_STABLE_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:snout_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
-static BASTION_HOGLIN_STABLE_POOL3_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:netherite_upgrade_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BASTION_HOGLIN_STABLE_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:snout_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
+static BASTION_HOGLIN_STABLE_POOL3_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:netherite_upgrade_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BASTION_HOGLIN_STABLE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: BASTION_HOGLIN_STABLE_POOL0_ENTRIES,
@@ -955,18 +968,22 @@ static BASTION_OTHER_POOL2_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static BASTION_OTHER_POOL3_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:snout_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
-static BASTION_OTHER_POOL4_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:netherite_upgrade_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BASTION_OTHER_POOL3_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:snout_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
+static BASTION_OTHER_POOL4_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:netherite_upgrade_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BASTION_OTHER_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: BASTION_OTHER_POOL0_ENTRIES,
@@ -1168,18 +1185,22 @@ static BASTION_TREASURE_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 8i32,
     },
 ];
-static BASTION_TREASURE_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:snout_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
-static BASTION_TREASURE_POOL3_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:netherite_upgrade_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BASTION_TREASURE_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:snout_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
+static BASTION_TREASURE_POOL3_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:netherite_upgrade_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BASTION_TREASURE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: BASTION_TREASURE_POOL0_ENTRIES,
@@ -1209,12 +1230,14 @@ static BASTION_TREASURE_POOLS: &[ChestLootPool] = &[
 pub static BASTION_TREASURE: ChestLootTable = ChestLootTable {
     pools: BASTION_TREASURE_POOLS,
 };
-static BURIED_TREASURE_POOL0_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:heart_of_the_sea",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BURIED_TREASURE_POOL0_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:heart_of_the_sea",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BURIED_TREASURE_POOL1_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:iron_ingot",
@@ -1289,12 +1312,14 @@ static BURIED_TREASURE_POOL4_ENTRIES: &[ChestLootEntry] = &[
         max_count: 4i32,
     },
 ];
-static BURIED_TREASURE_POOL5_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:potion",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static BURIED_TREASURE_POOL5_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:potion",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static BURIED_TREASURE_POOL6_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:copper_nautilus_armor",
@@ -1492,12 +1517,14 @@ static DESERT_PYRAMID_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 8i32,
     },
 ];
-static DESERT_PYRAMID_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:dune_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static DESERT_PYRAMID_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:dune_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static DESERT_PYRAMID_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: DESERT_PYRAMID_POOL0_ENTRIES,
@@ -1673,12 +1700,14 @@ static END_CITY_TREASURE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static END_CITY_TREASURE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:spire_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static END_CITY_TREASURE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:spire_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static END_CITY_TREASURE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: END_CITY_TREASURE_POOL0_ENTRIES,
@@ -1740,12 +1769,14 @@ static IGLOO_CHEST_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 3i32,
     },
 ];
-static IGLOO_CHEST_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:golden_apple",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static IGLOO_CHEST_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:golden_apple",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static IGLOO_CHEST_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: IGLOO_CHEST_POOL0_ENTRIES,
@@ -1843,12 +1874,14 @@ static JUNGLE_TEMPLE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static JUNGLE_TEMPLE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:wild_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static JUNGLE_TEMPLE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:wild_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static JUNGLE_TEMPLE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: JUNGLE_TEMPLE_POOL0_ENTRIES,
@@ -1866,18 +1899,22 @@ static JUNGLE_TEMPLE_POOLS: &[ChestLootPool] = &[
 pub static JUNGLE_TEMPLE: ChestLootTable = ChestLootTable {
     pools: JUNGLE_TEMPLE_POOLS,
 };
-static JUNGLE_TEMPLE_DISPENSER_POOL0_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:arrow",
-    weight: 30i32,
-    min_count: 2i32,
-    max_count: 7i32,
-}];
-static JUNGLE_TEMPLE_DISPENSER_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: JUNGLE_TEMPLE_DISPENSER_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 2i32,
-    empty_weight: 0i32,
-}];
+static JUNGLE_TEMPLE_DISPENSER_POOL0_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:arrow",
+        weight: 30i32,
+        min_count: 2i32,
+        max_count: 7i32,
+    },
+];
+static JUNGLE_TEMPLE_DISPENSER_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: JUNGLE_TEMPLE_DISPENSER_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 2i32,
+        empty_weight: 0i32,
+    },
+];
 pub static JUNGLE_TEMPLE_DISPENSER: ChestLootTable = ChestLootTable {
     pools: JUNGLE_TEMPLE_DISPENSER_POOLS,
 };
@@ -1961,12 +1998,14 @@ static NETHER_BRIDGE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 4i32,
     },
 ];
-static NETHER_BRIDGE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:rib_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static NETHER_BRIDGE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:rib_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static NETHER_BRIDGE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: NETHER_BRIDGE_POOL0_ENTRIES,
@@ -1984,12 +2023,14 @@ static NETHER_BRIDGE_POOLS: &[ChestLootPool] = &[
 pub static NETHER_BRIDGE: ChestLootTable = ChestLootTable {
     pools: NETHER_BRIDGE_POOLS,
 };
-static PILLAGER_OUTPOST_POOL0_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:crossbow",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static PILLAGER_OUTPOST_POOL0_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:crossbow",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static PILLAGER_OUTPOST_POOL1_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:wheat",
@@ -2010,12 +2051,14 @@ static PILLAGER_OUTPOST_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 5i32,
     },
 ];
-static PILLAGER_OUTPOST_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:dark_oak_log",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 3i32,
-}];
+static PILLAGER_OUTPOST_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:dark_oak_log",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 3i32,
+    },
+];
 static PILLAGER_OUTPOST_POOL3_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:experience_bottle",
@@ -2054,18 +2097,22 @@ static PILLAGER_OUTPOST_POOL3_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static PILLAGER_OUTPOST_POOL4_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:goat_horn",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
-static PILLAGER_OUTPOST_POOL5_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:sentry_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static PILLAGER_OUTPOST_POOL4_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:goat_horn",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
+static PILLAGER_OUTPOST_POOL5_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:sentry_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static PILLAGER_OUTPOST_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: PILLAGER_OUTPOST_POOL0_ENTRIES,
@@ -2259,12 +2306,14 @@ static RUINED_PORTAL_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 2i32,
     },
 ];
-static RUINED_PORTAL_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:lodestone",
-    weight: 2i32,
-    min_count: 1i32,
-    max_count: 2i32,
-}];
+static RUINED_PORTAL_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:lodestone",
+        weight: 2i32,
+        min_count: 1i32,
+        max_count: 2i32,
+    },
+];
 static RUINED_PORTAL_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: RUINED_PORTAL_POOL0_ENTRIES,
@@ -2282,12 +2331,14 @@ static RUINED_PORTAL_POOLS: &[ChestLootPool] = &[
 pub static RUINED_PORTAL: ChestLootTable = ChestLootTable {
     pools: RUINED_PORTAL_POOLS,
 };
-static SHIPWRECK_MAP_POOL0_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:map",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static SHIPWRECK_MAP_POOL0_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:map",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static SHIPWRECK_MAP_POOL1_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:compass",
@@ -2326,12 +2377,14 @@ static SHIPWRECK_MAP_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 5i32,
     },
 ];
-static SHIPWRECK_MAP_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:coast_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static SHIPWRECK_MAP_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:coast_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static SHIPWRECK_MAP_POOL3_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:copper_nautilus_armor",
@@ -2491,12 +2544,14 @@ static SHIPWRECK_SUPPLY_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static SHIPWRECK_SUPPLY_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:coast_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static SHIPWRECK_SUPPLY_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:coast_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static SHIPWRECK_SUPPLY_POOL2_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:copper_nautilus_armor",
@@ -2598,12 +2653,14 @@ static SHIPWRECK_TREASURE_POOL1_ENTRIES: &[ChestLootEntry] = &[
         max_count: 10i32,
     },
 ];
-static SHIPWRECK_TREASURE_POOL2_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:coast_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 2i32,
-    max_count: 2i32,
-}];
+static SHIPWRECK_TREASURE_POOL2_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:coast_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 2i32,
+        max_count: 2i32,
+    },
+];
 static SHIPWRECK_TREASURE_POOL3_ENTRIES: &[ChestLootEntry] = &[
     ChestLootEntry {
         item: "minecraft:copper_nautilus_armor",
@@ -3105,12 +3162,14 @@ static STRONGHOLD_CORRIDOR_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static STRONGHOLD_CORRIDOR_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:eye_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static STRONGHOLD_CORRIDOR_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:eye_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static STRONGHOLD_CORRIDOR_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: STRONGHOLD_CORRIDOR_POOL0_ENTRIES,
@@ -3178,12 +3237,14 @@ static STRONGHOLD_CROSSING_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static STRONGHOLD_CROSSING_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: STRONGHOLD_CROSSING_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 4i32,
-    empty_weight: 0i32,
-}];
+static STRONGHOLD_CROSSING_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: STRONGHOLD_CROSSING_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 4i32,
+        empty_weight: 0i32,
+    },
+];
 pub static STRONGHOLD_CROSSING: ChestLootTable = ChestLootTable {
     pools: STRONGHOLD_CROSSING_POOLS,
 };
@@ -3219,12 +3280,14 @@ static STRONGHOLD_LIBRARY_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static STRONGHOLD_LIBRARY_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:eye_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static STRONGHOLD_LIBRARY_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:eye_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static STRONGHOLD_LIBRARY_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: STRONGHOLD_LIBRARY_POOL0_ENTRIES,
@@ -3304,12 +3367,14 @@ static TRIAL_CHAMBERS_CORRIDOR_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 20i32,
     },
 ];
-static TRIAL_CHAMBERS_CORRIDOR_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_CORRIDOR_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 3i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_CORRIDOR_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_CORRIDOR_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 3i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_CORRIDOR: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_CORRIDOR_POOLS,
 };
@@ -3345,12 +3410,14 @@ static TRIAL_CHAMBERS_ENTRANCE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 10i32,
     },
 ];
-static TRIAL_CHAMBERS_ENTRANCE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_ENTRANCE_POOL0_ENTRIES,
-    min_rolls: 2i32,
-    max_rolls: 3i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_ENTRANCE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_ENTRANCE_POOL0_ENTRIES,
+        min_rolls: 2i32,
+        max_rolls: 3i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_ENTRANCE: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_ENTRANCE_POOLS,
 };
@@ -3404,12 +3471,14 @@ static TRIAL_CHAMBERS_INTERSECTION_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 2i32,
     },
 ];
-static TRIAL_CHAMBERS_INTERSECTION_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_INTERSECTION_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 3i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_INTERSECTION_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_INTERSECTION_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 3i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_INTERSECTION: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_INTERSECTION_POOLS,
 };
@@ -3469,12 +3538,14 @@ static TRIAL_CHAMBERS_INTERSECTION_BARREL_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 10i32,
     },
 ];
-static TRIAL_CHAMBERS_INTERSECTION_BARREL_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_INTERSECTION_BARREL_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 3i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_INTERSECTION_BARREL_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_INTERSECTION_BARREL_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 3i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_INTERSECTION_BARREL: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_INTERSECTION_BARREL_POOLS,
 };
@@ -3560,12 +3631,14 @@ static TRIAL_CHAMBERS_REWARD_COMMON_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 2i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_COMMON_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_COMMON_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_COMMON_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_COMMON_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_COMMON: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_COMMON_POOLS,
 };
@@ -3627,12 +3700,14 @@ static TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOL0_ENTRIES: &[ChestLootEntry] = &
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON_POOLS,
 };
@@ -3698,12 +3773,14 @@ static TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_OMINOUS_RARE: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_POOLS,
 };
@@ -3739,12 +3816,14 @@ static TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOL0_ENTRIES: &[ChestLootEntry] = &
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE_POOLS,
 };
@@ -3816,12 +3895,14 @@ static TRIAL_CHAMBERS_REWARD_RARE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_RARE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_RARE_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_RARE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_RARE_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_RARE: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_RARE_POOLS,
 };
@@ -3857,12 +3938,14 @@ static TRIAL_CHAMBERS_REWARD_UNIQUE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_REWARD_UNIQUE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_REWARD_UNIQUE_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 1i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_REWARD_UNIQUE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_REWARD_UNIQUE_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 1i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_REWARD_UNIQUE: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_REWARD_UNIQUE_POOLS,
 };
@@ -3952,12 +4035,14 @@ static TRIAL_CHAMBERS_SUPPLY_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static TRIAL_CHAMBERS_SUPPLY_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: TRIAL_CHAMBERS_SUPPLY_POOL0_ENTRIES,
-    min_rolls: 3i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static TRIAL_CHAMBERS_SUPPLY_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: TRIAL_CHAMBERS_SUPPLY_POOL0_ENTRIES,
+        min_rolls: 3i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static TRIAL_CHAMBERS_SUPPLY: ChestLootTable = ChestLootTable {
     pools: TRIAL_CHAMBERS_SUPPLY_POOLS,
 };
@@ -4219,12 +4304,14 @@ static VILLAGE_VILLAGE_ARMORER_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static VILLAGE_VILLAGE_ARMORER_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_ARMORER_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_ARMORER_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_ARMORER_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_ARMORER: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_ARMORER_POOLS,
 };
@@ -4266,12 +4353,14 @@ static VILLAGE_VILLAGE_BUTCHER_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 3i32,
     },
 ];
-static VILLAGE_VILLAGE_BUTCHER_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_BUTCHER_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_BUTCHER_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_BUTCHER_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_BUTCHER: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_BUTCHER_POOLS,
 };
@@ -4307,12 +4396,14 @@ static VILLAGE_VILLAGE_CARTOGRAPHER_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 2i32,
     },
 ];
-static VILLAGE_VILLAGE_CARTOGRAPHER_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_CARTOGRAPHER_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_CARTOGRAPHER_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_CARTOGRAPHER_POOL0_ENTRIES,
@@ -4380,12 +4471,14 @@ static VILLAGE_VILLAGE_DESERT_HOUSE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 3i32,
     },
 ];
-static VILLAGE_VILLAGE_DESERT_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_DESERT_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_DESERT_HOUSE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_DESERT_HOUSE_POOL0_ENTRIES,
@@ -4447,12 +4540,14 @@ static VILLAGE_VILLAGE_FISHER_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 3i32,
     },
 ];
-static VILLAGE_VILLAGE_FISHER_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_FISHER_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_FISHER_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_FISHER_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_FISHER: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_FISHER_POOLS,
 };
@@ -4494,12 +4589,14 @@ static VILLAGE_VILLAGE_FLETCHER_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 3i32,
     },
 ];
-static VILLAGE_VILLAGE_FLETCHER_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_FLETCHER_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_FLETCHER_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_FLETCHER_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_FLETCHER: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_FLETCHER_POOLS,
 };
@@ -4553,12 +4650,14 @@ static VILLAGE_VILLAGE_MASON_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static VILLAGE_VILLAGE_MASON_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_MASON_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_MASON_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_MASON_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_MASON: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_MASON_POOLS,
 };
@@ -4624,12 +4723,14 @@ static VILLAGE_VILLAGE_PLAINS_HOUSE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 2i32,
     },
 ];
-static VILLAGE_VILLAGE_PLAINS_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_PLAINS_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_PLAINS_HOUSE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_PLAINS_HOUSE_POOL0_ENTRIES,
@@ -4709,12 +4810,14 @@ static VILLAGE_VILLAGE_SAVANNA_HOUSE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static VILLAGE_VILLAGE_SAVANNA_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_SAVANNA_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_SAVANNA_HOUSE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_SAVANNA_HOUSE_POOL0_ENTRIES,
@@ -4782,12 +4885,14 @@ static VILLAGE_VILLAGE_SHEPHERD_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 6i32,
     },
 ];
-static VILLAGE_VILLAGE_SHEPHERD_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_SHEPHERD_POOL0_ENTRIES,
-    min_rolls: 1i32,
-    max_rolls: 5i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_SHEPHERD_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_SHEPHERD_POOL0_ENTRIES,
+        min_rolls: 1i32,
+        max_rolls: 5i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_SHEPHERD: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_SHEPHERD_POOLS,
 };
@@ -4853,12 +4958,14 @@ static VILLAGE_VILLAGE_SNOWY_HOUSE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 4i32,
     },
 ];
-static VILLAGE_VILLAGE_SNOWY_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_SNOWY_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_SNOWY_HOUSE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_SNOWY_HOUSE_POOL0_ENTRIES,
@@ -4950,12 +5057,14 @@ static VILLAGE_VILLAGE_TAIGA_HOUSE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 5i32,
     },
 ];
-static VILLAGE_VILLAGE_TAIGA_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_TAIGA_HOUSE_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_TAIGA_HOUSE_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_TAIGA_HOUSE_POOL0_ENTRIES,
@@ -5023,12 +5132,14 @@ static VILLAGE_VILLAGE_TANNERY_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 4i32,
     },
 ];
-static VILLAGE_VILLAGE_TANNERY_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_TANNERY_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_TANNERY_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_TANNERY_POOL0_ENTRIES,
@@ -5084,12 +5195,14 @@ static VILLAGE_VILLAGE_TEMPLE_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 4i32,
     },
 ];
-static VILLAGE_VILLAGE_TEMPLE_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_TEMPLE_POOL0_ENTRIES,
-    min_rolls: 3i32,
-    max_rolls: 8i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_TEMPLE_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_TEMPLE_POOL0_ENTRIES,
+        min_rolls: 3i32,
+        max_rolls: 8i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_TEMPLE: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_TEMPLE_POOLS,
 };
@@ -5143,12 +5256,14 @@ static VILLAGE_VILLAGE_TOOLSMITH_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static VILLAGE_VILLAGE_TOOLSMITH_POOLS: &[ChestLootPool] = &[ChestLootPool {
-    entries: VILLAGE_VILLAGE_TOOLSMITH_POOL0_ENTRIES,
-    min_rolls: 3i32,
-    max_rolls: 8i32,
-    empty_weight: 0i32,
-}];
+static VILLAGE_VILLAGE_TOOLSMITH_POOLS: &[ChestLootPool] = &[
+    ChestLootPool {
+        entries: VILLAGE_VILLAGE_TOOLSMITH_POOL0_ENTRIES,
+        min_rolls: 3i32,
+        max_rolls: 8i32,
+        empty_weight: 0i32,
+    },
+];
 pub static VILLAGE_VILLAGE_TOOLSMITH: ChestLootTable = ChestLootTable {
     pools: VILLAGE_VILLAGE_TOOLSMITH_POOLS,
 };
@@ -5274,12 +5389,14 @@ static VILLAGE_VILLAGE_WEAPONSMITH_POOL0_ENTRIES: &[ChestLootEntry] = &[
         max_count: 1i32,
     },
 ];
-static VILLAGE_VILLAGE_WEAPONSMITH_POOL1_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:bundle",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static VILLAGE_VILLAGE_WEAPONSMITH_POOL1_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:bundle",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static VILLAGE_VILLAGE_WEAPONSMITH_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: VILLAGE_VILLAGE_WEAPONSMITH_POOL0_ENTRIES,
@@ -5447,12 +5564,14 @@ static WOODLAND_MANSION_POOL2_ENTRIES: &[ChestLootEntry] = &[
         max_count: 8i32,
     },
 ];
-static WOODLAND_MANSION_POOL3_ENTRIES: &[ChestLootEntry] = &[ChestLootEntry {
-    item: "minecraft:vex_armor_trim_smithing_template",
-    weight: 1i32,
-    min_count: 1i32,
-    max_count: 1i32,
-}];
+static WOODLAND_MANSION_POOL3_ENTRIES: &[ChestLootEntry] = &[
+    ChestLootEntry {
+        item: "minecraft:vex_armor_trim_smithing_template",
+        weight: 1i32,
+        min_count: 1i32,
+        max_count: 1i32,
+    },
+];
 static WOODLAND_MANSION_POOLS: &[ChestLootPool] = &[
     ChestLootPool {
         entries: WOODLAND_MANSION_POOL0_ENTRIES,
@@ -5511,13 +5630,19 @@ pub fn get_chest_loot_table(key: &str) -> Option<&'static ChestLootTable> {
         "minecraft:chests/stronghold_library" => Some(&STRONGHOLD_LIBRARY),
         "minecraft:chests/trial_chambers/corridor" => Some(&TRIAL_CHAMBERS_CORRIDOR),
         "minecraft:chests/trial_chambers/entrance" => Some(&TRIAL_CHAMBERS_ENTRANCE),
-        "minecraft:chests/trial_chambers/intersection" => Some(&TRIAL_CHAMBERS_INTERSECTION),
+        "minecraft:chests/trial_chambers/intersection" => {
+            Some(&TRIAL_CHAMBERS_INTERSECTION)
+        }
         "minecraft:chests/trial_chambers/intersection_barrel" => {
             Some(&TRIAL_CHAMBERS_INTERSECTION_BARREL)
         }
         "minecraft:chests/trial_chambers/reward" => Some(&TRIAL_CHAMBERS_REWARD),
-        "minecraft:chests/trial_chambers/reward_common" => Some(&TRIAL_CHAMBERS_REWARD_COMMON),
-        "minecraft:chests/trial_chambers/reward_ominous" => Some(&TRIAL_CHAMBERS_REWARD_OMINOUS),
+        "minecraft:chests/trial_chambers/reward_common" => {
+            Some(&TRIAL_CHAMBERS_REWARD_COMMON)
+        }
+        "minecraft:chests/trial_chambers/reward_ominous" => {
+            Some(&TRIAL_CHAMBERS_REWARD_OMINOUS)
+        }
         "minecraft:chests/trial_chambers/reward_ominous_common" => {
             Some(&TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON)
         }
@@ -5527,27 +5652,45 @@ pub fn get_chest_loot_table(key: &str) -> Option<&'static ChestLootTable> {
         "minecraft:chests/trial_chambers/reward_ominous_unique" => {
             Some(&TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE)
         }
-        "minecraft:chests/trial_chambers/reward_rare" => Some(&TRIAL_CHAMBERS_REWARD_RARE),
-        "minecraft:chests/trial_chambers/reward_unique" => Some(&TRIAL_CHAMBERS_REWARD_UNIQUE),
+        "minecraft:chests/trial_chambers/reward_rare" => {
+            Some(&TRIAL_CHAMBERS_REWARD_RARE)
+        }
+        "minecraft:chests/trial_chambers/reward_unique" => {
+            Some(&TRIAL_CHAMBERS_REWARD_UNIQUE)
+        }
         "minecraft:chests/trial_chambers/supply" => Some(&TRIAL_CHAMBERS_SUPPLY),
         "minecraft:chests/underwater_ruin_big" => Some(&UNDERWATER_RUIN_BIG),
         "minecraft:chests/underwater_ruin_small" => Some(&UNDERWATER_RUIN_SMALL),
         "minecraft:chests/village/village_armorer" => Some(&VILLAGE_VILLAGE_ARMORER),
         "minecraft:chests/village/village_butcher" => Some(&VILLAGE_VILLAGE_BUTCHER),
-        "minecraft:chests/village/village_cartographer" => Some(&VILLAGE_VILLAGE_CARTOGRAPHER),
-        "minecraft:chests/village/village_desert_house" => Some(&VILLAGE_VILLAGE_DESERT_HOUSE),
+        "minecraft:chests/village/village_cartographer" => {
+            Some(&VILLAGE_VILLAGE_CARTOGRAPHER)
+        }
+        "minecraft:chests/village/village_desert_house" => {
+            Some(&VILLAGE_VILLAGE_DESERT_HOUSE)
+        }
         "minecraft:chests/village/village_fisher" => Some(&VILLAGE_VILLAGE_FISHER),
         "minecraft:chests/village/village_fletcher" => Some(&VILLAGE_VILLAGE_FLETCHER),
         "minecraft:chests/village/village_mason" => Some(&VILLAGE_VILLAGE_MASON),
-        "minecraft:chests/village/village_plains_house" => Some(&VILLAGE_VILLAGE_PLAINS_HOUSE),
-        "minecraft:chests/village/village_savanna_house" => Some(&VILLAGE_VILLAGE_SAVANNA_HOUSE),
+        "minecraft:chests/village/village_plains_house" => {
+            Some(&VILLAGE_VILLAGE_PLAINS_HOUSE)
+        }
+        "minecraft:chests/village/village_savanna_house" => {
+            Some(&VILLAGE_VILLAGE_SAVANNA_HOUSE)
+        }
         "minecraft:chests/village/village_shepherd" => Some(&VILLAGE_VILLAGE_SHEPHERD),
-        "minecraft:chests/village/village_snowy_house" => Some(&VILLAGE_VILLAGE_SNOWY_HOUSE),
-        "minecraft:chests/village/village_taiga_house" => Some(&VILLAGE_VILLAGE_TAIGA_HOUSE),
+        "minecraft:chests/village/village_snowy_house" => {
+            Some(&VILLAGE_VILLAGE_SNOWY_HOUSE)
+        }
+        "minecraft:chests/village/village_taiga_house" => {
+            Some(&VILLAGE_VILLAGE_TAIGA_HOUSE)
+        }
         "minecraft:chests/village/village_tannery" => Some(&VILLAGE_VILLAGE_TANNERY),
         "minecraft:chests/village/village_temple" => Some(&VILLAGE_VILLAGE_TEMPLE),
         "minecraft:chests/village/village_toolsmith" => Some(&VILLAGE_VILLAGE_TOOLSMITH),
-        "minecraft:chests/village/village_weaponsmith" => Some(&VILLAGE_VILLAGE_WEAPONSMITH),
+        "minecraft:chests/village/village_weaponsmith" => {
+            Some(&VILLAGE_VILLAGE_WEAPONSMITH)
+        }
         "minecraft:chests/woodland_mansion" => Some(&WOODLAND_MANSION),
         _ => None,
     }

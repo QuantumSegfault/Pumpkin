@@ -67,6 +67,7 @@ impl<P, R> Remapper<P, R> {
 /// A decoded ViaVersion ID mapping with a forward translation table.
 pub struct ParsedMappings {
     /// Number of IDs in the mapped (newer) version's namespace.
+    #[allow(dead_code)]
     pub mapped_size: usize,
     /// Forward mapping: index is the old ID, value is the new ID (`-1` means unmapped).
     pub forward: Vec<i32>,
